@@ -1,3 +1,10 @@
+### 1.2.1 [20/4/2022 2:12]
+
+- Button2 on main deleted
+- by The wok
+
+
+
 ### 1.2 [20/4/2022 1:52]
 
 - Added one button on main activity to go to the currency_converter
