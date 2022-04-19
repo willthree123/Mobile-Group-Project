@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MobileAppAndroid</string>
+    <string name="display_text">You Language has changed to English!</string>
 </resources>

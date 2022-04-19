@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MobileAppAndroid</string>
+    <string name="display_text">你的語言已經轉換成中文</string>
+</resources>

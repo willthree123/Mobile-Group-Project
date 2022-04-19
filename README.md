@@ -1,4 +1,8 @@
 
+### 1.2 [19/4/2022 09:39]
+
+- Added setting page with lanuage change function
+- by Jesse
 
 ### 1.1 [16/4/2022 00:53]
 
