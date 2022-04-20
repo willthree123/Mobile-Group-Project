@@ -203,7 +203,12 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
                 ed2.setText("");
                 break;
             case R.id.button_back:
+                if(!(ed1.getText().toString().length()==1)){
                 delete_last_character();
+                }else{
+                    ed1.setText("");
+                    ed2.setText("");
+                }
                 break;
             case R.id.currency_page_go_home:
                 Intent intent = new Intent(currency_converter.this, MainActivity.class);
@@ -290,7 +295,7 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
                     //check user input is null or not
                     String amount_string_form = ed1.getText().toString();
                     amount_string_form = removeLastChar(amount_string_form);
-                    if (amount_string_form!=null){
+                    if (!((amount_string_form==null) && (amount_string_form.matches("")))){
                         amount = Double.parseDouble(amount_string_form);
 
                         the_required_amount = (amount/selected_currency_top_values_double)*selected_currency_bottom_values_double;

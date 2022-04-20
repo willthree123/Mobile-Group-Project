@@ -1,3 +1,8 @@
+### 1.3.2 [21/4/2022 4:20]
+
+- back button debug
+- by The wok
+
 ### 1.3.1 [21/4/2022 3:23]
 
 - Currency Converter add scroll view
