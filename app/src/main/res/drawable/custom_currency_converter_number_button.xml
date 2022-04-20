@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+>
+        <gradient
+            android:type="linear"
+            android:startColor="@color/currency_button_black_one"
+            android:endColor="@color/currency_button_black_two"
+            android:angle="51.137"
+            android:startX="15"
+            android:startY="30"
+            android:endX="45"
+            android:endY="30" />
+
+        <corners android:radius="9999dp" />
+
+
+
+
+</shape>
