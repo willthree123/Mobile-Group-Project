@@ -203,9 +203,12 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
                 ed2.setText("");
                 break;
             case R.id.button_back:
-                if(!(ed1.getText().toString().length()==1)){
+                int a = ed1.getText().toString().length();
+                Log.d("bitch",Integer.toString(a) );
+                if((ed1.getText().toString().length()!=1) && (ed1.getText().toString().length()!=0)){
                 delete_last_character();
-                }else{
+                }
+                else{
                     ed1.setText("");
                     ed2.setText("");
                 }
