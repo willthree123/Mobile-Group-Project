@@ -31,6 +31,7 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
     Spinner sp1,sp2;
     EditText ed1,ed2;
     Button convert;
+    Button swap;
     ImageButton home;
     Button virtual_keyboard[];
 
@@ -69,6 +70,7 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
         sp1 = findViewById(R.id.choose_currency_top);
         sp2 = findViewById(R.id.choose_currency_bottom);
         convert = findViewById(R.id.convert);
+        swap = findViewById(R.id.swap);
         home = findViewById(R.id.currency_page_go_home);
 
         //disable ed2 edit
@@ -133,6 +135,7 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
 
         //button listener
         convert.setOnClickListener(this);
+        swap.setOnClickListener(this);
 
         //home button listener
         home.setOnClickListener(this);
@@ -222,7 +225,17 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
                 sp2.setSelection(57);
                 change_currency();
                 break;
+            case R.id.swap:
+                int temp1 = sp1.getSelectedItemPosition();
+                int temp2 = sp2.getSelectedItemPosition();
+                sp1.setSelection(temp2);
+                sp2.setSelection(temp1);
 
+                String strTemp2 = ed2.getText().toString();
+                ed1.setText(strTemp2);
+
+                change_currency();
+                break;
 
 
         }

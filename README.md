@@ -1,3 +1,8 @@
+### 1.3.5 [21/4/2022 4:42]
+
+- added swap button for currency page
+- by Jesse
+
 ### 1.3.2 [21/4/2022 4:20]
 
 - back button debug
