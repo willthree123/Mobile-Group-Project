@@ -2,7 +2,6 @@
     <string name="app_name">MobileAppAndroid</string>
     <string name="currency_converter_title">Currency Converter</string>
     <string name="currency_converter_hint">Enter the amount</string>
-    <string name="currency_converter_convert_button">Convert Now!</string>
-    <string name="currency_converter_go_home">Go Home!</string>
+    <string name="currency_converter_convert_button">Change to default currency</string>
     <string name="display_text">You Language has changed to English!</string>
 </resources>

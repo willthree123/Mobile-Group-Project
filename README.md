@@ -1,3 +1,13 @@
+### 1.3 [21/4/2022 1:24]
+
+- Currency Converter have basic UI
+- Added couple of the default colour
+- Added a virtual keyboard to the currency_converter
+- The calculator will update itself automatically(no need to press convert)
+- Added default currency button change back to from USD to HKD
+- by The wok
+
+
 ### 1.2.1 [20/4/2022 2:12]
 
 - Button2 on main deleted
