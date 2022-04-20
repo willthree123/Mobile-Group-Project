@@ -1,3 +1,9 @@
+### 1.3.1 [21/4/2022 3:23]
+
+- Currency Converter add scroll view
+- Main Activity button change text
+- by The wok
+
 ### 1.3 [21/4/2022 1:24]
 
 - Currency Converter have basic UI
