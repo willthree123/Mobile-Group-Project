@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">MobileAppAndroid</string>
+    <string name="is_consume">Consume</string>
+    <string name="is_revenue">Revenue</string>
+    <string name="save_button">Save</string>
+    <string name="add_button">Add</string>
+    <string name="Amount">Amount</string>
+    <string name="Category">Category</string>
+    <string name="Description">Description</string>
+    <string name="Currency_HKD">HKD</string>
+    <string name="AddRecord">AddRecord</string>
+    <string name="Date">Date</string>
+    <string-array name = "months">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
 </resources>
