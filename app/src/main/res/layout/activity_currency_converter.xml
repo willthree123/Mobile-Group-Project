@@ -68,6 +68,13 @@
                         android:paddingTop="20dp"
                         android:paddingBottom="20dp">
 
+                        <TextView
+                            android:id="@+id/show_api_is_ok"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/currency_converter_white"
+                            android:textSize="20sp" />
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"

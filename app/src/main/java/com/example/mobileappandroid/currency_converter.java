@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -33,6 +34,7 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
     Button convert;
     Button swap;
     ImageButton home;
+    TextView api_working_hint;
     Button virtual_keyboard[];
 
     Double amount;
@@ -74,6 +76,7 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
         convert = findViewById(R.id.convert);
         swap = findViewById(R.id.swap);
         home = findViewById(R.id.currency_page_go_home);
+        api_working_hint = findViewById(R.id.show_api_is_ok);
 
         //disable ed2 edit
         ed2.setFocusable(false);
@@ -89,61 +92,77 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
         ed1.setKeyListener(null);
         ed1.setBackgroundColor(Color.TRANSPARENT);
 
-        setup_virtual_keyboard();
-
-
-        //set 2 spinners item
-        ArrayAdapter ad = new ArrayAdapter<String>(this, R.layout.currency_converter_spinner,currency_choose);
-//        com.google.android.material.R.layout.support_simple_spinner_dropdown_item
-        ad.setDropDownViewResource(R.layout.currency_converter_dropdown);
-        sp1.setAdapter(ad);
-        sp1.setSelection(148); // set default USD
-        sp1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String amount_string_form = ed1.getText().toString();
-                if(amount_string_form.matches("")){
-                }else {
-                    change_currency();
-                }
-            }
-
-            public void onNothingSelected(AdapterView<?> parent){
-            }
-        });
-
-        ArrayAdapter ad2 = new ArrayAdapter<String>(this, R.layout.currency_converter_spinner,currency_choose);
-        ad2.setDropDownViewResource(R.layout.currency_converter_dropdown);
-        sp2.setAdapter(ad2);
-        sp2.setSelection(57); //set default HKD
-        sp2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String amount_string_form = ed1.getText().toString();
-                if(amount_string_form.matches("")){
-                }else {
-                    change_currency();
-                }
-            }
-
-                public void onNothingSelected(AdapterView<?> parent){
-                }
-            });
-
-
         //set API link
         queue = Volley.newRequestQueue(currency_converter.this);
         url = "http://data.fixer.io/api/latest?access_key=1e3517690351e96f8fa21aab98c5047e&format=1";
 
-        //button listener
-        convert.setOnClickListener(this);
-        swap.setOnClickListener(this);
 
-        //home button listener
-        home.setOnClickListener(this);
+        //set 2 spinners item
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    setup_virtual_keyboard();
+                    currency = response.getJSONObject("rates");
+                    ArrayAdapter ad = new ArrayAdapter<String>(currency_converter.this, R.layout.currency_converter_spinner, currency_choose);
+                    //        com.google.android.material.R.layout.support_simple_spinner_dropdown_item
+                    ad.setDropDownViewResource(R.layout.currency_converter_dropdown);
+                    sp1.setAdapter(ad);
+                    sp1.setSelection(148); // set default USD
+                    sp1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                            String amount_string_form = ed1.getText().toString();
+                            if (amount_string_form.matches("")) {
+                            } else {
+                                change_currency();
+                            }
+                        }
+
+                        public void onNothingSelected(AdapterView<?> parent) {
+                        }
+                    });
+
+                    ArrayAdapter ad2 = new ArrayAdapter<String>(currency_converter.this, R.layout.currency_converter_spinner, currency_choose);
+                    ad2.setDropDownViewResource(R.layout.currency_converter_dropdown);
+                    sp2.setAdapter(ad2);
+                    sp2.setSelection(57); //set default HKD
+                    sp2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                            String amount_string_form = ed1.getText().toString();
+                            if (amount_string_form.matches("")) {
+                            } else {
+                                change_currency();
+                            }
+                        }
+
+                        public void onNothingSelected(AdapterView<?> parent) {
+                        }
+                    });
+                    //button listener
+                    convert.setOnClickListener(currency_converter.this);
+                    swap.setOnClickListener(currency_converter.this);
+
+                    //home button listener
+                    home.setOnClickListener(currency_converter.this);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
 
 
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(currency_converter.this, "The API is not working", Toast.LENGTH_SHORT).show();
+                api_working_hint.setText("API is not working, so this converter is disabled");
+            }
+
+        });
+        queue.add(request);
     }
+
 
     public void setup_virtual_keyboard(){
         Button virtual_keyboard[] = new Button[13];
@@ -252,51 +271,35 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
 
 
 
-    public void add_the_pressed_button_and_update(String pressed_value){
+    public void add_the_pressed_button_and_update(String pressed_value) {
         String currency_top;
         String currency_bottom;
 
         currency_top = sp1.getSelectedItem().toString();
         currency_bottom = sp2.getSelectedItem().toString();
 
-        //get json from API
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url ,null, new Response.Listener<JSONObject>(){
-            @Override
-            public void onResponse(JSONObject response){
-                try {
-                    currency = response.getJSONObject("rates");
 
-                    selected_currency_top_values_string =currency.getString(currency_top);
-                    selected_currency_bottom_values_string = currency.getString(currency_bottom);
+        try {
+            selected_currency_top_values_string =currency.getString(currency_top);
+            selected_currency_bottom_values_string = currency.getString(currency_bottom);
+            selected_currency_top_values_double = Double.parseDouble(selected_currency_top_values_string);
+            selected_currency_bottom_values_double = Double.parseDouble(selected_currency_bottom_values_string);
+            //check user input is null or not
+            String amount_string_form = ed1.getText().toString();
+            amount_string_form += pressed_value;
+            if (amount_string_form!=null){
+                amount = Double.parseDouble(amount_string_form);
 
-                    selected_currency_top_values_double = Double.parseDouble(selected_currency_top_values_string);
-                    selected_currency_bottom_values_double = Double.parseDouble(selected_currency_bottom_values_string);
-
-                    //check user input is null or not
-                    String amount_string_form = ed1.getText().toString();
-                    amount_string_form += pressed_value;
-                    if (amount_string_form!=null){
-                        amount = Double.parseDouble(amount_string_form);
-
-                        the_required_amount = (amount/selected_currency_top_values_double)*selected_currency_bottom_values_double;
-                        ed1.setText(amount_string_form);
-                        ed2.setText(String.format("%.4f",the_required_amount));
-                    }else{
-                        Toast.makeText(currency_converter.this, "Please enter the amount", Toast.LENGTH_SHORT).show();
-                    }
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        }, new Response.ErrorListener(){
-            @Override
-            public void onErrorResponse(VolleyError error){
-                Toast.makeText(currency_converter.this, "Something Wrong!!!", Toast.LENGTH_SHORT).show();
+                the_required_amount = (amount/selected_currency_top_values_double)*selected_currency_bottom_values_double;
+                ed1.setText(amount_string_form);
+                ed2.setText(String.format("%.4f",the_required_amount));
+            }else{
+                Toast.makeText(currency_converter.this, "Please enter the amount", Toast.LENGTH_SHORT).show();
             }
 
-        });
-        queue.add(request);
+        } catch (JSONException jsonException) {
+            Toast.makeText(currency_converter.this, "The API is not working", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void delete_last_character(){
@@ -306,45 +309,27 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
         currency_top = sp1.getSelectedItem().toString();
         currency_bottom = sp2.getSelectedItem().toString();
 
-        //get json from API
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url ,null, new Response.Listener<JSONObject>(){
-            @Override
-            public void onResponse(JSONObject response){
-                try {
-                    currency = response.getJSONObject("rates");
+        try {
+            selected_currency_top_values_string =currency.getString(currency_top);
+            selected_currency_bottom_values_string = currency.getString(currency_bottom);
+            selected_currency_top_values_double = Double.parseDouble(selected_currency_top_values_string);
+            selected_currency_bottom_values_double = Double.parseDouble(selected_currency_bottom_values_string);
+            //check user input is null or not
+            String amount_string_form = ed1.getText().toString();
+            amount_string_form = removeLastChar(amount_string_form);
+            if (amount_string_form!=null){
+                amount = Double.parseDouble(amount_string_form);
 
-                    selected_currency_top_values_string =currency.getString(currency_top);
-                    selected_currency_bottom_values_string = currency.getString(currency_bottom);
-
-                    selected_currency_top_values_double = Double.parseDouble(selected_currency_top_values_string);
-                    selected_currency_bottom_values_double = Double.parseDouble(selected_currency_bottom_values_string);
-
-                    //check user input is null or not
-                    String amount_string_form = ed1.getText().toString();
-                    amount_string_form = removeLastChar(amount_string_form);
-                    if (!((amount_string_form==null) && (amount_string_form.matches("")))){
-                        amount = Double.parseDouble(amount_string_form);
-
-                        the_required_amount = (amount/selected_currency_top_values_double)*selected_currency_bottom_values_double;
-
-                        ed1.setText(amount_string_form);
-                        ed2.setText(String.format("%.4f",the_required_amount));
-                    }else{
-                        Toast.makeText(currency_converter.this, "Please enter the amount", Toast.LENGTH_SHORT).show();
-                    }
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        }, new Response.ErrorListener(){
-            @Override
-            public void onErrorResponse(VolleyError error){
-                Toast.makeText(currency_converter.this, "Something Wrong!", Toast.LENGTH_SHORT).show();
+                the_required_amount = (amount/selected_currency_top_values_double)*selected_currency_bottom_values_double;
+                ed1.setText(amount_string_form);
+                ed2.setText(String.format("%.4f",the_required_amount));
+            }else{
+                Toast.makeText(currency_converter.this, "Please enter the amount", Toast.LENGTH_SHORT).show();
             }
 
-        });
-        queue.add(request);
+        } catch (JSONException jsonException) {
+            Toast.makeText(currency_converter.this, "The API is not working", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void change_currency(){
@@ -354,43 +339,27 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
         currency_top = sp1.getSelectedItem().toString();
         currency_bottom = sp2.getSelectedItem().toString();
 
-        //get json from API
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url ,null, new Response.Listener<JSONObject>(){
-            @Override
-            public void onResponse(JSONObject response){
-                try {
-                    currency = response.getJSONObject("rates");
+        try {
+            selected_currency_top_values_string =currency.getString(currency_top);
+            selected_currency_bottom_values_string = currency.getString(currency_bottom);
+            selected_currency_top_values_double = Double.parseDouble(selected_currency_top_values_string);
+            selected_currency_bottom_values_double = Double.parseDouble(selected_currency_bottom_values_string);
+            //check user input is null or not
+            String amount_string_form = ed1.getText().toString();
+            if (amount_string_form!=null){
+                amount = Double.parseDouble(amount_string_form);
 
-                    selected_currency_top_values_string =currency.getString(currency_top);
-                    selected_currency_bottom_values_string = currency.getString(currency_bottom);
-
-                    selected_currency_top_values_double = Double.parseDouble(selected_currency_top_values_string);
-                    selected_currency_bottom_values_double = Double.parseDouble(selected_currency_bottom_values_string);
-
-                    //check user input is null or not
-                    String amount_string_form = ed1.getText().toString();
-                    if (amount_string_form!=null){
-                        amount = Double.parseDouble(amount_string_form);
-
-                        the_required_amount = (amount/selected_currency_top_values_double)*selected_currency_bottom_values_double;
-
-                        ed2.setText(String.format("%.4f",the_required_amount));
-                    }else{
-                        Toast.makeText(currency_converter.this, "Please enter the amount", Toast.LENGTH_SHORT).show();
-                    }
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        }, new Response.ErrorListener(){
-            @Override
-            public void onErrorResponse(VolleyError error){
-                Toast.makeText(currency_converter.this, "Something Wrong!!", Toast.LENGTH_SHORT).show();
+                the_required_amount = (amount/selected_currency_top_values_double)*selected_currency_bottom_values_double;
+                ed1.setText(amount_string_form);
+                ed2.setText(String.format("%.4f",the_required_amount));
+            }else{
+                Toast.makeText(currency_converter.this, "Please enter the amount", Toast.LENGTH_SHORT).show();
             }
 
-        });
-        queue.add(request);
+        } catch (JSONException jsonException) {
+            Toast.makeText(currency_converter.this, "The API is not working", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     public String removeLastChar(String s) {

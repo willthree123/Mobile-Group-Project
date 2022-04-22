@@ -1,3 +1,9 @@
+### 1.3.7 [23/4/2022 00:01]
+
+- Get API change to on create get json
+- TextView added if API not work showed at text view
+- by Thw Wok
+
 ### 1.3.6 [22/4/2022 16:10]
 
 - Debug the back button
