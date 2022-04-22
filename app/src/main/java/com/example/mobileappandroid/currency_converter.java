@@ -47,6 +47,8 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
     JSONObject currency;
     RequestQueue queue;
 
+    int check_if_too_quick = -1;
+
     String[] currency_choose ={
             "AED","AFN","ALL","AMD","ANG","AOA","ARS","AUD","AWG","AZN","BAM","BBD","BDT","BGN","BHD","BIF","BMD","BND","BOB","BRL",
             "BSD","BTC","BTN","BWP","BYN","BYR","CAD","CDF","CHF","CLF","CLP","CNY","COP","CRC","CUC","CUP","CVE","CZK","DJF","DKK",
@@ -131,7 +133,7 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
 
         //set API link
         queue = Volley.newRequestQueue(currency_converter.this);
-        url = "http://api.exchangeratesapi.io/v1/latest?access_key=7ee74c9f604e100b9f5d1f66edcbd52b&format=1";
+        url = "http://data.fixer.io/api/latest?access_key=1e3517690351e96f8fa21aab98c5047e&format=1";
 
         //button listener
         convert.setOnClickListener(this);
@@ -206,16 +208,23 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
                 ed2.setText("");
                 break;
             case R.id.button_back:
-                int a = ed1.getText().toString().length();
-                Log.d("bitch",Integer.toString(a) );
-                if((ed1.getText().toString().length()!=1) && (ed1.getText().toString().length()!=0)){
-                delete_last_character();
+                int temp = ed1.getText().toString().length();
+                if(temp != check_if_too_quick) {
+                    check_if_too_quick = temp;
+                    if((check_if_too_quick!=1) && (check_if_too_quick!=0)){
+                        delete_last_character();
+                    }
+                    else{
+                        ed1.setText("");
+                        ed2.setText("");
+                    }
+                    break;
                 }
                 else{
-                    ed1.setText("");
-                    ed2.setText("");
+                    Toast.makeText(this, "You pressed to quick please take it slow", Toast.LENGTH_SHORT).show();
+                    break;
                 }
-                break;
+
             case R.id.currency_page_go_home:
                 Intent intent = new Intent(currency_converter.this, MainActivity.class);
                 startActivity(intent);
@@ -240,6 +249,8 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
 
         }
     }
+
+
 
     public void add_the_pressed_button_and_update(String pressed_value){
         String currency_top;
@@ -281,7 +292,7 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
         }, new Response.ErrorListener(){
             @Override
             public void onErrorResponse(VolleyError error){
-                Toast.makeText(currency_converter.this, "Something Wrong", Toast.LENGTH_SHORT).show();
+                Toast.makeText(currency_converter.this, "Something Wrong!!!", Toast.LENGTH_SHORT).show();
             }
 
         });
@@ -329,7 +340,7 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
         }, new Response.ErrorListener(){
             @Override
             public void onErrorResponse(VolleyError error){
-                Toast.makeText(currency_converter.this, "Something Wrong", Toast.LENGTH_SHORT).show();
+                Toast.makeText(currency_converter.this, "Something Wrong!", Toast.LENGTH_SHORT).show();
             }
 
         });
@@ -375,7 +386,7 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
         }, new Response.ErrorListener(){
             @Override
             public void onErrorResponse(VolleyError error){
-                Toast.makeText(currency_converter.this, "Something Wrong", Toast.LENGTH_SHORT).show();
+                Toast.makeText(currency_converter.this, "Something Wrong!!", Toast.LENGTH_SHORT).show();
             }
 
         });

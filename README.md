@@ -1,3 +1,10 @@
+### 1.3.6 [22/4/2022 16:10]
+
+- Debug the back button
+- change API as it only have 100 calls
+- by Thw Wok
+
+
 ### 1.3.5 [21/4/2022 4:42]
 
 - added swap button for currency page
