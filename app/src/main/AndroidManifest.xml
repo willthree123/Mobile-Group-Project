@@ -19,6 +19,21 @@
             android:name=".SettingActivity"
             android:exported="false" />
         <activity
+            android:name=".FinanceAmountPieChart"
+            android:exported="false" />
+        <activity
+            android:name=".FinanceGraph"
+            android:exported="false" />
+        <activity
+            android:name=".RecordDetailPage"
+            android:exported="false" />
+        <activity
+            android:name=".FinanceMainPage"
+            android:exported="false" />
+        <activity
+            android:name=".FinanceTracker"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true" >
             <intent-filter>
