@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MobileAppAndroid</string>
+    <string name="display_text">你的語言已經轉換成中文</string>
+    <string name="currency_converter_title">課幣轉換神器</string>
+    <string name="currency_converter_hint">輸入數目</string>
+    <string name="currency_converter_convert_button">預設課幣</string>
+</resources>

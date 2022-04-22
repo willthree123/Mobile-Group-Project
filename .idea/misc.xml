@@ -17,6 +17,21 @@
         <entry key="..\:/Github/Mobile-Group-Project/app/src/main/res/layout/record_rv_item.xml" value="0.2984375" />
         <entry key="..\:/Github/Mobile-Group-Project/app/src/main/res/layout/spinner_year_row.xml" value="0.2641271442986882" />
         <entry key="..\:/Github/Mobile-Group-Project/app/src/main/res/layout/year_spinner_row.xml" value="0.17777777777777778" />
+        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/layout/activity_currency_converter.xml" value="0.36666666666666664" />
+        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/layout/currency_converter_dropdown.xml" value="0.14583333333333334" />
+        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/layout/currency_converter_spinner.xml" value="0.14583333333333334" />
+        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/layout/setting.xml" value="0.5" />
+        <entry key="..\:/mobile_group_project/Mobile-Group-Project/app/src/main/res/drawable/bg_currency_converter.xml" value="0.2995" />
+        <entry key="..\:/mobile_group_project/Mobile-Group-Project/app/src/main/res/drawable/convert_now_button.xml" value="0.2995" />
+        <entry key="..\:/mobile_group_project/Mobile-Group-Project/app/src/main/res/drawable/currency_convertor_screen.xml" value="0.18" />
+        <entry key="..\:/mobile_group_project/Mobile-Group-Project/app/src/main/res/drawable/custom_button_drawable.xml" value="0.2995" />
+        <entry key="..\:/mobile_group_project/Mobile-Group-Project/app/src/main/res/drawable/custom_currency_converter_number_button.xml" value="0.2995" />
+        <entry key="..\:/mobile_group_project/Mobile-Group-Project/app/src/main/res/drawable/custom_long_button_drawable.xml" value="0.2995" />
+        <entry key="..\:/mobile_group_project/Mobile-Group-Project/app/src/main/res/layout/activity_currency_converter.xml" value="0.33" />
+        <entry key="..\:/mobile_group_project/Mobile-Group-Project/app/src/main/res/layout/activity_main.xml" value="0.3605128205128205" />
+        <entry key="..\:/mobile_group_project/Mobile-Group-Project/app/src/main/res/layout/currency_converter_dropdown.xml" value="0.3605128205128205" />
+        <entry key="..\:/mobile_group_project/Mobile-Group-Project/app/src/main/res/layout/currency_converter_spinner.xml" value="0.3605128205128205" />
       </map>
     </option>
   </component>
