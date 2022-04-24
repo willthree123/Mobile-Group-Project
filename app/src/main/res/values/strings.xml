@@ -25,10 +25,54 @@
         <item>November</item>
         <item>December</item>
     </string-array>
+    <string name="fNeg1">Transport</string>
+    <string name="fNeg2">Health</string>
+    <string name="fNeg3">Necessities</string>
+    <string name="fNeg4">Entertainment</string>
+    <string name="fNeg5">Catering</string>
+    <string name="fNeg6">Gift</string>
+    <string name="fNeg7">Education</string>
+    <string name="fNeg8">Top up</string>
+    <string name="fNeg9">Household</string>
+    <string name="fNeg10">Bill</string>
+    <string name="fNeg11">Housing</string>
+    <string name="fNeg12">Clothing</string>
+    <string name="fNeg13">Membership</string>
+    <string name="fNeg14">Others</string>
+    <string-array name ="financeNegCat">
+        <item>@string/fNeg1</item>
+        <item>@string/fNeg2</item>
+        <item>@string/fNeg3</item>
+        <item>@string/fNeg4</item>
+        <item>@string/fNeg5</item>
+        <item>@string/fNeg6</item>
+        <item>@string/fNeg7</item>
+        <item>@string/fNeg8</item>
+        <item>@string/fNeg9</item>
+        <item>@string/fNeg10</item>
+        <item>@string/fNeg11</item>
+        <item>@string/fNeg12</item>
+        <item>@string/fNeg13</item>
+        <item>@string/fNeg14</item>
+    </string-array>
+
+    <string name="fAdd1">Interest</string>
+    <string name="fAdd2">Income</string>
+    <string name="fAdd3">Gift</string>
+    <string name="fAdd4">Others</string>
+    <string-array name="financeAddCat">
+        <item>@string/fAdd1</item>
+        <item>@string/fAdd2</item>
+        <item>@string/fAdd3</item>
+        <item>@string/fAdd4</item>
+    </string-array>
 
     <string name="currency_converter_title">Currency Converter</string>
     <string name="currency_converter_hint">Please enter $</string>
     <string name="currency_converter_convert_button">Default currency</string>
     <string name="display_text">You Language has changed to English!</string>
 
+    <string name="fToday">Today</string>
+    <string name="fYesterday">Yesterday</string>
+    <string name="fYesYesterday">The day before yesterday</string>
 </resources>

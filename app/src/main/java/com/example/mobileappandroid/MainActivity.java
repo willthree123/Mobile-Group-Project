@@ -16,7 +16,7 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Set;
-  
+
 
 
 
@@ -33,10 +33,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         to_finance = findViewById(R.id.to_finance);
         to_finance.setOnClickListener(this);
-        SharedPreferences sp=getSharedPreferences("Records",MODE_PRIVATE);
-        SharedPreferences.Editor editor=sp.edit();
-        editor.clear();
-        editor.commit();
+//        SharedPreferences sharedPreferences = getSharedPreferences("KEY",MODE_PRIVATE);
+//        SharedPreferences.Editor editor= sharedPreferences.edit();
+//        editor.putString();
+//        SharedPreferences sp=getSharedPreferences("Records",MODE_PRIVATE);
+//        SharedPreferences.Editor editor=sp.edit();
+//        editor.clear();
+//        editor.commit();
     }
 
     @Override

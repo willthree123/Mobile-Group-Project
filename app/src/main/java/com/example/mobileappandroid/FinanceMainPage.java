@@ -81,16 +81,16 @@ public class FinanceMainPage extends AppCompatActivity implements View.OnClickLi
             RecordisEmpty=true;
             records= new ArrayList<>();
             // JustForTest
-            for(int i=2010;i<=2022;i++) {
-                Calendar cal = Calendar.getInstance();
-                Calendar cal2 = Calendar.getInstance();
-                cal2.set(i,1,1);
-                cal.set(i,0,1);
-                records.add(new Record((i-2000)*10, cal, R.drawable.ic_launcher_foreground, "No", true,0));
-                records.add(new Record((i-2000)*20, cal2, R.drawable.ic_launcher_foreground, "No", true,0));
-                records.add(new Record((i-2000)*10, cal, R.drawable.ic_launcher_foreground, "No", false,0));
-                records.add(new Record((i-2000)*40, cal2, R.drawable.ic_launcher_foreground, "No", false,0));
-            }
+//            for(int i=2010;i<=2022;i++) {
+//                Calendar cal = Calendar.getInstance();
+//                Calendar cal2 = Calendar.getInstance();
+//                cal2.set(i,1,1);
+//                cal.set(i,0,1);
+//                records.add(new Record((i-2000)*10, cal, R.drawable.ic_launcher_foreground, "No", true,0));
+//                records.add(new Record((i-2000)*20, cal2, R.drawable.ic_launcher_foreground, "No", true,0));
+//                records.add(new Record((i-2000)*10, cal, R.drawable.ic_launcher_foreground, "No", false,0));
+//                records.add(new Record((i-2000)*40, cal2, R.drawable.ic_launcher_foreground, "No", false,0));
+//            }
             // EndJustForTest
 
             SharedPreferences.Editor editor=sp.edit();

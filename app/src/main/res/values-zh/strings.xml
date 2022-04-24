@@ -5,4 +5,45 @@
     <string name="currency_converter_title">課幣轉換神器</string>
     <string name="currency_converter_hint">輸入數目</string>
     <string name="currency_converter_convert_button">預設課幣</string>
+    <string-array name ="financeNegCat">
+        <item>@string/fNeg1</item>
+        <item>@string/fNeg2</item>
+        <item>@string/fNeg3</item>
+        <item>@string/fNeg4</item>
+        <item>@string/fNeg5</item>
+        <item>@string/fNeg6</item>
+        <item>@string/fNeg7</item>
+        <item>@string/fNeg8</item>
+        <item>@string/fNeg9</item>
+        <item>@string/fNeg10</item>
+        <item>@string/fNeg11</item>
+        <item>@string/fNeg12</item>
+        <item>@string/fNeg13</item>
+        <item>@string/fNeg14</item>
+    </string-array>
+    <string-array name="financeAddCat">
+        <item>利息</item>
+        <item>薪金</item>
+        <item>收禮</item>
+        <item>其他</item>
+    </string-array>
+    <string name="fNeg1">交通</string>
+    <string name="fNeg2">健康</string>
+    <string name="fNeg3">日常品</string>
+    <string name="fNeg4">娛樂</string>
+    <string name="fNeg5">飲食</string>
+    <string name="fNeg6">贈禮</string>
+    <string name="fNeg7">教學</string>
+    <string name="fNeg8">課金</string>
+    <string name="fNeg9">家用</string>
+    <string name="fNeg10">帳單</string>
+    <string name="fNeg11">住屋</string>
+    <string name="fNeg12">衣物</string>
+    <string name="fNeg13">會籍</string>
+    <string name="fNeg14">其他</string>
+    <string name="fAdd1">利息</string>
+    <string name="fAdd2">薪金</string>
+    <string name="fAdd3">收禮</string>
+    <string name="fAdd4">其他</string>
+
 </resources>
