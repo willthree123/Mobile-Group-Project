@@ -14,5 +14,5 @@
     <color name="currency_converter_white">#E9EAF0</color>
     <color name="currency_hint">#8A8887</color>
     <color name="currency_long_button_text_color">#F4845F</color>
-
+    <color name="add_record_display_text_color">#979797</color>
 </resources>

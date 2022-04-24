@@ -1,3 +1,8 @@
+### 1.4.0 [25/4/2022 03:38]
+
+- Added Cat buttons on activity finace tracker page
+- by Jesse
+
 ### 1.3.7 [23/4/2022 00:01]
 
 - Get API change to on create get json
