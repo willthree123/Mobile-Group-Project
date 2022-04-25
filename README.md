@@ -1,3 +1,8 @@
+### 1.4.1 [26/4/2022 01:38]
+
+- Added Welcome screen
+- by Jesse
+
 ### 1.4.0 [25/4/2022 03:38]
 
 - Added Cat buttons on activity finace tracker page
