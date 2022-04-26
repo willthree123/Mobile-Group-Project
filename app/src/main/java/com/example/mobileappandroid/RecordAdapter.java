@@ -3,6 +3,7 @@ package com.example.mobileappandroid;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.text.Layout;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
@@ -52,9 +54,11 @@ public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.RecordView
         holder.tv_description.setText(current_record.getDescription());
         if(current_record.isConsume()){
             holder.tv_type.setText(R.string.is_consume);
+            holder.card.setCardBackgroundColor(Color.RED);
         }
         else{
             holder.tv_type.setText(R.string.is_revenue);
+            holder.card.setCardBackgroundColor(Color.GREEN);
         }
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,6 +84,7 @@ public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.RecordView
         public TextView tv_type;
         public ImageView iv_category;
         public Button bt_remove;
+        public CardView card;
 
         public RecordViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -89,6 +94,7 @@ public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.RecordView
             tv_date=itemView.findViewById(R.id.record_date);
             tv_description=itemView.findViewById(R.id.record_description);
             tv_type=itemView.findViewById(R.id.record_type);
+            card=itemView.findViewById(R.id.Card_of_record);
             bt_remove.setOnClickListener(this);
 
         }

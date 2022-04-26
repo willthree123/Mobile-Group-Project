@@ -96,7 +96,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //get element id
         TextView tv_tool_title = findViewById(R.id.tv_tool_title);
 
-
         //get string
         tv_tool_title.setText(resources.getString(R.string.main_tools));
         return;

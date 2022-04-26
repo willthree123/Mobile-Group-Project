@@ -28,7 +28,6 @@ public class FinanceMainPage extends AppCompatActivity implements View.OnClickLi
     public boolean is_saved;
     private ArrayList<Record> records;
     private Record record;
-    private boolean RecordisEmpty=true;
 
 //    private TextView test;
 //    private String amount[];
@@ -58,6 +57,8 @@ public class FinanceMainPage extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public void onBackPressed() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
     private void saveData() {
@@ -78,7 +79,6 @@ public class FinanceMainPage extends AppCompatActivity implements View.OnClickLi
         Type type=new TypeToken<ArrayList<Record>>(){}.getType();
 
         if (json==null){
-            RecordisEmpty=true;
             records= new ArrayList<>();
             // JustForTest
 //            for(int i=2010;i<=2022;i++) {
@@ -87,11 +87,16 @@ public class FinanceMainPage extends AppCompatActivity implements View.OnClickLi
 //                cal2.set(i,1,1);
 //                cal.set(i,0,1);
 //                records.add(new Record((i-2000)*10, cal, R.drawable.ic_launcher_foreground, "No", true,0));
-//                records.add(new Record((i-2000)*20, cal2, R.drawable.ic_launcher_foreground, "No", true,0));
-//                records.add(new Record((i-2000)*10, cal, R.drawable.ic_launcher_foreground, "No", false,0));
-//                records.add(new Record((i-2000)*40, cal2, R.drawable.ic_launcher_foreground, "No", false,0));
+//                records.add(new Record((i-2000)*20, cal, R.drawable.ic_launcher_foreground, "No", true,1));
+//                records.add(new Record((i-2000)*10, cal, R.drawable.ic_launcher_foreground, "No", false,2));
+//                records.add(new Record((i-2000)*40, cal, R.drawable.ic_launcher_foreground, "No", false,3));
 //            }
             // EndJustForTest
+            Calendar cal = Calendar.getInstance();
+            cal.set(2022,0,1);
+            for (int i=0;i<=13;i++){
+                records.add(new Record(100, cal, R.drawable.ic_launcher_foreground, "No", false,i));
+            }
 
             SharedPreferences.Editor editor=sp.edit();
             editor=sp.edit();
@@ -99,7 +104,6 @@ public class FinanceMainPage extends AppCompatActivity implements View.OnClickLi
             editor.putString("record_data",json);
             editor.apply();
         }
-        RecordisEmpty = false;
         records = gson.fromJson(json, type);
         rv_record = findViewById(R.id.rv_record);
         rv_record.setHasFixedSize(true);
@@ -119,13 +123,8 @@ public class FinanceMainPage extends AppCompatActivity implements View.OnClickLi
                 startActivity(intent);
                 break;
             case R.id.to_graph:
-                if(RecordisEmpty==false) {
-                    Intent intent2 = new Intent(this, FinanceGraph.class);
-                    startActivity(intent2);
-                }
-                else{
-                    Toast.makeText(this, "No record to generate graph", Toast.LENGTH_SHORT).show();
-                }
+                Intent intent2 = new Intent(this, FinanceAmountPieChart.class);
+                startActivity(intent2);
                 break;
         }
     }

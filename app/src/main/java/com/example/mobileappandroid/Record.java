@@ -69,6 +69,10 @@ public class Record implements Serializable {
         return category;
     }
 
+    public int getCategory_type() {
+        return Category_type;
+    }
+
     public void setCategory(int category) {
         this.category = category;
     }

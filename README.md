@@ -1,3 +1,9 @@
+### 1.5.0 [27/4/2022 00:02]
+
+- Record adding class added category button
+- PieChart is now fully functional
+- by Alvin
+
 ### 1.4.3 [27/4/2022 02:29]
 
 - Done setting page
@@ -16,7 +22,7 @@
 
 - Added Welcome screen
 - by Jesse
-
+- 
 ### 1.4.0 [25/4/2022 03:38]
 
 - Added Cat buttons on activity finace tracker page
