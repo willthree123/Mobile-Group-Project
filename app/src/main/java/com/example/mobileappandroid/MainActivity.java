@@ -33,13 +33,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         to_finance = findViewById(R.id.to_finance);
         to_finance.setOnClickListener(this);
-//        SharedPreferences sharedPreferences = getSharedPreferences("KEY",MODE_PRIVATE);
-//        SharedPreferences.Editor editor= sharedPreferences.edit();
-//        editor.putString();
-//        SharedPreferences sp=getSharedPreferences("Records",MODE_PRIVATE);
-//        SharedPreferences.Editor editor=sp.edit();
-//        editor.clear();
-//        editor.commit();
+        SharedPreferences sp=getSharedPreferences("Records",MODE_PRIVATE);
+        SharedPreferences.Editor editor=sp.edit();
+        editor.clear();
+        editor.commit();
+
+        go_to_currency_cal = findViewById(R.id.to_currency_converter);
+        go_to_currency_cal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, currency_converter.class);
+                startActivity(intent);
+            }
+        });
+
+        Button btnSetting = findViewById(R.id.button2);
+        btnSetting.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent switchActivityIntent = new Intent(view.getContext(), SettingActivity.class);
+                startActivity(switchActivityIntent);
+            }
+        });
     }
 
     @Override
@@ -56,25 +72,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
         }
-
-        go_to_currency_cal = findViewById(R.id.to_currency_converter);
-        go_to_currency_cal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, currency_converter.class);
-                startActivity(intent);
-            }
-        });
-                                              
-        Button btnSetting = findViewById(R.id.button2);
-        btnSetting.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                Intent switchActivityIntent = new Intent(view.getContext(), SettingActivity.class);
-                startActivity(switchActivityIntent);
-            }
-        });
 
     }
 

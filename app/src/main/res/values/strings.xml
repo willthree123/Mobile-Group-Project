@@ -60,6 +60,7 @@
     <string name="fAdd2">Income</string>
     <string name="fAdd3">Gift</string>
     <string name="fAdd4">Others</string>
+
     <string-array name="financeAddCat">
         <item>@string/fAdd1</item>
         <item>@string/fAdd2</item>

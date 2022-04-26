@@ -141,6 +141,9 @@ public class RecordDetailPage extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onBackPressed() {
+        Intent intent = new Intent(this, FinanceMainPage.class);
+        intent.putExtra("is_saved", false);
+        startActivity(intent);
     }
 
 }

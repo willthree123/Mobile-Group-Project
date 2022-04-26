@@ -40,9 +40,18 @@
         android:id="@+id/piechart_change_view_mode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
         android:text="Consume/Revenue"
         app:layout_constraintBottom_toTopOf="@+id/piechart_view_all"
-        tools:layout_editor_absoluteX="81dp" />
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/piechart_change_view_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CATEGORY/ALL"
+        app:layout_constraintBottom_toTopOf="@+id/piechart_view_year"
+        app:layout_constraintStart_toEndOf="@+id/piechart_change_view_mode" />
 
     <Spinner
         android:id="@+id/spinner_year"
@@ -53,6 +62,15 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/piechart_view_year"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/TextView_show_displaying"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/PieChart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
