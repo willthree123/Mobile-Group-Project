@@ -1,0 +1,10 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="169dp"
+    android:height="49dp"
+    android:viewportWidth="169"
+    android:viewportHeight="49">
+    <path
+        android:fillColor="#FFEFEFEF"
+        android:fillType="evenOdd"
+        android:pathData="M53 40.5c0 4.7 3.8 8.5 8.5 8.5h99c4.7 0 8.5-3.8 8.5-8.5s-3.8-8.5-8.5-8.5h-52c-4.14 0-7.5-3.36-7.5-7.5 0-4.14 3.36-7.5 7.5-7.5h38c4.7 0 8.5-3.8 8.5-8.5S151.2 0 146.5 0H8.5C3.8 0 0 3.8 0 8.5S3.8 17 8.5 17h58c4.14 0 7.5 3.36 7.5 7.5 0 4.14-3.36 7.5-7.5 7.5h-5c-4.7 0-8.5 3.8-8.5 8.5Z"/>
+</vector>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--    Main    -->
     <color name="purple_200">#FCB986</color>
     <color name="purple_500">#EE9F00</color>
     <color name="purple_700">#CC4C07</color>
@@ -9,10 +10,27 @@
     <color name="white">#FFFFFFFF</color>
     <color name="black_gradiant_one">#2A2D32</color>
     <color name="black_gradiant_two">#131313</color>
+    <!--    Welcome Page    -->
+
+    <!--    Home Page    -->
+    <color name="home_white">@color/currency_converter_white</color>
+
+    <!--    Tracking    -->
+    <color name="add_record_display_text_color">#979797</color>
+
+    <!--    Converter    -->
     <color name="currency_button_black_one">#282B2F</color>
     <color name="currency_button_black_two">#00282B2F</color>
     <color name="currency_converter_white">#E9EAF0</color>
     <color name="currency_hint">#8A8887</color>
     <color name="currency_long_button_text_color">#F4845F</color>
-    <color name="add_record_display_text_color">#979797</color>
+
+    <!--    Setting    -->
+    <color name="setting_white">@color/currency_converter_white</color>
+
+    <!--    Not Sorted    -->
+
+
+
+
 </resources>

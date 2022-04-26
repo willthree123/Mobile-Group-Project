@@ -2,7 +2,9 @@ package com.example.mobileappandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,7 +30,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class currency_converter extends AppCompatActivity implements View.OnClickListener{
-
+    Context context;
+    Resources resources;
     Spinner sp1,sp2;
     EditText ed1,ed2;
     Button convert;
@@ -69,6 +72,7 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
 
         //find view by id
         setContentView(R.layout.activity_currency_converter);
+        reloadLang(currency_converter.this);
         ed1 = findViewById(R.id.enter_amount_top);
         ed2 = findViewById(R.id.show_amount);
         sp1 = findViewById(R.id.choose_currency_top);
@@ -368,4 +372,28 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
                 : (s.substring(0, s.length() - 1));
     }
 
+    private void reloadLang(Context context) {
+        //Lang Change
+        String lang = SharedPreferenceHelper.getLanguage(context);
+        context = LocaleHelper.setLocale(context, lang);
+        resources = context.getResources();
+
+        //Edit below
+        //get element id
+        TextView title = findViewById(R.id.title);
+        EditText hint = findViewById(R.id.enter_amount_top);
+        Button convert = findViewById(R.id.convert);
+        Button ac=findViewById(R.id.button_ac);
+        Button back=findViewById(R.id.button_back);
+        //get string
+        title.setText(resources.getString(R.string.currency_converter_title));
+        hint.setHint(resources.getString(R.string.currency_converter_hint));
+        convert.setText(resources.getString(R.string.currency_converter_convert_button));
+        back.setText(resources.getString(R.string.Back));
+        ac.setText(resources.getString(R.string.AC));
+        return;
+
+    }
+
 }
+
