@@ -17,6 +17,10 @@
 
     <!--    Tracking    -->
     <color name="add_record_display_text_color">#979797</color>
+    <color name="card_bg_green">#4E7336</color>
+    <color name="card_bg_red">#713433</color>
+    <color name="record_question">#BEBEC0</color>
+    <color name="record_content">@color/currency_converter_white</color>
 
     <!--    Converter    -->
     <color name="currency_button_black_one">#282B2F</color>

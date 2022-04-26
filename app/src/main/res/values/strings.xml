@@ -85,6 +85,10 @@
     <string name="fYesterday">Yesterday</string>
     <string name="fYesYesterday">The day before yesterday</string>
 
+    <string name="Dateq">Date:</string>
+    <string name="HKDq">HKD:</string>
+    <string name="view">view...</string>
+
 
     <!--    Converter    -->
     <string name="currency_converter_title">Currency Converter</string>

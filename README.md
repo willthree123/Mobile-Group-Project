@@ -1,3 +1,8 @@
+### 1.5.1 [27/4/2022 03:08]
+
+- Try edit the record card and code
+- by Jesse
+
 ### 1.5.0 [27/4/2022 00:02]
 
 - Record adding class added category button

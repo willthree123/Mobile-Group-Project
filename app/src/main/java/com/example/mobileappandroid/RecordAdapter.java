@@ -54,11 +54,12 @@ public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.RecordView
         holder.tv_description.setText(current_record.getDescription());
         if(current_record.isConsume()){
             holder.tv_type.setText(R.string.is_consume);
-            holder.card.setCardBackgroundColor(Color.RED);
+
+            holder.card.setCardBackgroundColor(context.getResources().getColor(R.color.card_bg_red));
         }
         else{
             holder.tv_type.setText(R.string.is_revenue);
-            holder.card.setCardBackgroundColor(Color.GREEN);
+            holder.card.setCardBackgroundColor(context.getResources().getColor(R.color.card_bg_green));
         }
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,8 +103,8 @@ public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.RecordView
         @Override
         public void onClick(View view) {
             int index=getAdapterPosition();
-            Log.d("position to be remove",Integer.toString(getAdapterPosition()));
-            Log.d("records size",Integer.toString(records.size()-1));
+//            Log.d("position to be remove",Integer.toString(getAdapterPosition()));
+//            Log.d("records size",Integer.toString(records.size()-1));
             if (index != records.size() - 1) {
                 for (int i = index; i < records.size() - 1; i++) {
                     records.set(i, records.get(i + 1));
