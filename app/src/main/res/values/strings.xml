@@ -11,6 +11,8 @@
 
     <string name="main_tools">Tools</string>
     <string name="main_currency_btn">@string/currency_converter_title</string>
+    <string name="Financial_Tracking">Financial Tracking</string>
+    <string name="plusadd_button">+ Add</string>
 
     <!--    Tracking    -->
     <string name="is_consume">Consume</string>
@@ -87,15 +89,20 @@
     <string name="currency_converter_title">Currency Converter</string>
     <string name="currency_converter_hint">Please enter $</string>
     <string name="currency_converter_convert_button">Default currency</string>
+    <string name="AC">AC</string>
+    <string name="Back">Back</string>
 
 
     <!--    Setting    -->
     <string name="setting_titile">Setting</string>
+    <string name="Tracking">Tracking</string>
+    <string name="btn_clear_tracking">CLEAR ALL TRACKING RECORD</string>
     <string name="Language">Language</string>
     <string name="lan_1">English</string>
     <string name="lan_2">中文</string>
     <string name="lan_3">日本語</string>
     <string name="display_text">You Language has changed to English!</string>
+    <string name="cleared">All tracking records has been cleared</string>
 
 
     <!--    Not Sorted    -->

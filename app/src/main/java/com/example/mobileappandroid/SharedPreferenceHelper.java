@@ -13,6 +13,12 @@ public class SharedPreferenceHelper {
     static String getLanguage(Context context) {
         return getString(context, "Language_code", "code");
     }
+    static void clearRecords(Context context){
+        SharedPreferences sp = context.getSharedPreferences("Records", 0);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.clear();
+        editor.commit();
+    }
 
     //    Driver
     static void setString(Context context, String key1, String key2, String value) {

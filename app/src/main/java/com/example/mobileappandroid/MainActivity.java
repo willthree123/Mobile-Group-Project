@@ -59,10 +59,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onBackPressed() {
 //        reloadLang(MainActivity.this);
     }
-//    @Override
-//    public void onStart(){
-//        reloadLang(MainActivity.this);
-//    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        reloadLang(MainActivity.this);
+    }
 
 
     @Override
@@ -83,7 +85,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
         }
-
     }
     private void reloadLang(Context context) {
         //Lang change

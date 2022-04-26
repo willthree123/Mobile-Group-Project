@@ -1,3 +1,10 @@
+### 1.4.3 [27/4/2022 02:29]
+
+- Done setting page
+- Done Currency page
+- Finished lanuage update helper
+- by Jesse
+
 ### 1.4.2 [26/4/2022 18:27]
 
 - Done some of the ui

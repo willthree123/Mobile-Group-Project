@@ -9,17 +9,18 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingLeft="20dp"
@@ -38,10 +39,9 @@
 
                 <ImageButton
                     android:id="@+id/currency_page_go_home"
-                    android:layout_width="80dp"
-                    android:layout_height="70dp"
-                    android:background="@drawable/transparent"
-                    app:srcCompat="@drawable/currency_converter_home_button" />
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/currency_converter_home_button" />
 
             </LinearLayout>
 
@@ -88,6 +88,7 @@
                                 android:layout_weight="1"
                                 android:backgroundTint="@android:color/transparent"
                                 android:ems="10"
+                                android:fontFamily="@font/prompt"
                                 android:hint="@string/currency_converter_hint"
                                 android:inputType="numberDecimal"
                                 android:keyboardNavigationCluster="false"
@@ -119,6 +120,7 @@
                                 android:layout_weight="1"
                                 android:backgroundTint="@android:color/transparent"
                                 android:ems="10"
+                                android:fontFamily="@font/prompt"
                                 android:inputType="textPersonName"
                                 android:paddingLeft="18dp"
                                 android:paddingTop="10dp"
@@ -151,6 +153,7 @@
                         android:layout_weight="1"
                         android:background="@drawable/convert_now_button"
                         android:elevation="20dp"
+                        android:fontFamily="@font/prompt"
                         android:text="@string/currency_converter_convert_button"
                         android:textSize="17sp" />
 
@@ -165,9 +168,17 @@
 
             </LinearLayout>
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:paddingLeft="10dp">
 
@@ -184,6 +195,7 @@
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/custom_button_drawable"
                         android:elevation="20dp"
+                        android:fontFamily="@font/prompt"
                         android:text="7"
                         android:textColor="@color/currency_converter_white"
                         android:textSize="20sp" />
@@ -194,6 +206,7 @@
                         android:layout_height="80dp"
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/custom_button_drawable"
+                        android:fontFamily="@font/prompt"
                         android:text="4"
                         android:textColor="@color/currency_converter_white"
                         android:textSize="20sp" />
@@ -204,6 +217,7 @@
                         android:layout_height="80dp"
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/custom_button_drawable"
+                        android:fontFamily="@font/prompt"
                         android:text="1"
                         android:textColor="@color/currency_converter_white"
                         android:textSize="20sp" />
@@ -222,6 +236,7 @@
                         android:layout_height="80dp"
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/custom_button_drawable"
+                        android:fontFamily="@font/prompt"
                         android:text="8"
                         android:textColor="@color/currency_converter_white"
                         android:textSize="20sp" />
@@ -232,6 +247,7 @@
                         android:layout_height="80dp"
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/custom_button_drawable"
+                        android:fontFamily="@font/prompt"
                         android:text="5"
                         android:textColor="@color/currency_converter_white"
                         android:textSize="20sp" />
@@ -242,6 +258,7 @@
                         android:layout_height="80dp"
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/custom_button_drawable"
+                        android:fontFamily="@font/prompt"
                         android:text="2"
                         android:textColor="@color/currency_converter_white"
                         android:textSize="20sp" />
@@ -251,6 +268,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
                         android:background="@drawable/custom_button_drawable"
+                        android:fontFamily="@font/prompt"
                         android:text="0"
                         android:textColor="@color/currency_converter_white"
                         android:textSize="20sp" />
@@ -271,7 +289,8 @@
                         android:background="@drawable/custom_button_drawable"
                         android:text="9"
                         android:textColor="@color/currency_converter_white"
-                        android:textSize="20sp" />
+                        android:textSize="20sp"
+                        android:fontFamily="@font/prompt" />
 
                     <Button
                         android:id="@+id/button_6"
@@ -279,6 +298,7 @@
                         android:layout_height="80dp"
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/custom_button_drawable"
+                        android:fontFamily="@font/prompt"
                         android:text="6"
                         android:textColor="@color/currency_converter_white"
                         android:textSize="20sp" />
@@ -289,6 +309,7 @@
                         android:layout_height="80dp"
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/custom_button_drawable"
+                        android:fontFamily="@font/prompt"
                         android:text="3"
                         android:textColor="@color/currency_converter_white"
                         android:textSize="20sp" />
@@ -298,6 +319,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
                         android:background="@drawable/custom_button_drawable"
+                        android:fontFamily="@font/prompt"
                         android:text="."
                         android:textColor="@color/currency_converter_white"
                         android:textSize="20sp" />
@@ -316,7 +338,8 @@
                         android:layout_height="170dp"
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/custom_long_button_drawable"
-                        android:text="AC"
+                        android:fontFamily="@font/prompt"
+                        android:text="@string/AC"
                         android:textAppearance="@style/ac"
                         android:textColor="@color/currency_long_button_text_color" />
 
@@ -325,13 +348,14 @@
                         android:layout_width="80dp"
                         android:layout_height="170dp"
                         android:background="@drawable/custom_long_button_drawable"
-                        android:text="Back"
+                        android:fontFamily="@font/prompt"
+                        android:text="@string/Back"
                         android:textAppearance="@style/ac"
                         android:textColor="@color/currency_long_button_text_color" />
                 </LinearLayout>
             </LinearLayout>
-
         </LinearLayout>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

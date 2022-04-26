@@ -38,16 +38,17 @@
           android:layout_weight="1" />
 
       <Button
-          android:id="@+id/btn_setting"
+          android:id="@+id/currency_page_go_home"
           android:layout_width="50dp"
           android:layout_height="50dp"
-          android:background="@drawable/icon_setting" />
+          android:background="@drawable/currency_converter_home_button" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
         android:orientation="vertical">
 
       <TextView
@@ -105,6 +106,35 @@
             android:textColor="@color/setting_white"
             android:visibility="gone" />
       </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+      <TextView
+          android:id="@+id/tv_tracking_title"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="8dp"
+          android:fontFamily="@font/prompt"
+          android:text="@string/Language"
+          android:textColor="@color/home_white"
+          android:textSize="18sp" />
+
+      <Button
+          android:id="@+id/btn_clear_all_records"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@drawable/bg_red_stork_button"
+          android:fontFamily="@font/prompt_bold"
+          android:paddingTop="8dp"
+          android:paddingBottom="8dp"
+          android:text="@string/btn_clear_tracking"
+          android:textColor="#FF1313"
+          android:textSize="15sp" />
+
     </LinearLayout>
 
   </LinearLayout>
