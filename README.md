@@ -1,3 +1,10 @@
+### 1.4.2 [26/4/2022 18:27]
+
+- Done some of the ui
+- Added class SharedPreferenceHelper
+- Trying to pass language and update another screen
+- by Jesse
+
 ### 1.4.1 [26/4/2022 01:38]
 
 - Added Welcome screen

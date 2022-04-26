@@ -45,5 +45,8 @@
     <string name="fAdd2">薪金</string>
     <string name="fAdd3">收禮</string>
     <string name="fAdd4">其他</string>
+    <string name="Language">語言</string>
+    <string name="setting_titile">設定</string>
+    <string name="main_tools">工具</string>
 
 </resources>

@@ -1,6 +1,18 @@
 <resources>
+
+    <!--    Main strings    -->
     <string name="app_name">MobileAppAndroid</string>
+
+
+    <!--    Welcome Page    -->
     <string name="welcome_slo">Your Financial Assistant.</string>
+
+    <!--    Home Page    -->
+
+    <string name="main_tools">Tools</string>
+    <string name="main_currency_btn">@string/currency_converter_title</string>
+
+    <!--    Tracking    -->
     <string name="is_consume">Consume</string>
     <string name="is_revenue">Revenue</string>
     <string name="save_button">Save</string>
@@ -55,7 +67,6 @@
         <item>@string/fNeg13</item>
         <item>@string/fNeg14</item>
     </string-array>
-
     <string name="fAdd1">Interest</string>
     <string name="fAdd2">Income</string>
     <string name="fAdd3">Gift</string>
@@ -67,12 +78,26 @@
         <item>@string/fAdd4</item>
     </string-array>
 
-    <string name="currency_converter_title">Currency Converter</string>
-    <string name="currency_converter_hint">Please enter $</string>
-    <string name="currency_converter_convert_button">Default currency</string>
-    <string name="display_text">You Language has changed to English!</string>
-
     <string name="fToday">Today</string>
     <string name="fYesterday">Yesterday</string>
     <string name="fYesYesterday">The day before yesterday</string>
+
+
+    <!--    Converter    -->
+    <string name="currency_converter_title">Currency Converter</string>
+    <string name="currency_converter_hint">Please enter $</string>
+    <string name="currency_converter_convert_button">Default currency</string>
+
+
+    <!--    Setting    -->
+    <string name="setting_titile">Setting</string>
+    <string name="Language">Language</string>
+    <string name="lan_1">English</string>
+    <string name="lan_2">中文</string>
+    <string name="lan_3">日本語</string>
+    <string name="display_text">You Language has changed to English!</string>
+
+
+    <!--    Not Sorted    -->
+
 </resources>

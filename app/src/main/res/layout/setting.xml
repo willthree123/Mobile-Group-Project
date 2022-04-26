@@ -1,51 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_currency_converter"
     tools:context=".SettingActivity">
+
   <LinearLayout
-      android:layout_width="409dp"
-      android:layout_height="541dp"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
       android:orientation="vertical"
+      android:paddingLeft="20dp"
+      android:paddingTop="18dp"
+      android:paddingRight="20dp"
       tools:layout_editor_absoluteX="1dp"
-      tools:layout_editor_absoluteY="189dp">
+      tools:layout_editor_absoluteY="1dp">
 
     <LinearLayout
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
         android:orientation="horizontal">
 
       <TextView
-          android:id="@+id/textView2"
+          android:id="@+id/setting_screen_titile"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_weight="1"
-          android:text="English"
-          android:textAlignment="viewEnd" />
+          android:fontFamily="@font/prompt_bold"
+          android:text="@string/setting_titile"
+          android:textColor="@color/currency_converter_white"
+          android:textSize="26sp" />
 
-      <Switch
-          android:id="@+id/lang_switch"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content" />
-
-      <TextView
-          android:id="@+id/textView"
+      <Space
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_weight="1"
-          android:text="中文"
-          android:textAlignment="viewStart" />
+          android:layout_weight="1" />
+
+      <Button
+          android:id="@+id/btn_setting"
+          android:layout_width="50dp"
+          android:layout_height="50dp"
+          android:background="@drawable/icon_setting" />
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/displayText"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/display_text"
-        android:textAlignment="center" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+      <TextView
+          android:id="@+id/tv_lang_title"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="8dp"
+          android:fontFamily="@font/prompt"
+          android:text="@string/Language"
+          android:textColor="@color/home_white"
+          android:textSize="18sp" />
+
+      <RadioGroup
+          android:id="@+id/radio_group_lan"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radio_eng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="#555555"
+            android:checked="false"
+            android:fontFamily="@font/prompt"
+            android:text="@string/lan_1"
+            android:textColor="@color/setting_white" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:id="@+id/radio_chin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="#555555"
+            android:fontFamily="@font/prompt"
+            android:text="@string/lan_2"
+            android:textColor="@color/setting_white" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:id="@+id/radio_jp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="#555555"
+            android:fontFamily="@font/prompt"
+            android:text="@string/lan_3"
+            android:textColor="@color/setting_white"
+            android:visibility="gone" />
+      </RadioGroup>
+    </LinearLayout>
+
   </LinearLayout>
-  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
