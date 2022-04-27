@@ -10,27 +10,31 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_record"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
+        android:layout_height="475dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="20dp"
+        android:paddingRight="10dp"
+        tools:layout_editor_absoluteX="-1dp"
         tools:layout_editor_absoluteY="0dp">
 
     </androidx.recyclerview.widget.RecyclerView>
 
     <Button
-        android:id="@+id/add_record"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/AddRecord"
-        app:layout_constraintBottom_toBottomOf="@+id/rv_record"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
         android:id="@+id/to_graph"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:text="Button"
         app:layout_constraintBottom_toTopOf="@+id/add_record"
+        tools:layout_editor_absoluteX="161dp" />
+
+    <Button
+        android:id="@+id/add_record"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/AddRecord"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

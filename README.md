@@ -1,6 +1,12 @@
+### 1.5.2 [27/4/2022 17:22]
+
+- Finshed animation
+- add/neg Show hide
+- by Jesse
+
 ### 1.5.1 [27/4/2022 03:08]
 
-- Try edit the record card and code
+- Try edit the record card and coden
 - by Jesse
 
 ### 1.5.0 [27/4/2022 00:02]

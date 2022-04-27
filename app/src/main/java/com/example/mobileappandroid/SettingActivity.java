@@ -93,7 +93,6 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
                 startActivity(intent);
                 break;
             case R.id.btn_clear_all_records:
-                Log.d("cry", "Pressed");
                 AlertDialog.Builder alert = new AlertDialog.Builder(SettingActivity.this);
                 alert.setTitle("CLEAR ALL RECORDS");
                 alert.setMessage("Are you sure you want to clear all records?");

@@ -1,8 +1,11 @@
 package com.example.mobileappandroid;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.text.Layout;
 import android.util.Log;
@@ -12,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -25,43 +29,41 @@ import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
-public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.RecordViewHolder>{
-
+public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.RecordViewHolder> {
+    Context context;
+    Resources resources;
     private ArrayList<Record> records;
-    private Context context;
-
 
     @NonNull
     @Override
     public RecordViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.record,parent,false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.record, parent, false);
         RecordViewHolder recordViewHolder = new RecordViewHolder(v);
         context = parent.getContext();
         return recordViewHolder;
     }
 
-    public RecordAdapter(ArrayList<Record> records){
-        this.records=records;
+    public RecordAdapter(ArrayList<Record> records) {
+        this.records = records;
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecordViewHolder holder, int position) {
         Record current_record = records.get(position);
         int record_position = position;
-        holder.tv_amount.setText(String.format("%.2f", current_record.getAmount())+"HKD");
+        holder.tv_amount.setText(String.format("%.1f", current_record.getAmount()));
         holder.iv_category.setImageResource(current_record.getCategory());
         holder.tv_date.setText(current_record.getDate());
         holder.tv_description.setText(current_record.getDescription());
-        if(current_record.isConsume()){
+        if (current_record.isConsume()) {
             holder.tv_type.setText(R.string.is_consume);
 
             holder.card.setCardBackgroundColor(context.getResources().getColor(R.color.card_bg_red));
-        }
-        else{
+        } else {
             holder.tv_type.setText(R.string.is_revenue);
             holder.card.setCardBackgroundColor(context.getResources().getColor(R.color.card_bg_green));
         }
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+        holder.card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, RecordDetailPage.class);
@@ -70,6 +72,7 @@ public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.RecordView
                 context.startActivity(intent);
             }
         });
+
     }
 
     @Override
@@ -77,47 +80,65 @@ public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.RecordView
         return records.size();
     }
 
-    public class RecordViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+
+    public class RecordViewHolder extends RecyclerView.ViewHolder implements View.OnLongClickListener {
 
         public TextView tv_amount;
         public TextView tv_date;
         public TextView tv_description;
         public TextView tv_type;
         public ImageView iv_category;
-        public Button bt_remove;
         public CardView card;
 
         public RecordViewHolder(@NonNull View itemView) {
             super(itemView);
-            tv_amount=itemView.findViewById(R.id.record_amount);
-            iv_category=itemView.findViewById(R.id.record_category);
-            bt_remove=itemView.findViewById(R.id.remove_button);
-            tv_date=itemView.findViewById(R.id.record_date);
-            tv_description=itemView.findViewById(R.id.record_description);
-            tv_type=itemView.findViewById(R.id.record_type);
-            card=itemView.findViewById(R.id.Card_of_record);
-            bt_remove.setOnClickListener(this);
+            tv_amount = itemView.findViewById(R.id.record_amount);
+            iv_category = itemView.findViewById(R.id.record_category);
+            tv_date = itemView.findViewById(R.id.record_date);
+            tv_description = itemView.findViewById(R.id.record_description);
+            tv_type = itemView.findViewById(R.id.record_type);
+            card = itemView.findViewById(R.id.Card_of_record);
+            card.setOnLongClickListener(this);
 
         }
 
         @Override
-        public void onClick(View view) {
-            int index=getAdapterPosition();
-//            Log.d("position to be remove",Integer.toString(getAdapterPosition()));
-//            Log.d("records size",Integer.toString(records.size()-1));
-            if (index != records.size() - 1) {
-                for (int i = index; i < records.size() - 1; i++) {
-                    records.set(i, records.get(i + 1));
+        public boolean onLongClick(View view) {
+
+            AlertDialog.Builder alert = new AlertDialog.Builder(context);
+
+            alert.setTitle("DELETE RECORDS");
+            alert.setMessage("Are you sure you want to delete this record");
+
+            alert.setPositiveButton("DELETE", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    int index = getAdapterPosition();
+                    if (index != records.size() - 1) {
+                        for (int j = index; j < records.size() - 1; j++) {
+                            records.set(j, records.get(j + 1));
+                        }
+                    }
+                    records.remove(records.size() - 1);
+                    SharedPreferences sp = context.getSharedPreferences("Records", context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sp.edit();
+                    Gson gson = new Gson();
+                    String json = gson.toJson(records);
+                    editor.putString("record_data", json);
+                    editor.apply();
+                    notifyDataSetChanged();
                 }
-            }
-            records.remove(records.size() - 1);
-            SharedPreferences sp=context.getSharedPreferences("Records",context.MODE_PRIVATE);
-            SharedPreferences.Editor editor=sp.edit();
-            Gson gson = new Gson();
-            String json=gson.toJson(records);
-            editor.putString("record_data",json);
-            editor.apply();
-            notifyDataSetChanged();
+            });
+            alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+
+                }
+            });
+            alert.create().show();
+
+            return false;
         }
+
     }
 }
