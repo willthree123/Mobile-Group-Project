@@ -1,3 +1,8 @@
+### 1.6.0 [29/4/2022 04:04]
+
+- Export/ Import SharedPref
+- by Jesse
+
 ### 1.5.10 [29/4/2022 01:04]
 
 - Fixed currency page xml

@@ -94,11 +94,11 @@ public class FinanceMainPage extends AppCompatActivity implements View.OnClickLi
 //                records.add(new Record((i-2000)*40, cal, R.drawable.ic_launcher_foreground, "No", false,3));
 //            }
             // EndJustForTest
-            Calendar cal = Calendar.getInstance();
-            cal.set(2022,0,1);
-            for (int i=0;i<=13;i++){
-                records.add(new Record(100, cal, R.drawable.ic_launcher_foreground, "No", false,i));
-            }
+//            Calendar cal = Calendar.getInstance();
+//            cal.set(2022,0,1);
+//            for (int i=0;i<=13;i++){
+//                records.add(new Record(100, cal, R.drawable.ic_launcher_foreground, "No", false,i));
+//            }
 
             SharedPreferences.Editor editor=sp.edit();
             editor=sp.edit();
