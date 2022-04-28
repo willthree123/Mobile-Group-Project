@@ -13,6 +13,9 @@
         android:theme="@style/Theme.MobileAppAndroid"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".AllRecordsPage"
+            android:exported="false" />
+        <activity
             android:name=".Interest_calc"
             android:exported="false" />
         <activity

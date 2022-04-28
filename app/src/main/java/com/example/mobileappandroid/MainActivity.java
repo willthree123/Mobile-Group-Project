@@ -39,18 +39,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         to_setting=findViewById(R.id.btn_setting);
         to_setting.setOnClickListener(this);
-//        SharedPreferences sharedPreferences = getSharedPreferences("KEY",MODE_PRIVATE);
-//        SharedPreferences.Editor editor= sharedPreferences.edit();
-//        editor.putString();
-//        SharedPreferences sp=getSharedPreferences("Records",MODE_PRIVATE);
-//        SharedPreferences.Editor editor=sp.edit();
-//        editor.clear();
-//        editor.commit();
+
+        SharedPreferences sp=getSharedPreferences("Records",MODE_PRIVATE);
+        SharedPreferences.Editor editor=sp.edit();
+        editor.clear();
+        editor.commit();
         reloadLang(MainActivity.this);
+
+//         Intent intent = new Intent(this, AllRecordsPage.class);
+//         startActivity(intent);
+
         to_interest = findViewById(R.id.to_interest);
         to_interest.setOnClickListener(this);
         button_add_record = findViewById(R.id.add_record);
         button_add_record.setOnClickListener(this);
+
     }
 
     @Override
