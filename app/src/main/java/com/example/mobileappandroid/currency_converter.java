@@ -14,6 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,7 +25,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.android.material.navigation.NavigationBarView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -39,6 +39,7 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
     ImageButton home;
     TextView api_working_hint;
     Button virtual_keyboard[];
+    LinearLayout to_finance_checker_add_records;
 
     Double amount;
     Double selected_currency_top_values_double;
@@ -81,6 +82,8 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
         swap = findViewById(R.id.swap);
         home = findViewById(R.id.currency_page_go_home);
         api_working_hint = findViewById(R.id.show_api_is_ok);
+        to_finance_checker_add_records = findViewById(R.id.to_finance_checker_add_records);
+
 
         //disable ed2 edit
         ed2.setFocusable(false);
@@ -147,6 +150,7 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
                     //button listener
                     convert.setOnClickListener(currency_converter.this);
                     swap.setOnClickListener(currency_converter.this);
+                    to_finance_checker_add_records.setOnClickListener(currency_converter.this);
 
                     //home button listener
                     home.setOnClickListener(currency_converter.this);
@@ -268,7 +272,9 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
 
                 change_currency();
                 break;
-
+            case R.id.to_finance_checker_add_records:
+                go_to_add_records();
+                break;
 
         }
     }
@@ -350,7 +356,7 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
             selected_currency_bottom_values_double = Double.parseDouble(selected_currency_bottom_values_string);
             //check user input is null or not
             String amount_string_form = ed1.getText().toString();
-            if (amount_string_form!=null){
+            if (!(amount_string_form.matches(""))){
                 amount = Double.parseDouble(amount_string_form);
 
                 the_required_amount = (amount/selected_currency_top_values_double)*selected_currency_bottom_values_double;
@@ -394,6 +400,36 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
         return;
 
     }
+
+    public void go_to_add_records(){
+        String currency_top;
+        String add_records_description;
+        currency_top = sp1.getSelectedItem().toString();
+        try {
+            selected_currency_top_values_string = currency.getString(currency_top);
+            selected_currency_bottom_values_string = currency.getString("HKD");
+            selected_currency_top_values_double = Double.parseDouble(selected_currency_top_values_string);
+            selected_currency_bottom_values_double = Double.parseDouble(selected_currency_bottom_values_string);
+            String amount_string_form = ed1.getText().toString();
+            if (!(amount_string_form.matches(""))){
+                amount = Double.parseDouble(amount_string_form);
+                the_required_amount = (amount/selected_currency_top_values_double)*selected_currency_bottom_values_double;
+                String the_required_amount_string = String.format("%.2f",the_required_amount);
+
+                add_records_description = "A transaction with the price of " + currency_top + " " + amount_string_form;
+                SharedPreferenceHelper.setString(this,"pass_converter_to_add_records", "records_description", add_records_description);
+                SharedPreferenceHelper.setString(this,"pass_converter_to_add_records", "records_number", the_required_amount_string);
+                Intent intent = new Intent(this, FinanceTracker.class);
+                startActivity(intent);
+            }else{
+                Toast.makeText(currency_converter.this, "You cannot get the number as the field is empty", Toast.LENGTH_SHORT).show();
+            }
+
+        } catch (JSONException e) {
+            Toast.makeText(currency_converter.this, "The API is not working", Toast.LENGTH_SHORT).show();
+        }
+    }
+
 
 }
 

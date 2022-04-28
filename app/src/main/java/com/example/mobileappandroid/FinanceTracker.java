@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -165,6 +166,7 @@ public class FinanceTracker extends AppCompatActivity implements View.OnClickLis
         btn_fAdd3.setOnClickListener(this);
         btn_fAdd4.setOnClickListener(this);
 
+
         listener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
@@ -178,6 +180,7 @@ public class FinanceTracker extends AppCompatActivity implements View.OnClickLis
             }
         };
         resetAllAlpha();
+        get_data_from_currency_converter();
     }
 
     @Override
@@ -372,6 +375,16 @@ public class FinanceTracker extends AppCompatActivity implements View.OnClickLis
             return (false);
         }
         return (true);
+    }
+
+    public void get_data_from_currency_converter(){
+        String get_data_from_currency_converter_description = SharedPreferenceHelper.getString(this,"pass_converter_to_add_records","records_description");
+        String get_data_from_currency_converter_amount = SharedPreferenceHelper.getString(this,"pass_converter_to_add_records","records_number");
+        if((!(get_data_from_currency_converter_amount.matches("")))&&(!(get_data_from_currency_converter_description.matches("")))){
+            amount.setText(get_data_from_currency_converter_amount);
+            description.setText(get_data_from_currency_converter_description);
+            SharedPreferenceHelper.clearData(this,"pass_converter_to_add_records");
+        }
     }
 
 }

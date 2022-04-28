@@ -71,7 +71,7 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
-                        android:id="@+id/to_currency_converter"
+                        android:id="@+id/to_finance_checker_add_records"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/bg_stork_button"
