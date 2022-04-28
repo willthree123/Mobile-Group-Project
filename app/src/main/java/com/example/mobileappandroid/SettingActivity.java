@@ -183,7 +183,7 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
                 json = sp.getString("record_data", null);
 
                 clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-                if (json != null && json.length()>5) {
+                if (json != null && json.length() > 5) {
                     et.setText(json);
                     linearLayout.setVisibility(View.VISIBLE);
                     linearLayout = findViewById(R.id.load_layout);
@@ -274,13 +274,28 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
         TextView tv_lang_title = findViewById(R.id.tv_lang_title);
         TextView setting_screen_titile = findViewById(R.id.setting_screen_titile);
         TextView tv_tracking_title = findViewById(R.id.tv_tracking_title);
+        TextView tv_export_title = findViewById(R.id.tv_export_title);
+
+        TextView textView6 = findViewById(R.id.textView6);
+        TextView textView4 = findViewById(R.id.textView4);
+        TextView textView7 = findViewById(R.id.textView7);
+
+
         Button btn_clear_all_records = findViewById(R.id.btn_clear_all_records);
+        Button btn_export = findViewById(R.id.btn_export);
+        Button btn_load = findViewById(R.id.btn_load);
 
         //get string
         tv_lang_title.setText(resources.getString(R.string.Language));
         setting_screen_titile.setText(resources.getString(R.string.setting_titile));
         tv_tracking_title.setText(resources.getString(R.string.Tracking));
         btn_clear_all_records.setText(resources.getString(R.string.btn_clear_tracking));
+        tv_export_title.setText(resources.getString(R.string.export));
+        textView6.setText(resources.getString(R.string.loadDes));
+        textView4.setText(resources.getString(R.string.backupDes));
+        textView7.setText(resources.getString(R.string.warning));
+        btn_export.setText(resources.getString(R.string.btn_export));
+        btn_load.setText(resources.getString(R.string.btn_load));
 
         if (!isOnCreate) {
             Toast.makeText(context, resources.getString(R.string.display_text), Toast.LENGTH_SHORT).show();

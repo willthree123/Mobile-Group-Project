@@ -3,8 +3,10 @@ package com.example.mobileappandroid;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -18,6 +20,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.GridLayout;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
@@ -59,6 +62,8 @@ public class FinanceTracker extends AppCompatActivity implements View.OnClickLis
             , R.id.btn_fAdd3
             , R.id.btn_fAdd4
     };
+
+
     private int[] category_images = {
             R.drawable.ficon_01, R.drawable.ficon_02,
             R.drawable.ficon_03, R.drawable.ficon_04,
@@ -98,6 +103,7 @@ public class FinanceTracker extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_finance_tracker);
+        reloadLang(this);
         save = findViewById(R.id.add_record_button);
         amount = findViewById(R.id.add_record_amount);
         description = findViewById(R.id.add_record_description);
@@ -378,14 +384,93 @@ public class FinanceTracker extends AppCompatActivity implements View.OnClickLis
         return (true);
     }
 
-    public void get_data_from_currency_converter(){
-        String get_data_from_currency_converter_description = SharedPreferenceHelper.getString(this,"pass_converter_to_add_records","records_description");
-        String get_data_from_currency_converter_amount = SharedPreferenceHelper.getString(this,"pass_converter_to_add_records","records_number");
-        if((!(get_data_from_currency_converter_amount.matches("")))&&(!(get_data_from_currency_converter_description.matches("")))){
+    public void get_data_from_currency_converter() {
+        String get_data_from_currency_converter_description = SharedPreferenceHelper.getString(this, "pass_converter_to_add_records", "records_description");
+        String get_data_from_currency_converter_amount = SharedPreferenceHelper.getString(this, "pass_converter_to_add_records", "records_number");
+        if ((!(get_data_from_currency_converter_amount.matches(""))) && (!(get_data_from_currency_converter_description.matches("")))) {
             amount.setText(get_data_from_currency_converter_amount);
             description.setText(get_data_from_currency_converter_description);
-            SharedPreferenceHelper.clearData(this,"pass_converter_to_add_records");
+            SharedPreferenceHelper.clearData(this, "pass_converter_to_add_records");
         }
+    }
+
+
+    private void reloadLang(Context context) {
+        //Lang change
+        String lang = SharedPreferenceHelper.getLanguage(context);
+        context = LocaleHelper.setLocale(context, lang);
+        Resources resources = context.getResources();
+
+        //Edit below
+        //get element id
+        TextView setting_screen_titile = findViewById(R.id.setting_screen_titile);
+        TextView tv_tool_title2 = findViewById(R.id.tv_tool_title2);
+        TextView tv_tool_title4 = findViewById(R.id.tv_tool_title4);
+        TextView tv_tool_title3 = findViewById(R.id.tv_tool_title3);
+        TextView tv_tool_title5 = findViewById(R.id.tv_tool_title5);
+        TextView fDisplayText = findViewById(R.id.fDisplayText);
+        TextView fDisplayText15 = findViewById(R.id.fDisplayText15);
+        TextView add_record_currency = findViewById(R.id.add_record_currency);
+        Button consume_button = findViewById(R.id.consume_button);
+        Button revenue_button = findViewById(R.id.revenue_button);
+        EditText add_record_amount = findViewById(R.id.add_record_amount);
+        EditText add_record_description = findViewById(R.id.add_record_description);
+
+        //get string
+        consume_button.setText(resources.getString(R.string.is_consume));
+        revenue_button.setText(resources.getString(R.string.is_revenue));
+        add_record_amount.setHint(resources.getString(R.string.Amount));
+        add_record_description.setText(resources.getString(R.string.Description));
+        add_record_currency.setText(resources.getString(R.string.Currency_HKD));
+        fDisplayText15.setText(resources.getString(R.string.fYesterday));
+        fDisplayText.setText(resources.getString(R.string.fToday));
+        tv_tool_title5.setText(resources.getString(R.string.Date));
+        tv_tool_title3.setText(resources.getString(R.string.Category));
+        tv_tool_title4.setText(resources.getString(R.string.Description));
+        tv_tool_title2.setText(resources.getString(R.string.Amount));
+        setting_screen_titile.setText(resources.getString(R.string.AddRecord));
+
+
+        TextView fDisplayText1 = findViewById(R.id.fDisplayText1);
+        TextView fDisplayText2 = findViewById(R.id.fDisplayText2);
+        TextView fDisplayText3  = findViewById(R.id.fDisplayText3);
+        TextView fDisplayText4 = findViewById(R.id.fDisplayText4);
+        TextView fDisplayText5 = findViewById(R.id.fDisplayText5);
+        TextView fDisplayText6 = findViewById(R.id.fDisplayText6);
+        TextView fDisplayText7 = findViewById(R.id.fDisplayText7);
+        TextView fDisplayText8 = findViewById(R.id.fDisplayText8);
+        TextView fDisplayText9 = findViewById(R.id.fDisplayText9);
+        TextView fDisplayText10 = findViewById(R.id.fDisplayText10);
+        TextView fDisplayText11 = findViewById(R.id.fDisplayText11);
+        TextView fDisplayText12 = findViewById(R.id.fDisplayText12);
+        TextView fDisplayText13 = findViewById(R.id.fDisplayText13);
+        TextView fDisplayText14 = findViewById(R.id.fDisplayText14);
+        TextView fDisplayAddText1 = findViewById(R.id.fDisplayAddText1);
+        TextView fDisplayAddText2 = findViewById(R.id.fDisplayAddText2);
+        TextView fDisplayAddText3 = findViewById(R.id.fDisplayAddText3);
+        TextView fDisplayAddText4 = findViewById(R.id.fDisplayAddText4);
+
+        fDisplayText1.setText(resources.getString(R.string.fNeg1));
+        fDisplayText2.setText(resources.getString(R.string.fNeg2));
+        fDisplayText3.setText(resources.getString(R.string.fNeg3));
+        fDisplayText4.setText(resources.getString(R.string.fNeg4));
+        fDisplayText5.setText(resources.getString(R.string.fNeg5));
+        fDisplayText6.setText(resources.getString(R.string.fNeg6));
+        fDisplayText7.setText(resources.getString(R.string.fNeg7));
+        fDisplayText8.setText(resources.getString(R.string.fNeg8));
+        fDisplayText9.setText(resources.getString(R.string.fNeg9));
+        fDisplayText10.setText(resources.getString(R.string.fNeg10));
+        fDisplayText11.setText(resources.getString(R.string.fNeg11));
+        fDisplayText12.setText(resources.getString(R.string.fNeg12));
+        fDisplayText13.setText(resources.getString(R.string.fNeg13));
+        fDisplayText14.setText(resources.getString(R.string.fNeg14));
+        fDisplayAddText1.setText(resources.getString(R.string.fAdd1));
+        fDisplayAddText2.setText(resources.getString(R.string.fAdd2));
+        fDisplayAddText3.setText(resources.getString(R.string.fAdd3));
+        fDisplayAddText4.setText(resources.getString(R.string.fAdd4));
+
+
+        return;
     }
 
     public void get_data_from_interest_calc(){
@@ -409,5 +494,6 @@ public class FinanceTracker extends AppCompatActivity implements View.OnClickLis
             SharedPreferenceHelper.clearData(this,"Interest_calc_to_add_records");
         }
     }
+
 
 }

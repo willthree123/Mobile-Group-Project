@@ -104,9 +104,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //Edit below
         //get element id
         TextView tv_tool_title = findViewById(R.id.tv_tool_title);
+        TextView add_interest_to_record = findViewById(R.id.add_interest_to_record);
+        TextView add_interest_to_record2 = findViewById(R.id.add_interest_to_record2);
+        TextView tv_tracking_title= findViewById(R.id.tv_tracking_title);
+        TextView tv_tracking_title2 = findViewById(R.id.tv_tracking_title2);
+        TextView textView8 = findViewById(R.id.textView8);
+//        TextView  = findViewById(R.id.);
+        Button add_record = findViewById(R.id.add_record);
 
         //get string
         tv_tool_title.setText(resources.getString(R.string.main_tools));
+        add_interest_to_record.setText(resources.getString(R.string.main_currency_btn));
+        add_interest_to_record2.setText(resources.getString(R.string.interestCalc));
+        tv_tracking_title.setText(resources.getString(R.string.Financial_Tracking));
+        tv_tracking_title2.setText(resources.getString(R.string.thisMonth));
+        textView8.setText(resources.getString(R.string.viewDetail));
+        add_record.setText(resources.getString(R.string.plusadd_button));
+
         return;
     }
 }

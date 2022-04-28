@@ -391,12 +391,15 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
         Button convert = findViewById(R.id.convert);
         Button ac=findViewById(R.id.button_ac);
         Button back=findViewById(R.id.button_back);
+        TextView b = findViewById(R.id.add_interest_to_record);
+
         //get string
         title.setText(resources.getString(R.string.currency_converter_title));
         hint.setHint(resources.getString(R.string.currency_converter_hint));
         convert.setText(resources.getString(R.string.currency_converter_convert_button));
         back.setText(resources.getString(R.string.Back));
         ac.setText(resources.getString(R.string.AC));
+        b.setText(resources.getString(R.string.add2Record));
         return;
 
     }

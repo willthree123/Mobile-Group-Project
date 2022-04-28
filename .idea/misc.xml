@@ -3,63 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Github/Mobile-Group-Project/app/src/main/res/layout/activity_all_records_page.xml" value="0.75" />
-        <entry key="..\:/Github/Mobile-Group-Project/app/src/main/res/layout/activity_currency_converter.xml" value="0.5453125" />
-        <entry key="..\:/Github/Mobile-Group-Project/app/src/main/res/layout/activity_finance_main_page.xml" value="0.38405797101449274" />
-        <entry key="..\:/Github/Mobile-Group-Project/app/src/main/res/layout/activity_finance_pie_chart.xml" value="0.67" />
-        <entry key="..\:/Github/Mobile-Group-Project/app/src/main/res/layout/activity_finance_tracker.xml" value="0.5" />
-        <entry key="..\:/Github/Mobile-Group-Project/app/src/main/res/layout/activity_main.xml" value="0.5144927536231884" />
-        <entry key="..\:/Github/Mobile-Group-Project/app/src/main/res/layout/currency_converter_dropdown.xml" value="0.25" />
-        <entry key="..\:/Github/Mobile-Group-Project/app/src/main/res/layout/record.xml" value="0.5" />
-        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/drawable/bg_currency_converter.xml" value="0.3605" />
-        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/drawable/bg_input_field.xml" value="0.3605" />
-        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/drawable/bg_input_field_light.xml" value="0.3605" />
-        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/drawable/bg_main_add_btn.xml" value="0.3605" />
-        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/drawable/bg_record_consume.xml" value="0.3605" />
-        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/drawable/bg_record_rev.xml" value="0.3605" />
-        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/drawable/bg_red_stork_button.xml" value="0.3565" />
-        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/drawable/bg_stork_button.xml" value="0.3605" />
-        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/drawable/bg_stork_button_long.xml" value="0.3605" />
-        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/drawable/bg_welcome_screen.xml" value="0.3605" />
-        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/drawable/convert_now_button.xml" value="0.3605" />
-        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/drawable/currency_convertor_screen.xml" value="0.3605" />
-        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/drawable/fCalendar.xml" value="0.3605" />
-        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/drawable/fcalendar.xml" value="0.3605" />
-        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/drawable/icon_setting.xml" value="0.3605" />
-        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/drawable/micon_currency.xml" value="0.3605" />
-        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/drawable/micon_exchange.xml" value="0.3605" />
-        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/drawable/micon_interest.xml" value="0.3605" />
-        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/drawable/sm_logo.xml" value="0.3605" />
-        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/drawable/welcome_cloud1.xml" value="0.3605" />
-        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/drawable/welcome_cloud2.xml" value="0.3605" />
-        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/drawable/welcome_logo.xml" value="0.3605" />
-        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/layout/activity_currency_converter.xml" value="0.25" />
-        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/layout/activity_finance_graph.xml" value="0.36666666666666664" />
-        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/layout/activity_finance_main_page.xml" value="0.36666666666666664" />
-        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/layout/activity_finance_pie_chart.xml" value="0.36666666666666664" />
-        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/layout/activity_finance_tracker.xml" value="0.33" />
-        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/layout/activity_interest_calc.xml" value="0.36666666666666664" />
-        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/layout/activity_record_detail_page.xml" value="0.36666666666666664" />
-        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/layout/currency_converter_dropdown.xml" value="0.14583333333333334" />
-        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/layout/currency_converter_spinner.xml" value="0.25" />
-        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/layout/record.xml" value="0.5" />
-        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/layout/setting.xml" value="0.33" />
-        <entry key="..\:/OneDrive - Hong Kong Community College (HKCC)/Sem Four/3165 Mobile App/Group Project Github/Mobile-Group-Project/app/src/main/res/layout/welcome_screen.xml" value="0.33" />
-        <entry key="..\:/mobile_group_project/Mobile-Group-Project/app/src/main/res/drawable/bg_currency_converter.xml" value="0.2995" />
-        <entry key="..\:/mobile_group_project/Mobile-Group-Project/app/src/main/res/drawable/convert_now_button.xml" value="0.2995" />
-        <entry key="..\:/mobile_group_project/Mobile-Group-Project/app/src/main/res/drawable/currency_convertor_screen.xml" value="0.18" />
-        <entry key="..\:/mobile_group_project/Mobile-Group-Project/app/src/main/res/drawable/custom_button_drawable.xml" value="0.2995" />
-        <entry key="..\:/mobile_group_project/Mobile-Group-Project/app/src/main/res/drawable/custom_currency_converter_number_button.xml" value="0.2995" />
-        <entry key="..\:/mobile_group_project/Mobile-Group-Project/app/src/main/res/drawable/custom_long_button_drawable.xml" value="0.2995" />
-        <entry key="..\:/mobile_group_project/Mobile-Group-Project/app/src/main/res/layout/activity_currency_converter.xml" value="0.22" />
-        <entry key="..\:/mobile_group_project/Mobile-Group-Project/app/src/main/res/layout/activity_finance_tracker.xml" value="0.18518518518518517" />
-        <entry key="..\:/mobile_group_project/Mobile-Group-Project/app/src/main/res/layout/activity_interest_calc.xml" value="0.2796296296296296" />
-        <entry key="..\:/mobile_group_project/Mobile-Group-Project/app/src/main/res/layout/activity_interest_calc2.xml" value="0.2796296296296296" />
-        <entry key="..\:/mobile_group_project/Mobile-Group-Project/app/src/main/res/layout/activity_main.xml" value="0.3605128205128205" />
-        <entry key="..\:/mobile_group_project/Mobile-Group-Project/app/src/main/res/layout/currency_converter_dropdown.xml" value="0.3605128205128205" />
-        <entry key="..\:/mobile_group_project/Mobile-Group-Project/app/src/main/res/layout/currency_converter_spinner.xml" value="0.3605128205128205" />
-        <entry key="..\:/mobile_group_project/Mobile-Group-Project/app/src/main/res/layout/welcome_screen.xml" value="0.2796296296296296" />
+
       </map>
     </option>
   </component>

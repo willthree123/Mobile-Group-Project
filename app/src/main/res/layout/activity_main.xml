@@ -127,10 +127,12 @@
                             android:id="@+id/imageView6"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
+
                             app:srcCompat="@drawable/micon_interest" />
 
+
                         <TextView
-                            android:id="@+id/add_interest_to_record"
+                            android:id="@+id/add_interest_to_record2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
