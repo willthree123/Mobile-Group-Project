@@ -11,6 +11,9 @@
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="18dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="-138dp">
@@ -19,766 +22,882 @@
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/consume_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
                 android:layout_weight="1"
-                android:text="@string/is_consume" />
+                android:alpha="0.9"
+                android:background="@drawable/bg_record_consume"
+                android:fontFamily="@font/prompt_bold"
+                android:text="@string/is_consume"
+                android:textColor="@color/record_white" />
 
             <Button
                 android:id="@+id/revenue_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/is_revenue" />
+                android:alpha="0.4"
+                android:background="@drawable/bg_record_rev"
+                android:fontFamily="@font/prompt_bold"
+                android:text="@string/is_revenue"
+                android:textColor="@color/record_white" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/add_record_amount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@android:color/transparent"
-                android:hint="@string/Amount"
-                android:inputType="textPersonName"
-                android:textColor="@color/currency_converter_white"
-                android:textColorHint="@color/currency_converter_white" />
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/add_record_currency"
-                android:layout_width="wrap_content"
+                android:id="@+id/tv_tool_title2"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/Currency_HKD"
-                android:textColor="@color/currency_converter_white" />
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/tv_Category"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/Category"
-            android:textColor="@color/currency_converter_white" />
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/prompt"
+                android:text="@string/Amount"
+                android:textColor="@color/home_white"
+                android:textSize="14sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:background="@drawable/bg_input_field"
+                android:orientation="horizontal"
+                android:paddingLeft="16dp"
+                android:paddingTop="12dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="12dp">
 
-                <androidx.gridlayout.widget.GridLayout
-                    android:id="@+id/gridLayout1"
-                    android:layout_width="match_parent"
+                <EditText
+                    android:id="@+id/add_record_amount"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    app:columnCount="3"
-                    app:rowCount="5">
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@android:color/transparent"
+                    android:fontFamily="@font/prompt"
+                    android:hint="@string/Amount"
+                    android:inputType="numberDecimal"
+                    android:padding="0dp"
+                    android:textColor="@color/currency_converter_white"
+                    android:textColorHint="@color/record_hint"
+                    android:textSize="16sp" />
 
-                    <LinearLayout
-                        android:id="@+id/lay_16"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:alpha="1"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        app:layout_columnWeight="1">
-
-                        <Button
-                            android:id="@+id/btn_fAdd2"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:alpha="0.3"
-                            android:background="@drawable/ficon_16"
-                            android:drawableTint="@android:color/transparent"
-                            android:foregroundTint="@android:color/transparent" />
-
-                        <TextView
-                            android:id="@+id/fDisplayAddText2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/prompt"
-                            android:text="@string/fAdd2"
-                            android:textAlignment="center"
-                            android:textColor="@color/add_record_display_text_color"
-                            android:textSize="13sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/lay_17"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:alpha="1"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        app:layout_columnWeight="1">
-
-                        <Button
-                            android:id="@+id/btn_fAdd3"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:alpha="0.3"
-                            android:background="@drawable/ficon_06"
-                            android:drawableTint="@android:color/transparent"
-                            android:foregroundTint="@android:color/transparent" />
-
-                        <TextView
-                            android:id="@+id/fDisplayAddText3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/prompt"
-                            android:text="@string/fAdd3"
-                            android:textAlignment="center"
-                            android:textColor="@color/add_record_display_text_color"
-                            android:textSize="13sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/lay_15"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:alpha="1"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        app:layout_columnWeight="1">
-
-                        <Button
-                            android:id="@+id/btn_fAdd1"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:alpha="0.3"
-                            android:background="@drawable/ficon_15"
-                            android:drawableTint="@android:color/transparent"
-                            android:foregroundTint="@android:color/transparent" />
-
-                        <TextView
-                            android:id="@+id/fDisplayAddText1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/prompt"
-                            android:text="@string/fAdd1"
-                            android:textAlignment="center"
-                            android:textColor="@color/add_record_display_text_color"
-                            android:textSize="13sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/lay_18"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:alpha="1"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        app:layout_columnWeight="1">
-
-                        <Button
-                            android:id="@+id/btn_fAdd4"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:alpha="0.3"
-                            android:background="@drawable/ficon_14"
-                            android:drawableTint="@android:color/transparent"
-                            android:foregroundTint="@android:color/transparent" />
-
-                        <TextView
-                            android:id="@+id/fDisplayAddText4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/prompt"
-                            android:text="@string/fAdd4"
-                            android:textAlignment="center"
-                            android:textColor="@color/add_record_display_text_color"
-                            android:textSize="13sp" />
-
-                    </LinearLayout>
-                </androidx.gridlayout.widget.GridLayout>
-
-                <androidx.gridlayout.widget.GridLayout
-                    android:id="@+id/gridLayout2"
-                    android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/add_record_currency"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:columnCount="3"
-                    app:rowCount="5">
-
-
-                    <LinearLayout
-                        android:id="@+id/lay_1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:visibility="visible"
-                        app:layout_columnWeight="1">
-
-                        <Button
-                            android:id="@+id/btn_fNeg1"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:alpha="0.3"
-                            android:background="@drawable/ficon_01"
-                            android:drawableTint="@android:color/transparent"
-                            android:foregroundTint="@android:color/transparent" />
-
-                        <TextView
-                            android:id="@+id/fDisplayText1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/prompt"
-                            android:text="@string/fNeg1"
-                            android:textAlignment="center"
-                            android:textColor="@color/add_record_display_text_color"
-                            android:textSize="13sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/lay_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:visibility="visible"
-                        app:layout_columnWeight="1">
-
-                        <Button
-                            android:id="@+id/btn_fNeg2"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:alpha="0.3"
-                            android:background="@drawable/ficon_02"
-                            android:drawableTint="@android:color/transparent"
-                            android:foregroundTint="@android:color/transparent" />
-
-                        <TextView
-                            android:id="@+id/fDisplayText2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/prompt"
-                            android:text="@string/fNeg2"
-                            android:textAlignment="center"
-                            android:textColor="@color/add_record_display_text_color"
-                            android:textSize="13sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/lay_3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:visibility="visible"
-                        app:layout_columnWeight="1">
-
-                        <Button
-                            android:id="@+id/btn_fNeg3"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:alpha="0.3"
-                            android:background="@drawable/ficon_03"
-                            android:drawableTint="@android:color/transparent"
-                            android:foregroundTint="@android:color/transparent" />
-
-                        <TextView
-                            android:id="@+id/fDisplayText3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/prompt"
-                            android:text="@string/fNeg3"
-                            android:textAlignment="center"
-                            android:textColor="@color/add_record_display_text_color"
-                            android:textSize="13sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/lay_4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:visibility="visible"
-                        app:layout_columnWeight="1">
-
-                        <Button
-                            android:id="@+id/btn_fNeg4"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:alpha="0.3"
-                            android:background="@drawable/ficon_04"
-                            android:drawableTint="@android:color/transparent"
-                            android:foregroundTint="@android:color/transparent" />
-
-                        <TextView
-                            android:id="@+id/fDisplayText4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/prompt"
-                            android:text="@string/fNeg4"
-                            android:textAlignment="center"
-                            android:textColor="@color/add_record_display_text_color"
-                            android:textSize="13sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/lay_5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:visibility="visible"
-                        app:layout_columnWeight="1">
-
-                        <Button
-                            android:id="@+id/btn_fNeg5"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:alpha="0.3"
-                            android:background="@drawable/ficon_05"
-                            android:drawableTint="@android:color/transparent"
-                            android:foregroundTint="@android:color/transparent" />
-
-                        <TextView
-                            android:id="@+id/fDisplayText5"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/prompt"
-                            android:text="@string/fNeg5"
-                            android:textAlignment="center"
-                            android:textColor="@color/add_record_display_text_color"
-                            android:textSize="13sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/lay_6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:visibility="visible"
-                        app:layout_columnWeight="1">
-
-                        <Button
-                            android:id="@+id/btn_fNeg6"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:alpha="0.3"
-                            android:background="@drawable/ficon_06"
-                            android:drawableTint="@android:color/transparent"
-                            android:foregroundTint="@android:color/transparent" />
-
-                        <TextView
-                            android:id="@+id/fDisplayText6"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/prompt"
-                            android:text="@string/fNeg6"
-                            android:textAlignment="center"
-                            android:textColor="@color/add_record_display_text_color"
-                            android:textSize="13sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/lay_7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:visibility="visible"
-                        app:layout_columnWeight="1">
-
-                        <Button
-                            android:id="@+id/btn_fNeg7"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:alpha="0.3"
-                            android:background="@drawable/ficon_07"
-                            android:drawableTint="@android:color/transparent"
-                            android:foregroundTint="@android:color/transparent" />
-
-                        <TextView
-                            android:id="@+id/fDisplayText7"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/prompt"
-                            android:text="@string/fNeg7"
-                            android:textAlignment="center"
-                            android:textColor="@color/add_record_display_text_color"
-                            android:textSize="13sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/lay_8"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:visibility="visible"
-                        app:layout_columnWeight="1">
-
-                        <Button
-                            android:id="@+id/btn_fNeg8"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:alpha="0.3"
-                            android:background="@drawable/ficon_08"
-                            android:drawableTint="@android:color/transparent"
-                            android:foregroundTint="@android:color/transparent" />
-
-                        <TextView
-                            android:id="@+id/fDisplayText8"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/prompt"
-                            android:text="@string/fNeg8"
-                            android:textAlignment="center"
-                            android:textColor="@color/add_record_display_text_color"
-                            android:textSize="13sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/lay_9"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:visibility="visible"
-                        app:layout_columnWeight="1">
-
-                        <Button
-                            android:id="@+id/btn_fNeg9"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:alpha="0.3"
-                            android:background="@drawable/ficon_09"
-                            android:drawableTint="@android:color/transparent"
-                            android:foregroundTint="@android:color/transparent" />
-
-                        <TextView
-                            android:id="@+id/fDisplayText9"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/prompt"
-                            android:text="@string/fNeg9"
-                            android:textAlignment="center"
-                            android:textColor="@color/add_record_display_text_color"
-                            android:textSize="13sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/lay_10"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:visibility="visible"
-                        app:layout_columnWeight="1">
-
-                        <Button
-                            android:id="@+id/btn_fNeg10"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:alpha="0.3"
-                            android:background="@drawable/ficon_10"
-                            android:drawableTint="@android:color/transparent"
-                            android:foregroundTint="@android:color/transparent" />
-
-                        <TextView
-                            android:id="@+id/fDisplayText10"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/prompt"
-                            android:text="@string/fNeg10"
-                            android:textAlignment="center"
-                            android:textColor="@color/add_record_display_text_color"
-                            android:textSize="13sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/lay_11"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:visibility="visible"
-                        app:layout_columnWeight="1">
-
-                        <Button
-                            android:id="@+id/btn_fNeg11"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:alpha="0.3"
-                            android:background="@drawable/ficon_11"
-                            android:drawableTint="@android:color/transparent"
-                            android:foregroundTint="@android:color/transparent" />
-
-                        <TextView
-                            android:id="@+id/fDisplayText11"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/prompt"
-                            android:text="@string/fNeg11"
-                            android:textAlignment="center"
-                            android:textColor="@color/add_record_display_text_color"
-                            android:textSize="13sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/lay_12"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:visibility="visible"
-                        app:layout_columnWeight="1">
-
-                        <Button
-                            android:id="@+id/btn_fNeg12"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:alpha="0.3"
-                            android:background="@drawable/ficon_12"
-                            android:drawableTint="@android:color/transparent"
-                            android:foregroundTint="@android:color/transparent" />
-
-                        <TextView
-                            android:id="@+id/fDisplayText12"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/prompt"
-                            android:text="@string/fNeg12"
-                            android:textAlignment="center"
-                            android:textColor="@color/add_record_display_text_color"
-                            android:textSize="13sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/lay_13"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:visibility="visible"
-                        app:layout_columnWeight="1">
-
-                        <Button
-                            android:id="@+id/btn_fNeg13"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:alpha="0.3"
-                            android:background="@drawable/ficon_13"
-                            android:drawableTint="@android:color/transparent"
-                            android:foregroundTint="@android:color/transparent" />
-
-                        <TextView
-                            android:id="@+id/fDisplayText13"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/prompt"
-                            android:text="@string/fNeg13"
-                            android:textAlignment="center"
-                            android:textColor="@color/add_record_display_text_color"
-                            android:textSize="13sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/lay_14"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:visibility="visible"
-                        app:layout_columnWeight="1">
-
-                        <Button
-                            android:id="@+id/btn_fNeg14"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:alpha="0.3"
-                            android:background="@drawable/ficon_14"
-                            android:drawableTint="@android:color/transparent"
-                            android:foregroundTint="@android:color/transparent" />
-
-                        <TextView
-                            android:id="@+id/fDisplayText14"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/prompt"
-                            android:text="@string/fNeg14"
-                            android:textAlignment="center"
-                            android:textColor="@color/add_record_display_text_color"
-                            android:textSize="13sp" />
-
-                    </LinearLayout>
-
-                </androidx.gridlayout.widget.GridLayout>
+                    android:text="@string/Currency_HKD"
+                    android:textColor="@color/record_white"
+                    android:textSize="16sp" />
 
             </LinearLayout>
-        </ScrollView>
-
-        <TextView
-            android:id="@+id/tv_Description"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/Description"
-            android:textColor="@color/currency_converter_white" />
-
-
-        <EditText
-            android:id="@+id/add_record_description"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:textColor="@color/currency_converter_white" />
-
-        <TextView
-            android:id="@+id/tv_date"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/Date"
-            android:textColor="@color/currency_converter_white" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:orientation="horizontal">
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/tv_tool_title3"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="12"
-                android:gravity="center"
-                android:orientation="vertical">
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/prompt"
+                android:text="@string/Category"
+                android:textColor="@color/home_white"
+                android:textSize="14sp" />
 
-                <Button
-                    android:id="@+id/add_record_date_today"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+            <ScrollView
+                android:layout_width="match_parent"
 
-                <TextView
-                    android:id="@+id/fDisplayText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/prompt"
-                    android:text="@string/fToday"
-                    android:textAlignment="center"
-                    android:textColor="@color/currency_converter_white"
-                    android:textSize="14sp" />
+                android:layout_height="200dp"
+                android:scrollbarThumbHorizontal="@color/record_scrollbar"
+                android:scrollbarThumbVertical="@color/record_scrollbar">
+                <!--                android:layout_height="wrap_content">-->
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/add_record_date_yesterday"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:id="@+id/fDisplayText15"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/prompt"
-                    android:text="@string/fYesterday"
-                    android:textAlignment="center"
-                    android:textColor="@color/currency_converter_white"
-                    android:textSize="14sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/add_record_date_dby"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="5dp"
-                android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.gridlayout.widget.GridLayout
+                        android:id="@+id/gridLayout1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:columnCount="3"
+                        app:rowCount="5">
+
+                        <LinearLayout
+                            android:id="@+id/lay_16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:alpha="1"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            app:layout_columnWeight="1">
+
+                            <Button
+                                android:id="@+id/btn_fAdd2"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:alpha="0.3"
+                                android:background="@drawable/ficon_16"
+                                android:drawableTint="@android:color/transparent"
+                                android:foregroundTint="@android:color/transparent" />
+
+                            <TextView
+                                android:id="@+id/fDisplayAddText2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/prompt"
+                                android:text="@string/fAdd2"
+                                android:textAlignment="center"
+                                android:textColor="@color/add_record_display_text_color"
+                                android:textSize="13sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lay_17"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:alpha="1"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            app:layout_columnWeight="1">
+
+                            <Button
+                                android:id="@+id/btn_fAdd3"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:alpha="0.3"
+                                android:background="@drawable/ficon_06"
+                                android:drawableTint="@android:color/transparent"
+                                android:foregroundTint="@android:color/transparent" />
+
+                            <TextView
+                                android:id="@+id/fDisplayAddText3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/prompt"
+                                android:text="@string/fAdd3"
+                                android:textAlignment="center"
+                                android:textColor="@color/add_record_display_text_color"
+                                android:textSize="13sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lay_15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:alpha="1"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            app:layout_columnWeight="1">
+
+                            <Button
+                                android:id="@+id/btn_fAdd1"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:alpha="0.3"
+                                android:background="@drawable/ficon_15"
+                                android:drawableTint="@android:color/transparent"
+                                android:foregroundTint="@android:color/transparent" />
+
+                            <TextView
+                                android:id="@+id/fDisplayAddText1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/prompt"
+                                android:text="@string/fAdd1"
+                                android:textAlignment="center"
+                                android:textColor="@color/add_record_display_text_color"
+                                android:textSize="13sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lay_18"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:alpha="1"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            app:layout_columnWeight="1">
+
+                            <Button
+                                android:id="@+id/btn_fAdd4"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:alpha="0.3"
+                                android:background="@drawable/ficon_14"
+                                android:drawableTint="@android:color/transparent"
+                                android:foregroundTint="@android:color/transparent" />
+
+                            <TextView
+                                android:id="@+id/fDisplayAddText4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/prompt"
+                                android:text="@string/fAdd4"
+                                android:textAlignment="center"
+                                android:textColor="@color/add_record_display_text_color"
+                                android:textSize="13sp" />
+
+                        </LinearLayout>
+                    </androidx.gridlayout.widget.GridLayout>
+
+                    <androidx.gridlayout.widget.GridLayout
+                        android:id="@+id/gridLayout2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:columnCount="3"
+                        app:rowCount="5">
+
+
+                        <LinearLayout
+                            android:id="@+id/lay_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="visible"
+                            app:layout_columnWeight="1">
+
+                            <Button
+                                android:id="@+id/btn_fNeg1"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:alpha="0.3"
+                                android:background="@drawable/ficon_01"
+                                android:drawableTint="@android:color/transparent"
+                                android:foregroundTint="@android:color/transparent" />
+
+                            <TextView
+                                android:id="@+id/fDisplayText1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/prompt"
+                                android:text="@string/fNeg1"
+                                android:textAlignment="center"
+                                android:textColor="@color/add_record_display_text_color"
+                                android:textSize="13sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lay_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="visible"
+                            app:layout_columnWeight="1">
+
+                            <Button
+                                android:id="@+id/btn_fNeg2"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:alpha="0.3"
+                                android:background="@drawable/ficon_02"
+                                android:drawableTint="@android:color/transparent"
+                                android:foregroundTint="@android:color/transparent" />
+
+                            <TextView
+                                android:id="@+id/fDisplayText2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/prompt"
+                                android:text="@string/fNeg2"
+                                android:textAlignment="center"
+                                android:textColor="@color/add_record_display_text_color"
+                                android:textSize="13sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lay_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="visible"
+                            app:layout_columnWeight="1">
+
+                            <Button
+                                android:id="@+id/btn_fNeg3"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:alpha="0.3"
+                                android:background="@drawable/ficon_03"
+                                android:drawableTint="@android:color/transparent"
+                                android:foregroundTint="@android:color/transparent" />
+
+                            <TextView
+                                android:id="@+id/fDisplayText3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/prompt"
+                                android:text="@string/fNeg3"
+                                android:textAlignment="center"
+                                android:textColor="@color/add_record_display_text_color"
+                                android:textSize="13sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lay_4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="visible"
+                            app:layout_columnWeight="1">
+
+                            <Button
+                                android:id="@+id/btn_fNeg4"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:alpha="0.3"
+                                android:background="@drawable/ficon_04"
+                                android:drawableTint="@android:color/transparent"
+                                android:foregroundTint="@android:color/transparent" />
+
+                            <TextView
+                                android:id="@+id/fDisplayText4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/prompt"
+                                android:text="@string/fNeg4"
+                                android:textAlignment="center"
+                                android:textColor="@color/add_record_display_text_color"
+                                android:textSize="13sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lay_5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="visible"
+                            app:layout_columnWeight="1">
+
+                            <Button
+                                android:id="@+id/btn_fNeg5"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:alpha="0.3"
+                                android:background="@drawable/ficon_05"
+                                android:drawableTint="@android:color/transparent"
+                                android:foregroundTint="@android:color/transparent" />
+
+                            <TextView
+                                android:id="@+id/fDisplayText5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/prompt"
+                                android:text="@string/fNeg5"
+                                android:textAlignment="center"
+                                android:textColor="@color/add_record_display_text_color"
+                                android:textSize="13sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lay_6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="visible"
+                            app:layout_columnWeight="1">
+
+                            <Button
+                                android:id="@+id/btn_fNeg6"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:alpha="0.3"
+                                android:background="@drawable/ficon_06"
+                                android:drawableTint="@android:color/transparent"
+                                android:foregroundTint="@android:color/transparent" />
+
+                            <TextView
+                                android:id="@+id/fDisplayText6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/prompt"
+                                android:text="@string/fNeg6"
+                                android:textAlignment="center"
+                                android:textColor="@color/add_record_display_text_color"
+                                android:textSize="13sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lay_7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="visible"
+                            app:layout_columnWeight="1">
+
+                            <Button
+                                android:id="@+id/btn_fNeg7"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:alpha="0.3"
+                                android:background="@drawable/ficon_07"
+                                android:drawableTint="@android:color/transparent"
+                                android:foregroundTint="@android:color/transparent" />
+
+                            <TextView
+                                android:id="@+id/fDisplayText7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/prompt"
+                                android:text="@string/fNeg7"
+                                android:textAlignment="center"
+                                android:textColor="@color/add_record_display_text_color"
+                                android:textSize="13sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lay_8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="visible"
+                            app:layout_columnWeight="1">
+
+                            <Button
+                                android:id="@+id/btn_fNeg8"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:alpha="0.3"
+                                android:background="@drawable/ficon_08"
+                                android:drawableTint="@android:color/transparent"
+                                android:foregroundTint="@android:color/transparent" />
+
+                            <TextView
+                                android:id="@+id/fDisplayText8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/prompt"
+                                android:text="@string/fNeg8"
+                                android:textAlignment="center"
+                                android:textColor="@color/add_record_display_text_color"
+                                android:textSize="13sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lay_9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="visible"
+                            app:layout_columnWeight="1">
+
+                            <Button
+                                android:id="@+id/btn_fNeg9"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:alpha="0.3"
+                                android:background="@drawable/ficon_09"
+                                android:drawableTint="@android:color/transparent"
+                                android:foregroundTint="@android:color/transparent" />
+
+                            <TextView
+                                android:id="@+id/fDisplayText9"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/prompt"
+                                android:text="@string/fNeg9"
+                                android:textAlignment="center"
+                                android:textColor="@color/add_record_display_text_color"
+                                android:textSize="13sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lay_10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="visible"
+                            app:layout_columnWeight="1">
+
+                            <Button
+                                android:id="@+id/btn_fNeg10"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:alpha="0.3"
+                                android:background="@drawable/ficon_10"
+                                android:drawableTint="@android:color/transparent"
+                                android:foregroundTint="@android:color/transparent" />
+
+                            <TextView
+                                android:id="@+id/fDisplayText10"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/prompt"
+                                android:text="@string/fNeg10"
+                                android:textAlignment="center"
+                                android:textColor="@color/add_record_display_text_color"
+                                android:textSize="13sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lay_11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="visible"
+                            app:layout_columnWeight="1">
+
+                            <Button
+                                android:id="@+id/btn_fNeg11"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:alpha="0.3"
+                                android:background="@drawable/ficon_11"
+                                android:drawableTint="@android:color/transparent"
+                                android:foregroundTint="@android:color/transparent" />
+
+                            <TextView
+                                android:id="@+id/fDisplayText11"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/prompt"
+                                android:text="@string/fNeg11"
+                                android:textAlignment="center"
+                                android:textColor="@color/add_record_display_text_color"
+                                android:textSize="13sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lay_12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="visible"
+                            app:layout_columnWeight="1">
+
+                            <Button
+                                android:id="@+id/btn_fNeg12"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:alpha="0.3"
+                                android:background="@drawable/ficon_12"
+                                android:drawableTint="@android:color/transparent"
+                                android:foregroundTint="@android:color/transparent" />
+
+                            <TextView
+                                android:id="@+id/fDisplayText12"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/prompt"
+                                android:text="@string/fNeg12"
+                                android:textAlignment="center"
+                                android:textColor="@color/add_record_display_text_color"
+                                android:textSize="13sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lay_13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="visible"
+                            app:layout_columnWeight="1">
+
+                            <Button
+                                android:id="@+id/btn_fNeg13"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:alpha="0.3"
+                                android:background="@drawable/ficon_13"
+                                android:drawableTint="@android:color/transparent"
+                                android:foregroundTint="@android:color/transparent" />
+
+                            <TextView
+                                android:id="@+id/fDisplayText13"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/prompt"
+                                android:text="@string/fNeg13"
+                                android:textAlignment="center"
+                                android:textColor="@color/add_record_display_text_color"
+                                android:textSize="13sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lay_14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="visible"
+                            app:layout_columnWeight="1">
+
+                            <Button
+                                android:id="@+id/btn_fNeg14"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:alpha="0.3"
+                                android:background="@drawable/ficon_14"
+                                android:drawableTint="@android:color/transparent"
+                                android:foregroundTint="@android:color/transparent" />
+
+                            <TextView
+                                android:id="@+id/fDisplayText14"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/prompt"
+                                android:text="@string/fNeg14"
+                                android:textAlignment="center"
+                                android:textColor="@color/add_record_display_text_color"
+                                android:textSize="13sp" />
+
+                        </LinearLayout>
+
+                    </androidx.gridlayout.widget.GridLayout>
+
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_tool_title5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/prompt"
+                android:text="@string/Date"
+                android:textColor="@color/home_white"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="12"
+                    android:gravity="center"
                     android:orientation="vertical">
 
                     <Button
-                        android:id="@+id/add_record_date_custom"
+                        android:id="@+id/add_record_date_today"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_input_field_light"
+                        android:padding="0dp"
+                        android:textColor="@color/record_white" />
+
+                    <TextView
+                        android:id="@+id/fDisplayText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/prompt"
+                        android:text="@string/fToday"
+                        android:textAlignment="center"
+                        android:textColor="@color/currency_converter_white"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="8dp"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/add_record_date_yesterday"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:alpha="0.4"
+                        android:background="@drawable/bg_input_field_light"
+                        android:textColor="@color/record_white" />
+
+                    <TextView
+                        android:id="@+id/fDisplayText15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/prompt"
+                        android:text="@string/fYesterday"
+                        android:textAlignment="center"
+                        android:textColor="@color/currency_converter_white"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="8dp"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/add_record_date_dby"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:alpha="0.4"
+                        android:background="@drawable/bg_input_field_light"
+                        android:textColor="@color/record_white" />
+
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="8dp"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@drawable/fcalendar" />
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/add_record_date_custom"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/fcalendar" />
+                    </LinearLayout>
                 </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_tool_title4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/prompt"
+                android:text="@string/Description"
+                android:textColor="@color/home_white"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_input_field"
+                android:orientation="horizontal"
+                android:paddingLeft="16dp"
+                android:paddingTop="12dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="12dp">
+
+                <EditText
+                    android:id="@+id/add_record_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@android:color/transparent"
+                    android:fontFamily="@font/prompt"
+                    android:hint="@string/Description"
+                    android:inputType="textPersonName"
+                    android:padding="0dp"
+                    android:textColor="@color/currency_converter_white"
+                    android:textColorHint="@color/record_hint"
+                    android:textSize="16sp" />
+
+
             </LinearLayout>
 
         </LinearLayout>
 
-    </LinearLayout>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
 
-    <Button
-        android:id="@+id/add_record_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/add_button"
-        app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
-        tools:layout_editor_absoluteX="1dp" />
+        <Button
+            android:id="@+id/add_record_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/add_button" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

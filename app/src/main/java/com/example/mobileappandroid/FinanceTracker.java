@@ -182,6 +182,7 @@ public class FinanceTracker extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onClick(View view) {
+        Button btn;
         switch (view.getId()) {
             case R.id.add_record_button:
                 if (validate_record()) {
@@ -202,22 +203,40 @@ public class FinanceTracker extends AppCompatActivity implements View.OnClickLis
                 break;
             case R.id.add_record_date_today:
                 calendar.setTime(currentTime);
+                dateRestAlpha();
+                btn = findViewById(view.getId());
+                btn.setAlpha(0.4f);
+                btn.animate().alpha(1.0f).setDuration(300);
+                btn.setAlpha(1.0f);
                 break;
             case R.id.add_record_date_yesterday:
                 calendar.setTime(currentTime);
                 calendar.add(Calendar.DATE, -1);
+                dateRestAlpha();
+                btn = findViewById(view.getId());
+                btn.setAlpha(0.4f);
+                btn.animate().alpha(1.0f).setDuration(300);
+                btn.setAlpha(1.0f);
                 break;
             case R.id.add_record_date_dby:
                 calendar.setTime(currentTime);
                 calendar.add(Calendar.DATE, -2);
+                dateRestAlpha();
+                btn = findViewById(view.getId());
+                btn.setAlpha(0.4f);
+                btn.animate().alpha(1.0f).setDuration(300);
+                btn.setAlpha(1.0f);
                 break;
             case R.id.add_record_date_custom:
+                dateRestAlpha();
                 int year = calendar_temp_picker.get(Calendar.YEAR);
                 int month = calendar_temp_picker.get(Calendar.MONTH);
                 int day = calendar_temp_picker.get(Calendar.DAY_OF_MONTH);
                 DatePickerDialog dialog = new DatePickerDialog(this, android.R.style.Theme_Holo_Light_Dialog_MinWidth, listener, year, month, day);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialog.show();
+
+//                bt_dby.setText(dateFormat.format(calendar_temp.getTime()));
                 break;
             case R.id.btn_fNeg1:
 
@@ -259,7 +278,7 @@ public class FinanceTracker extends AppCompatActivity implements View.OnClickLis
                 categoryPicked = Arrays.asList(btn_id_array).indexOf(view.getId());
                 resetAllAlpha();
 
-                Button btn = findViewById(view.getId());
+                btn = findViewById(view.getId());
 //
                 Animation animation = new AlphaAnimation(0.3f, 1.0f);
                 animation.setDuration(300);
@@ -271,16 +290,36 @@ public class FinanceTracker extends AppCompatActivity implements View.OnClickLis
     }
 
     public void showCat(boolean sta) {
+        Button btn1, btn2;
         androidx.gridlayout.widget.GridLayout gridLayout1, gridLayout2;
         gridLayout1 = findViewById(R.id.gridLayout1);
         gridLayout2 = findViewById(R.id.gridLayout2);
+        btn1 = findViewById(R.id.consume_button);
+        btn2 = findViewById(R.id.revenue_button);
 
         if (sta) {
             gridLayout1.setVisibility(View.GONE);
             gridLayout2.setVisibility(View.VISIBLE);
+
+            btn2.setAlpha(0.9f);
+            btn2.animate().alpha(0.4f).setDuration(300);
+            btn2.setAlpha(0.4f);
+
+            btn1.setAlpha(0.4f);
+            btn1.animate().alpha(0.9f).setDuration(300);
+            btn1.setAlpha(0.9f);
+
         } else {
             gridLayout1.setVisibility(View.VISIBLE);
             gridLayout2.setVisibility(View.GONE);
+
+            btn1.setAlpha(0.9f);
+            btn1.animate().alpha(0.4f).setDuration(300);
+            btn1.setAlpha(0.4f);
+
+            btn2.setAlpha(0.4f);
+            btn2.animate().alpha(0.9f).setDuration(300);
+            btn2.setAlpha(0.9f);
         }
     }
 
@@ -293,6 +332,29 @@ public class FinanceTracker extends AppCompatActivity implements View.OnClickLis
                 btn.animate().alpha(0.3f).setDuration(300);
                 btn.setAlpha(0.3f);
             }
+        }
+    }
+
+    public void dateRestAlpha() {
+        Button btn;
+        btn = findViewById(R.id.add_record_date_today);
+        if (btn.getAlpha() == 1.0f) {
+            btn.setAlpha(1.0f);
+            btn.animate().alpha(0.4f).setDuration(300);
+            btn.setAlpha(0.4f);
+        }
+
+        btn = findViewById(R.id.add_record_date_yesterday);
+        if (btn.getAlpha() == 1.0f) {
+            btn.setAlpha(1.0f);
+            btn.animate().alpha(0.4f).setDuration(300);
+            btn.setAlpha(0.4f);
+        }
+        btn = findViewById(R.id.add_record_date_dby);
+        if (btn.getAlpha() == 1.0f) {
+            btn.setAlpha(1.0f);
+            btn.animate().alpha(0.4f).setDuration(300);
+            btn.setAlpha(0.4f);
         }
     }
 

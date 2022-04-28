@@ -32,6 +32,10 @@
     <!--    Setting    -->
     <color name="setting_white">@color/currency_converter_white</color>
 
+    <!--    Record    -->
+    <color name="record_white">@color/currency_converter_white</color>
+    <color name="record_hint">#A3A3A3</color>
+    <color name="record_scrollbar">#656565</color>
     <!--    Not Sorted    -->
 
 
