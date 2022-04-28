@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,8 +24,8 @@ import java.util.Calendar;
 public class FinanceMainPage extends AppCompatActivity implements View.OnClickListener {
 
 
-    private Button button_add_record;
-    private Button bt_to_graph;
+    Button bt_add_record;
+    private LinearLayout bt_to_graph;
     public boolean is_saved;
     private ArrayList<Record> records;
     private Record record;
@@ -48,9 +49,10 @@ public class FinanceMainPage extends AppCompatActivity implements View.OnClickLi
             loadData();
         }
 
-        button_add_record = findViewById(R.id.add_record);
+        bt_add_record = findViewById(R.id.add_record);
         bt_to_graph=findViewById(R.id.to_graph);
-        button_add_record.setOnClickListener(this);
+
+        bt_add_record.setOnClickListener(this);
         bt_to_graph.setOnClickListener(this);
 
     }

@@ -21,10 +21,39 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/setting_screen_titile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/prompt_bold"
+                    android:text="@string/AddRecord"
+                    android:textColor="@color/currency_converter_white"
+                    android:textSize="26sp" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/currency_page_go_home"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/currency_converter_home_button" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="12dp"
                 android:orientation="horizontal">
 
                 <Button
@@ -55,7 +84,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="12dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -107,7 +136,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="12dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -154,7 +183,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="12dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -170,7 +199,7 @@
                 <ScrollView
                     android:layout_width="match_parent"
 
-                    android:layout_height="200dp"
+                    android:layout_height="170dp"
                     android:scrollbarThumbHorizontal="@color/record_scrollbar"
                     android:scrollbarThumbVertical="@color/record_scrollbar">
                     <!--                android:layout_height="wrap_content">-->
@@ -766,7 +795,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="12dp"
                 android:orientation="vertical">
 
                 <TextView
