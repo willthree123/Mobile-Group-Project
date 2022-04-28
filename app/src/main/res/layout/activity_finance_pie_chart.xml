@@ -20,7 +20,7 @@
         android:id="@+id/piechart_view_all"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="150dp"
+        android:layout_marginEnd="200dp"
         android:text="ViewAll"
         app:layout_constraintBottom_toTopOf="@+id/PieChart"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,6 +63,14 @@
         app:layout_constraintStart_toEndOf="@+id/piechart_view_year"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Spinner
+        android:id="@+id/spinner_month"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/PieChart"
+        app:layout_constraintStart_toEndOf="@+id/spinner_year"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/TextView_show_displaying"
         android:layout_width="wrap_content"
@@ -70,6 +78,14 @@
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/PieChart"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/piechart_view_month"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="VIEWMONTH"
+        app:layout_constraintBottom_toTopOf="@+id/PieChart"
         app:layout_constraintStart_toStartOf="parent" />
 
 
