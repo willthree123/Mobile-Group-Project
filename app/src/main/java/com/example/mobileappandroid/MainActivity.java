@@ -21,7 +21,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     LinearLayout go_to_currency_cal;
     private Button to_setting,button_add_record;
-    private LinearLayout to_finance;
+    private LinearLayout to_finance, to_interest;
     private ArrayList<Record> records;
 
     @Override
@@ -39,16 +39,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         to_setting=findViewById(R.id.btn_setting);
         to_setting.setOnClickListener(this);
-//        SharedPreferences sharedPreferences = getSharedPreferences("KEY",MODE_PRIVATE);
-//        SharedPreferences.Editor editor= sharedPreferences.edit();
-//        editor.putString();
-//        SharedPreferences sp=getSharedPreferences("Records",MODE_PRIVATE);
-//        SharedPreferences.Editor editor=sp.edit();
-//        editor.clear();
-//        editor.commit();
+
+        SharedPreferences sp=getSharedPreferences("Records",MODE_PRIVATE);
+        SharedPreferences.Editor editor=sp.edit();
+        editor.clear();
+        editor.commit();
         reloadLang(MainActivity.this);
+
+//         Intent intent = new Intent(this, AllRecordsPage.class);
+//         startActivity(intent);
+
+        to_interest = findViewById(R.id.to_interest);
+        to_interest.setOnClickListener(this);
         button_add_record = findViewById(R.id.add_record);
         button_add_record.setOnClickListener(this);
+
     }
 
     @Override
@@ -82,6 +87,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.add_record:
                 intent = new Intent(this, FinanceTracker.class);
+                startActivity(intent);
+                break;
+            case R.id.to_interest:
+                intent = new Intent(this, Interest_calc.class);
                 startActivity(intent);
                 break;
         }

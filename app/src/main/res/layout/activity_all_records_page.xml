@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2B2626"
+    tools:context=".AllRecordsPage">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_record_allrecordspage"
+        android:layout_width="match_parent"
+        android:layout_height="553dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <Button
+        android:id="@+id/AllRecordsPage_ViewByCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp" />
+
+    <Spinner
+        android:id="@+id/AllRecordsPage_SpinnerCategory"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:backgroundTint="@color/currency_converter_white"
+        app:layout_constraintStart_toEndOf="@+id/AllRecordsPage_ViewByCategory"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/AllRecordsPage_ViewYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AllRecordsPage_ViewByCategory" />
+
+    <Spinner
+        android:id="@+id/AllRecordsPage_SpinnerYear"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:backgroundTint="@color/currency_converter_white"
+        app:layout_constraintStart_toEndOf="@+id/AllRecordsPage_ViewYear"
+        app:layout_constraintTop_toBottomOf="@+id/AllRecordsPage_SpinnerCategory" />
+
+    <Button
+        android:id="@+id/AllRecordsPage_ViewMonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AllRecordsPage_ViewYear" />
+
+    <Spinner
+        android:id="@+id/AllRecordsPage_SpinnerMonth"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="48dp"
+        android:backgroundTint="@color/currency_converter_white"
+        app:layout_constraintStart_toEndOf="@+id/AllRecordsPage_SpinnerYear"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

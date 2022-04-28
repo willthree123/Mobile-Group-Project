@@ -91,7 +91,7 @@
                             app:srcCompat="@drawable/micon_currency" />
 
                         <TextView
-                            android:id="@+id/textView7"
+                            android:id="@+id/add_interest_to_record"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
@@ -130,7 +130,7 @@
                             app:srcCompat="@drawable/micon_interest" />
 
                         <TextView
-                            android:id="@+id/textView7"
+                            android:id="@+id/add_interest_to_record"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
@@ -146,6 +146,36 @@
                         android:layout_width="30dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_stork_button"
+                        android:gravity="start|center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="15dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="15dp"
+                        android:paddingBottom="10dp">
+
+                        <ImageView
+                            android:id="@+id/imageView6"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            app:srcCompat="@drawable/micon_currency" />
+
+                        <TextView
+                            android:id="@+id/add_interest_to_record"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:gravity="center_vertical"
+                            android:text="@string/main_currency_btn"
+                            android:textAlignment="center"
+                            android:textColor="@color/home_white"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
             </HorizontalScrollView>

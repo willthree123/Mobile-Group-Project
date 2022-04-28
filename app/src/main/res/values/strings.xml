@@ -15,6 +15,7 @@
     <string name="plusadd_button">+ Add</string>
     <string name="thisMonth">(This month)</string>
     <string name="viewDetail">View Detail</string>
+    <string name="interestCalc">Interest Calculator</string>
 
     <!--    Tracking    -->
     <string name="Charts">Charts</string>
@@ -113,7 +114,23 @@
     <string name="lan_3">日本語</string>
     <string name="display_text">You Language has changed to English!</string>
     <string name="cleared">All tracking records has been cleared</string>
-
+<string name="export">Backup Tracking Records</string>
+<string name="recordsCopied">All Records Copied</string>
+<string name="recordsNull">There are no records</string>
+<string name="loadedRecord">Loaded Records</string>
+<string name="backupDes">To back up, press &#8220;EXPORT DATA AND COPY&#8220; and paste the data to store (e.g. notepad)</string>
+<string name="loadDes">To load back up, copy data from back up and press &#8220;PASTE AND LOAD&#8220;</string>
+<string name="warning">Please be sure your data was not corrupted before loading</string>
+<string name="clearAll">CLEAR ALL RECORDS</string>
+<string name="clearConfirm">Are you sure you want to clear all records?</string>
+<string name="clear">CLEAR</string>
+<string name="loadTitle">LOAD RECORDS</string>
+<string name="loadConfirm">Are you sure you want to load  records? Overwritting old records</string>
+<string name="loadNOverwrite">Load and Overwrite</string>
+<string name="no">No</string>
+<string name="btn_export">export data and copy</string>
+<string name="btn_load">paste and LOAD</string>
+    <string name="loaded">All tracking records has been loaded</string>
 
     <!--    Record    -->
 
