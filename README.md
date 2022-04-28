@@ -1,20 +1,17 @@
-<<<<<<< Updated upstream
-=======
+### 1.7.3 [29/4/2022 05:50]
+
+- some fixed
+- by Jesse
+
 ### 1.7.2 [29/4/2022 5:50]
 
 - interest_calc add home button
 - by The Wok
->>>>>>> Stashed changes
 
 ### 1.6.2 [29/4/2022 5:14]
 
 - implementing interest_calc
 - by The Wok
-
-### 1.6.1 [29/4/2022 05:13]
-
-- Chinese UI
-- by Jesse
 
 ### 1.6.0 [29/4/2022 04:04]
 
