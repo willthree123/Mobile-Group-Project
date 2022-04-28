@@ -114,7 +114,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/bg_stork_button"
+                        android:clickable="true"
                         android:gravity="start|center_vertical"
+                        android:onClick="onClick"
                         android:orientation="horizontal"
                         android:paddingLeft="15dp"
                         android:paddingTop="10dp"
@@ -125,7 +127,7 @@
                             android:id="@+id/imageView6"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
-                            app:srcCompat="@drawable/micon_currency" />
+                            app:srcCompat="@drawable/micon_interest" />
 
                         <TextView
                             android:id="@+id/add_interest_to_record"
@@ -133,7 +135,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:gravity="center_vertical"
-                            android:text="@string/main_currency_btn"
+                            android:text="@string/interestCalc"
                             android:textAlignment="center"
                             android:textColor="@color/home_white"
                             android:textSize="16sp" />
@@ -174,6 +176,7 @@
                             android:textSize="16sp" />
 
                     </LinearLayout>
+
                 </LinearLayout>
             </HorizontalScrollView>
         </LinearLayout>
@@ -285,7 +288,6 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.756" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

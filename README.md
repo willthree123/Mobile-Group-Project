@@ -19,6 +19,11 @@
 - Added Interest page
 - by Jesse
 
+
+### 1.5.8 [29/4/2022 00:15]
+
+- LandingPage with Interest
+
 ### 1.5.8 [29/4/2022 00:11]
 
 - Finished landing
