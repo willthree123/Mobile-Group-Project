@@ -1,3 +1,9 @@
+### 1.5.7 [29/4/2022 00:11]
+
+- The exchange to add record function implementation done
+- Debug Currency Converter
+- by The Wok
+
 ### 1.5.4 [28/4/2022 21:24]
 
 - Working on records finished

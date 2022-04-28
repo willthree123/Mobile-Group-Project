@@ -44,4 +44,13 @@ public class SharedPreferenceHelper {
         }
         return result;
     }
+
+    static void clearData(Context context,String key1){
+        SharedPreferences sp = context.getSharedPreferences(key1, context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.clear();
+        editor.commit();
+    }
+
+
 }
