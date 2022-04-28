@@ -16,6 +16,9 @@
             android:name=".AllRecordsPage"
             android:exported="false" />
         <activity
+            android:name=".Interest_calc"
+            android:exported="false" />
+        <activity
             android:name=".WelcomeScreenActivity"
             android:exported="false" />
         <activity
