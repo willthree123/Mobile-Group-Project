@@ -1,3 +1,8 @@
+### 1.6.2 [29/4/2022 5:14]
+
+- implementing interest_calc
+- by The Wok
+
 ### 1.5.8 [29/4/2022 00:44]
 
 - implementing the interest calculator
