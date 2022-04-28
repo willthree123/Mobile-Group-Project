@@ -14,6 +14,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -26,6 +27,7 @@ public class Interest_calc extends AppCompatActivity {
     EditText result_interest_with_starting;
 
     Button clear;
+    ImageButton home;
 
     LinearLayout add_interest_only;
     LinearLayout add_interest_with_starting;
@@ -54,6 +56,7 @@ public class Interest_calc extends AppCompatActivity {
         set_start_amount_listener();
         set_year_listener();
         clear_on_click();
+        home_on_click();
         add_interest_only_on_click();
         add_interest_with_starting_on_click();
     }
@@ -71,6 +74,7 @@ public class Interest_calc extends AppCompatActivity {
         disable_edit_text_editing(result_interest_with_starting);
 
         clear = findViewById(R.id.clear);
+        home = findViewById(R.id.currency_page_go_home);
 
         add_interest_only = findViewById(R.id.add_interest);
         add_interest_with_starting = findViewById(R.id.add_interestWithStarting);
@@ -120,6 +124,7 @@ public class Interest_calc extends AppCompatActivity {
             }
         });
     }
+
     private void set_start_amount_listener(){
         start_amount.addTextChangedListener(new TextWatcher() {
             @Override
@@ -138,6 +143,7 @@ public class Interest_calc extends AppCompatActivity {
             }
         });
     }
+
     private void set_year_listener(){
         year.addTextChangedListener(new TextWatcher() {
             @Override
@@ -163,6 +169,16 @@ public class Interest_calc extends AppCompatActivity {
             public void onClick(View view) {
                 interest_spinner.setSelection(0);
                 clear_all_text();
+            }
+        });
+    }
+
+    private void home_on_click(){
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Interest_calc.this, MainActivity.class);
+                startActivity(intent);
             }
         });
     }

@@ -1,3 +1,10 @@
+<<<<<<< Updated upstream
+=======
+### 1.7.2 [29/4/2022 5:50]
+
+- interest_calc add home button
+- by The Wok
+>>>>>>> Stashed changes
 
 ### 1.6.2 [29/4/2022 5:14]
 
