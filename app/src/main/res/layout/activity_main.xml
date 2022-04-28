@@ -125,15 +125,15 @@
                             android:id="@+id/imageView6"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
-                            app:srcCompat="@drawable/micon_currency" />
+                            app:srcCompat="@drawable/micon_bank" />
 
                         <TextView
-                            android:id="@+id/add_interest_to_record"
+                            android:id="@+id/add_interest_to_record2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:gravity="center_vertical"
-                            android:text="@string/main_currency_btn"
+                            android:text="@string/interestCalc"
                             android:textAlignment="center"
                             android:textColor="@color/home_white"
                             android:textSize="16sp" />

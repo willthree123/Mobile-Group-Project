@@ -9,7 +9,7 @@
 
     <!--    Home Page    -->
     <string name="main_tools">Tools</string>
-    <string name="main_currency_btn">@string/currency_converter_title</string>
+    <string name="main_currency_btn" translatable="false">@string/currency_converter_title</string>
     <string name="Financial_Tracking">Financial Tracking</string>
     <string name="plusadd_button">+ Add</string>
     <string name="thisMonth">(This month)</string>
@@ -108,9 +108,9 @@
     <string name="Tracking">Tracking</string>
     <string name="btn_clear_tracking">CLEAR ALL TRACKING RECORD</string>
     <string name="Language">Language</string>
-    <string name="lan_1">English</string>
-    <string name="lan_2">中文</string>
-    <string name="lan_3">日本語</string>
+    <string name="lan_1" translatable="false">English</string>
+    <string name="lan_2" translatable="false">中文</string>
+    <string name="lan_3" translatable="false">日本語</string>
     <string name="display_text">You Language has changed to English!</string>
     <string name="cleared">All tracking records has been cleared</string>
 <string name="export">Backup Tracking Records</string>
@@ -124,7 +124,7 @@
 <string name="clearConfirm">Are you sure you want to clear all records?</string>
 <string name="clear">CLEAR</string>
 <string name="loadTitle">LOAD RECORDS</string>
-<string name="loadConfirm">Are you sure you want to load  records? Overwritting old records</string>
+<string name="loadConfirm">Are you sure you want to load records? Overwritting old records</string>
 <string name="loadNOverwrite">Load and Overwrite</string>
 <string name="no">No</string>
 <string name="btn_export">export data and copy</string>
