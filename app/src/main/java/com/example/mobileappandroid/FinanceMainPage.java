@@ -71,40 +71,20 @@ public class FinanceMainPage extends AppCompatActivity implements View.OnClickLi
     private void saveData() {
         record = (Record) getIntent().getSerializableExtra("record_info");
         records.add(record);
-        SharedPreferences sp = getSharedPreferences("Records", MODE_PRIVATE);
-        SharedPreferences.Editor editor = sp.edit();
+
         Gson gson = new Gson();
-        String json = gson.toJson(records);
-        editor.putString("record_data", json);
-        editor.apply();
+        String json=gson.toJson(records);
+        SharedPreferenceHelper.setString(this,"Records","record_data",json);
     }
 
     private void loadData() {
-        SharedPreferences sp = getSharedPreferences("Records", MODE_PRIVATE);
-        Gson gson = new Gson();
-        String json = sp.getString("record_data", null);
-        Type type = new TypeToken<ArrayList<Record>>() {
-        }.getType();
+        SharedPreferences sp=getSharedPreferences("Records",MODE_PRIVATE);
+        Gson gson=new Gson();
+        String json=sp.getString("record_data",null);
+        Type type=new TypeToken<ArrayList<Record>>(){}.getType();
+        if (json==null){
+            records= new ArrayList<>();
 
-        if (json == null) {
-            records = new ArrayList<>();
-            // JustForTest
-//            for(int i=2010;i<=2022;i++) {
-//                Calendar cal = Calendar.getInstance();
-//                Calendar cal2 = Calendar.getInstance();
-//                cal2.set(i,1,1);
-//                cal.set(i,0,1);
-//                records.add(new Record((i-2000)*10, cal, R.drawable.ic_launcher_foreground, "No", true,0));
-//                records.add(new Record((i-2000)*20, cal, R.drawable.ic_launcher_foreground, "No", true,1));
-//                records.add(new Record((i-2000)*10, cal, R.drawable.ic_launcher_foreground, "No", false,2));
-//                records.add(new Record((i-2000)*40, cal, R.drawable.ic_launcher_foreground, "No", false,3));
-//            }
-            // EndJustForTest
-//            Calendar cal = Calendar.getInstance();
-//            cal.set(2022,0,1);
-//            for (int i=0;i<=13;i++){
-//                records.add(new Record(100, cal, R.drawable.ic_launcher_foreground, "No", false,i));
-//            }
 
             SharedPreferences.Editor editor = sp.edit();
             editor = sp.edit();
@@ -119,7 +99,6 @@ public class FinanceMainPage extends AppCompatActivity implements View.OnClickLi
         rv_adapter = new RecordAdapter(records);
         rv_record.setLayoutManager(rv_layoutManager);
         rv_record.setAdapter(rv_adapter);
-
     }
 
 

@@ -187,6 +187,7 @@ public class FinanceTracker extends AppCompatActivity implements View.OnClickLis
         };
         resetAllAlpha();
         get_data_from_currency_converter();
+        get_data_from_interest_calc();
     }
 
     @Override
@@ -393,6 +394,7 @@ public class FinanceTracker extends AppCompatActivity implements View.OnClickLis
         }
     }
 
+
     private void reloadLang(Context context) {
         //Lang change
         String lang = SharedPreferenceHelper.getLanguage(context);
@@ -470,4 +472,28 @@ public class FinanceTracker extends AppCompatActivity implements View.OnClickLis
 
         return;
     }
+
+    public void get_data_from_interest_calc(){
+        String interest_calc_amount = SharedPreferenceHelper.getString(this,"Interest_calc_to_add_records","Amount");
+        String interest_calc_description = SharedPreferenceHelper.getString(this, "Interest_calc_to_add_records","Description");
+        if ((!(interest_calc_amount.matches("")))&&(!(interest_calc_description.matches("")))){
+            amount.setText(interest_calc_amount);
+            description.setText(interest_calc_description);
+            categoryPicked = Arrays.asList(btn_id_array).indexOf(R.id.btn_fAdd1);
+            resetAllAlpha();
+
+            Button btn = findViewById(R.id.btn_fAdd1);
+//
+//            Animation animation = new AlphaAnimation(0.3f, 1.0f);
+//            animation.setDuration(300);
+//            animation.setInterpolator(new AccelerateDecelerateInterpolator());
+//            btn.startAnimation(animation);
+            btn.setAlpha(1);
+            consume = false;
+            showCat(consume);
+            SharedPreferenceHelper.clearData(this,"Interest_calc_to_add_records");
+        }
+    }
+
+
 }

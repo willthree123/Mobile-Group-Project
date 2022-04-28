@@ -11,6 +11,7 @@
     <string name="main_tools">Tools</string>
     <string name="main_currency_btn" translatable="false">@string/currency_converter_title</string>
     <string name="Financial_Tracking">Financial Tracking</string>
+    <string name="interestCalc">Interest Calculator</string>
     <string name="plusadd_button">+ Add</string>
     <string name="thisMonth">(This month)</string>
     <string name="viewDetail">View Detail</string>

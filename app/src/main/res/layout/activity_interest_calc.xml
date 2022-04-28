@@ -207,6 +207,7 @@
                 android:orientation="vertical">
 
                 <LinearLayout
+
                     android:id="@+id/add_interest"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -223,7 +224,7 @@
                     android:paddingBottom="10dp">
 
                     <TextView
-                        android:id="@+id/add_interestWithStarting"
+                        android:id="@+id/display_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical"
@@ -235,7 +236,8 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/to_currency_converter"
+                    android:id="@+id/add_interestWithStarting"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
@@ -251,7 +253,9 @@
                     android:paddingBottom="10dp">
 
                     <TextView
+
                         android:id="@+id/add_interest_to_record"
+
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical"

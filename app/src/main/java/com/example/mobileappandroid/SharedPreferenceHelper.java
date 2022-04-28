@@ -27,6 +27,7 @@ public class SharedPreferenceHelper {
         editor.commit();
     }
 
+
     //    Driver
     static void setString(Context context, String key1, String key2, String value) {
         SharedPreferences sp = context.getSharedPreferences(key1, context.MODE_PRIVATE);
@@ -37,10 +38,8 @@ public class SharedPreferenceHelper {
     static String getString(Context context, String key1, String key2) {
         SharedPreferences sp = context.getSharedPreferences(key1, context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
-        String result = sp.getString(key2, null);
-        if (result==null){
-            return "";
-        }
+        String result = sp.getString(key2, "");
+
         return result;
     }
 

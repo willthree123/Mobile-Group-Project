@@ -1,3 +1,9 @@
+
+### 1.6.2 [29/4/2022 5:14]
+
+- implementing interest_calc
+- by The Wok
+
 ### 1.6.1 [29/4/2022 05:13]
 
 - Chinese UI
@@ -17,6 +23,11 @@
 
 - Added Interest page
 - by Jesse
+
+
+### 1.5.8 [29/4/2022 00:15]
+
+- LandingPage with Interest
 
 ### 1.5.8 [29/4/2022 00:11]
 
