@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
             case R.id.to_interest:
-                intent = new Intent(this, InterestCalc.class);
+                intent = new Intent(this, Interest_calc.class);
                 startActivity(intent);
                 break;
         }

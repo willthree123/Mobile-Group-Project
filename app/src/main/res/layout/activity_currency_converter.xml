@@ -426,7 +426,7 @@
                     android:paddingLeft="15dp"
                     android:paddingTop="10dp"
                     android:paddingRight="15dp"
-                    android:paddingBottom="10dp">
+                    android:paddingBottom="10dp"/>
 
                     <TextView
                         android:id="@+id/add_interest_to_record"
@@ -438,7 +438,7 @@
                         android:textColor="@color/home_white"
                         android:textSize="16sp" />
 
-                </LinearLayout>
+<!--                </LinearLayout>-->
             </LinearLayout>
 
         </LinearLayout>
