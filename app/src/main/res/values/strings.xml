@@ -131,6 +131,14 @@
 <string name="btn_load">paste and LOAD</string>
     <string name="loaded">All tracking records has been loaded</string>
 
+    <!--    Interest Calculator    -->
+    <string name="interest_calculator_title">Interest Calculator</string>
+    <string name="interest_calculator_interest">Interest</string>
+    <string name="interest_calculator_starting">Starting</string>
+    <string name="interest_calculator_year">Year</string>
+    <string name="interest_calculator_add_records_no_starting">Add interest amount to the record</string>
+    <string name="interest_calculator_add_records_with_starting">Add interest amount to the record(with starting amount)</string>
+
     <!--    Record    -->
 
     <!--    Not Sorted    -->

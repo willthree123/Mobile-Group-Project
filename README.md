@@ -1,3 +1,8 @@
+### 1.7.4 [29/4/2022 06:21]
+
+- Interest calculator supports Chinese
+- by The Wok
+
 ### 1.7.3 [29/4/2022 05:50]
 
 - some fixed
