@@ -413,7 +413,7 @@
                     app:srcCompat="@drawable/micon_currency" />
 
                 <TextView
-                    android:id="@+id/textView7"
+                    android:id="@+id/add_interest_to_record"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
@@ -429,7 +429,7 @@
                     android:paddingBottom="10dp">
 
                     <TextView
-                        android:id="@+id/textView7"
+                        android:id="@+id/add_interest_to_record"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical"

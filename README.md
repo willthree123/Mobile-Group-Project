@@ -1,3 +1,8 @@
+### 1.5.8 [29/4/2022 00:44]
+
+- implementing the interest calculator
+- by The Wok
+
 ### 1.5.7 [29/4/2022 00:11]
 
 - The exchange to add record function implementation done
