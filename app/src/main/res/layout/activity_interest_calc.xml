@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_currency_converter"
+    tools:context=".currency_converter">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="12dp"
+                    android:paddingRight="20dp">
+
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/prompt_bold"
+                        android:text="@string/interestCalc"
+                        android:textColor="@color/currency_converter_white"
+                        android:textSize="26sp" />
+
+                    <ImageButton
+                        android:id="@+id/currency_page_go_home"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/currency_converter_home_button" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="30dp"
+                    android:paddingTop="0dp"
+                    android:paddingRight="30dp"
+                    android:paddingBottom="30dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/currency_convertor_screen"
+                        android:orientation="vertical"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="15dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/show_api_is_ok"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/currency_converter_white"
+                                android:textSize="20sp"
+                                android:visibility="gone" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <EditText
+                                    android:id="@+id/interest_rate"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="@android:color/transparent"
+                                    android:ems="10"
+                                    android:fontFamily="@font/prompt"
+                                    android:hint="@string/currency_converter_hint"
+                                    android:inputType="numberDecimal"
+                                    android:keyboardNavigationCluster="false"
+                                    android:paddingLeft="18dp"
+                                    android:paddingTop="10dp"
+                                    android:paddingRight="10dp"
+                                    android:paddingBottom="10dp"
+                                    android:textColor="@color/currency_converter_white"
+                                    android:textColorHint="@color/currency_hint" />
+
+                                <EditText
+                                    android:id="@+id/startAmount"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="@android:color/transparent"
+                                    android:ems="10"
+                                    android:fontFamily="@font/prompt"
+                                    android:hint="@string/currency_converter_hint"
+                                    android:inputType="numberDecimal"
+                                    android:keyboardNavigationCluster="false"
+                                    android:paddingLeft="18dp"
+                                    android:paddingTop="10dp"
+                                    android:paddingRight="10dp"
+                                    android:paddingBottom="10dp"
+                                    android:textColor="@color/currency_converter_white"
+                                    android:textColorHint="@color/currency_hint" />
+
+                                <EditText
+                                    android:id="@+id/year"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="@android:color/transparent"
+                                    android:ems="10"
+                                    android:fontFamily="@font/prompt"
+                                    android:hint="@string/currency_converter_hint"
+                                    android:inputType="numberDecimal"
+                                    android:keyboardNavigationCluster="false"
+                                    android:paddingLeft="18dp"
+                                    android:paddingTop="10dp"
+                                    android:paddingRight="10dp"
+                                    android:paddingBottom="10dp"
+                                    android:textColor="@color/currency_converter_white"
+                                    android:textColorHint="@color/currency_hint" />
+
+                            </LinearLayout>
+
+                            <Spinner
+                                android:id="@+id/selector"
+                                android:layout_width="200dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:backgroundTint="@color/currency_converter_white"
+                                android:padding="10dp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <EditText
+                                    android:id="@+id/result_interest"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="@android:color/transparent"
+                                    android:ems="10"
+                                    android:fontFamily="@font/prompt"
+                                    android:inputType="textPersonName"
+                                    android:paddingLeft="18dp"
+                                    android:paddingTop="10dp"
+                                    android:paddingRight="10dp"
+                                    android:paddingBottom="10dp"
+                                    android:textColor="@color/currency_converter_white" />
+                                <EditText
+                                    android:id="@+id/result_interestWithStarting"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="@android:color/transparent"
+                                    android:ems="10"
+                                    android:fontFamily="@font/prompt"
+                                    android:inputType="textPersonName"
+                                    android:paddingLeft="18dp"
+                                    android:paddingTop="10dp"
+                                    android:paddingRight="10dp"
+                                    android:paddingBottom="10dp"
+                                    android:textColor="@color/currency_converter_white" />
+
+                                <Button
+                                    android:id="@+id/clear"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_marginLeft="15dp"
+                                    android:width="20dp"
+                                    android:background="@drawable/micon_exchange" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/add_interest"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:background="@drawable/bg_stork_button_long"
+                    android:clickable="true"
+                    android:gravity="start|center_vertical"
+                    android:onClick="onClick"
+                    android:orientation="horizontal"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="10dp">
+
+                    <TextView
+                        android:id="@+id/add_interestWithStarting"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="@string/add2Record"
+                        android:textAlignment="center"
+                        android:textColor="@color/home_white"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/to_currency_converter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:background="@drawable/bg_stork_button_long"
+                    android:clickable="true"
+                    android:gravity="start|center_vertical"
+                    android:onClick="onClick"
+                    android:orientation="horizontal"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="10dp">
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="@string/add2Record"
+                        android:textAlignment="center"
+                        android:textColor="@color/home_white"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

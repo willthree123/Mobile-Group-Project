@@ -21,7 +21,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     LinearLayout go_to_currency_cal;
     private Button to_setting,button_add_record;
-    private LinearLayout to_finance;
+    private LinearLayout to_finance, to_interest;
     private ArrayList<Record> records;
 
     @Override
@@ -47,6 +47,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        editor.clear();
 //        editor.commit();
         reloadLang(MainActivity.this);
+        to_interest = findViewById(R.id.to_interest);
+        to_interest.setOnClickListener(this);
         button_add_record = findViewById(R.id.add_record);
         button_add_record.setOnClickListener(this);
     }
@@ -82,6 +84,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.add_record:
                 intent = new Intent(this, FinanceTracker.class);
+                startActivity(intent);
+                break;
+            case R.id.to_interest:
+                intent = new Intent(this, InterestCalc.class);
                 startActivity(intent);
                 break;
         }
