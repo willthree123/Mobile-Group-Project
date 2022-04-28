@@ -1,28 +1,21 @@
 package com.example.mobileappandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.res.TypedArrayUtils;
 
 import android.content.Context;
 import android.content.Intent;
 
-import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Set;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -41,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         to_finance = findViewById(R.id.to_finance);
         to_finance.setOnClickListener(this);
 
-        go_to_currency_cal = findViewById(R.id.to_currency_converter);
+        go_to_currency_cal = findViewById(R.id.to_finance_checker_add_records);
         go_to_currency_cal.setOnClickListener(this);
 
         to_setting=findViewById(R.id.btn_setting);
@@ -79,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent.putExtra("is_saved", false);
                 startActivity(intent);
                 break;
-            case R.id.to_currency_converter:
+            case R.id.to_finance_checker_add_records:
                 intent = new Intent(this, currency_converter.class);
                 startActivity(intent);
                 break;

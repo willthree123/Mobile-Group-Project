@@ -48,10 +48,11 @@
         <entry key="..\:/mobile_group_project/Mobile-Group-Project/app/src/main/res/drawable/custom_button_drawable.xml" value="0.2995" />
         <entry key="..\:/mobile_group_project/Mobile-Group-Project/app/src/main/res/drawable/custom_currency_converter_number_button.xml" value="0.2995" />
         <entry key="..\:/mobile_group_project/Mobile-Group-Project/app/src/main/res/drawable/custom_long_button_drawable.xml" value="0.2995" />
-        <entry key="..\:/mobile_group_project/Mobile-Group-Project/app/src/main/res/layout/activity_currency_converter.xml" value="0.33" />
+        <entry key="..\:/mobile_group_project/Mobile-Group-Project/app/src/main/res/layout/activity_currency_converter.xml" value="0.22" />
         <entry key="..\:/mobile_group_project/Mobile-Group-Project/app/src/main/res/layout/activity_main.xml" value="0.3605128205128205" />
         <entry key="..\:/mobile_group_project/Mobile-Group-Project/app/src/main/res/layout/currency_converter_dropdown.xml" value="0.3605128205128205" />
         <entry key="..\:/mobile_group_project/Mobile-Group-Project/app/src/main/res/layout/currency_converter_spinner.xml" value="0.3605128205128205" />
+        <entry key="..\:/mobile_group_project/Mobile-Group-Project/app/src/main/res/layout/welcome_screen.xml" value="0.2796296296296296" />
       </map>
     </option>
   </component>
