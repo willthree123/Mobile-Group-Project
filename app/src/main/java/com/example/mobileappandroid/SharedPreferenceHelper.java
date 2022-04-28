@@ -13,7 +13,7 @@ public class SharedPreferenceHelper {
 
     static String getLanguage(Context context) {
         String result = getString(context, "Language_code", "code");
-        if (result == null) {
+        if (result == "" || result == null) {
             setString(context, "Language_code", "code", "en");
             result = "en";
         }
@@ -34,7 +34,6 @@ public class SharedPreferenceHelper {
         editor.putString(key2, value);
         editor.apply();
     }
-
     static String getString(Context context, String key1, String key2) {
         SharedPreferences sp = context.getSharedPreferences(key1, context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();

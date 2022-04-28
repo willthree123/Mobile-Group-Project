@@ -4,6 +4,12 @@
 - Debug Currency Converter
 - by The Wok
 
+### 1.5.6 [28/4/2022 23:20]
+
+- Finished Ui
+- by Jesse
+
+
 ### 1.5.4 [28/4/2022 21:24]
 
 - Working on records finished

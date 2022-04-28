@@ -8,13 +8,16 @@
     <string name="welcome_slo">Your Financial Assistant.</string>
 
     <!--    Home Page    -->
-
     <string name="main_tools">Tools</string>
     <string name="main_currency_btn">@string/currency_converter_title</string>
     <string name="Financial_Tracking">Financial Tracking</string>
     <string name="plusadd_button">+ Add</string>
+    <string name="thisMonth">(This month)</string>
+    <string name="viewDetail">View Detail</string>
 
     <!--    Tracking    -->
+    <string name="Charts">Charts</string>
+    <string name="recentRecords">Recent Records</string>
     <string name="is_consume">Consume</string>
     <string name="is_revenue">Revenue</string>
     <string name="save_button">Save</string>
@@ -23,7 +26,7 @@
     <string name="Category">Category</string>
     <string name="Description">Description</string>
     <string name="Currency_HKD">HKD</string>
-    <string name="AddRecord">AddRecord</string>
+    <string name="AddRecord">Add Record</string>
     <string name="Date">Date</string>
     <string-array name="months">
         <item>January</item>
@@ -96,6 +99,7 @@
     <string name="currency_converter_convert_button">Default currency</string>
     <string name="AC">AC</string>
     <string name="Back">Back</string>
+    <string name="add2Record">Add this to record</string>
 
 
     <!--    Setting    -->
@@ -109,6 +113,8 @@
     <string name="display_text">You Language has changed to English!</string>
     <string name="cleared">All tracking records has been cleared</string>
 
+
+    <!--    Record    -->
 
     <!--    Not Sorted    -->
 
