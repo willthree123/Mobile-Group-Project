@@ -10,10 +10,17 @@ public class SharedPreferenceHelper {
     static void setLanguage(Context context, String value) {
         setString(context, "Language_code", "code", value);
     }
+
     static String getLanguage(Context context) {
-        return getString(context, "Language_code", "code");
+        String result = getString(context, "Language_code", "code");
+        if (result == null) {
+            setString(context, "Language_code", "code", "en");
+            result = "en";
+        }
+        return result;
     }
-    static void clearRecords(Context context){
+
+    static void clearRecords(Context context) {
         SharedPreferences sp = context.getSharedPreferences("Records", 0);
         SharedPreferences.Editor editor = sp.edit();
         editor.clear();
@@ -31,6 +38,10 @@ public class SharedPreferenceHelper {
     static String getString(Context context, String key1, String key2) {
         SharedPreferences sp = context.getSharedPreferences(key1, context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
-        return sp.getString(key2, null);
+        String result = sp.getString(key2, null);
+        if (result==null){
+            return "";
+        }
+        return result;
     }
 }

@@ -174,7 +174,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -287,10 +287,10 @@
                         android:layout_height="80dp"
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/custom_button_drawable"
+                        android:fontFamily="@font/prompt"
                         android:text="9"
                         android:textColor="@color/currency_converter_white"
-                        android:textSize="20sp"
-                        android:fontFamily="@font/prompt" />
+                        android:textSize="20sp" />
 
                     <Button
                         android:id="@+id/button_6"
@@ -353,6 +353,41 @@
                         android:textAppearance="@style/ac"
                         android:textColor="@color/currency_long_button_text_color" />
                 </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/to_currency_converter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/bg_stork_button"
+                android:clickable="true"
+                android:gravity="start|center_vertical"
+                android:onClick="onClick"
+                android:orientation="horizontal"
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="10dp">
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/micon_currency" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/main_currency_btn"
+                    android:textAlignment="center"
+                    android:textColor="@color/home_white"
+                    android:textSize="16sp" />
+
             </LinearLayout>
         </LinearLayout>
 
