@@ -1,3 +1,9 @@
+
+### 1.6.2 [29/4/2022 5:14]
+
+- implementing interest_calc
+- by The Wok
+
 ### 1.6.0 [29/4/2022 04:04]
 
 - Export/ Import SharedPref
