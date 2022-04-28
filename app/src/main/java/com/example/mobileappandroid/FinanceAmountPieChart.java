@@ -8,13 +8,13 @@ import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.PieData;
@@ -37,15 +37,22 @@ public class FinanceAmountPieChart extends AppCompatActivity implements View.OnC
 
     private ArrayList<Record> records;
     private List<Integer> availableYear_distinct;
+    private ArrayList<String> availableMonth_distinct_name;
+
     private List<Integer> availableCategory_distinct;
     private PieChart pieChart;
 
+    private String[] month;
+    private ArrayList<String> months;
+
     private boolean Category_mode = false;
     private boolean Consume_mode = false;
-    private boolean Viewing_Year = true;
+    private boolean ViewingAll = true;
+    private boolean ViewingYear = true;
+    private boolean ViewingMonth = false;
 
-    private Spinner spinner;
-    private int selected_year;
+    private Spinner spinner_year, spinner_month;
+    private int selected_year, selected_month;
 
     private Date currentTime;
     private Calendar calendar;
@@ -55,6 +62,7 @@ public class FinanceAmountPieChart extends AppCompatActivity implements View.OnC
     private Button bt_view_year;
     private Button bt_change_view_mode;
     private Button bt_change_view_category;
+    private Button bt_view_month;
 
     private ValueFormatter formatter;
 
@@ -65,25 +73,48 @@ public class FinanceAmountPieChart extends AppCompatActivity implements View.OnC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_finance_pie_chart);
 
+        availableMonth_distinct_name=new ArrayList<>();
+        months=new ArrayList<>();
+
+        SharedPreferences sp=getSharedPreferences("Records",MODE_PRIVATE);
+        Gson gson=new Gson();
+        String json=sp.getString("record_data",null);
+        Type type=new TypeToken<ArrayList<Record>>(){}.getType();
+        records=gson.fromJson(json,type);
+
         res = getResources();
+        month = res.getStringArray(R.array.months);
+        for (int i=0;i<month.length;i++)
+        {
+            months.add(month[i]);
+        }
+
 
         bt_view_all=findViewById(R.id.piechart_view_all);
         bt_view_year=findViewById(R.id.piechart_view_year);
+        bt_view_month=findViewById(R.id.piechart_view_month);
         bt_change_view_mode=findViewById(R.id.piechart_change_view_mode);
         bt_change_view_category=findViewById(R.id.piechart_change_view_category);
         TextView_show_displaying=findViewById(R.id.TextView_show_displaying);
 
-        spinner=findViewById(R.id.spinner_year);
+        spinner_year = findViewById(R.id.spinner_year);
+        spinner_month = findViewById(R.id.spinner_month);
+
         findAvailableCategory();
         findAvailableYear();
 
-        ArrayAdapter<Integer> adapter = new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,availableYear_distinct);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        ArrayAdapter<Integer> adapter = new ArrayAdapter<>(this,R.layout.currency_converter_spinner,availableYear_distinct);
+        adapter.setDropDownViewResource(R.layout.currency_converter_dropdown);
+        spinner_year.setAdapter(adapter);
+        spinner_year.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
+                ((TextView) adapterView.getChildAt(0)).setTextSize(18);
+                ((TextView) adapterView.getChildAt(0)).setGravity(Gravity.CENTER);
                 selected_year=availableYear_distinct.get(position);
+                findAvailableMonth();
+                if(ViewingYear||ViewingMonth)
+                    display_mode_filter();
             }
 
             @Override
@@ -91,10 +122,28 @@ public class FinanceAmountPieChart extends AppCompatActivity implements View.OnC
             }
         });
 
+        spinner_month.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
+                ((TextView) adapterView.getChildAt(0)).setTextSize(18);
+                ((TextView) adapterView.getChildAt(0)).setGravity(Gravity.CENTER);
+                selected_month=months.indexOf(availableMonth_distinct_name.get(position));
+                if(ViewingMonth)
+                    display_mode_filter();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
+
+
         bt_view_all.setOnClickListener(this);
         bt_view_year.setOnClickListener(this);
+        bt_view_month.setOnClickListener(this);
         bt_change_view_mode.setOnClickListener(this);
         bt_change_view_category.setOnClickListener(this);
+
 
         formatter = new ValueFormatter() {
             @Override
@@ -104,17 +153,41 @@ public class FinanceAmountPieChart extends AppCompatActivity implements View.OnC
         };
 
         pieChart = findViewById(R.id.PieChart);
-        loadChartYear_Amount();
+        loadChartAll_Amount();
+    }
+
+    private void findAvailableMonth() {
+        List<Integer> availableMonth = new ArrayList<>();
+        availableMonth_distinct_name.clear();
+        for (int i=0;i<=records.size()-1;i++) {
+            if(records.get(i).getYear_int()==selected_year)
+            {
+                availableMonth.add(records.get(i).getMonth_int());
+            }
+        }
+        List<Integer> availableMonth_distinct = availableMonth.stream().distinct().sorted().collect(Collectors.toList());
+        for (int i=0;i<availableMonth_distinct.size();i++)
+        {
+            availableMonth_distinct_name.add(month[availableMonth_distinct.get(i)]);
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,R.layout.currency_converter_spinner,availableMonth_distinct_name);
+        adapter.setDropDownViewResource(R.layout.currency_converter_dropdown);
+        spinner_month.setAdapter(adapter);
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.piechart_view_all:
-                Viewing_Year=true;
+                ViewingAll =true;
+                ViewingYear=false;
+                ViewingMonth=false;
                 break;
             case R.id.piechart_view_year:
-                Viewing_Year=false;
+                ViewingAll =false;
+                ViewingYear=true;
+                ViewingMonth=false;
                 break;
             case R.id.piechart_change_view_mode: // CONSUME/REVENUE
                 Consume_mode= !Consume_mode;
@@ -122,27 +195,35 @@ public class FinanceAmountPieChart extends AppCompatActivity implements View.OnC
             case R.id.piechart_change_view_category:
                 Category_mode=!Category_mode;
                 break;
+            case R.id.piechart_view_month:
+                ViewingAll =false;
+                ViewingYear=false;
+                ViewingMonth=true;
+                break;
         }
+        display_mode_filter();
+    }
+
+    private void display_mode_filter(){
         if(!Category_mode){
-            if(Viewing_Year)
+            if(ViewingAll)
+                loadChartAll_Amount();
+            if(ViewingYear)
                 loadChartYear_Amount();
-            else
-                loadChartMonth_Amount(selected_year);
+            if(ViewingMonth)
+                loadChartMonth_Amount();
         }
         else{
-            if(Viewing_Year)
-                loadChart_All_Category_Amount();
-            else
-                loadChart_Year_Category_Amount(selected_year);
+            if(ViewingAll)
+                loadChartAll_Category();
+            if(ViewingYear)
+                loadChartYear_Category();
+            if(ViewingMonth)
+                loadChartMonth_Category();
         }
     }
 
     private void findAvailableYear(){
-        SharedPreferences sp=getSharedPreferences("Records",MODE_PRIVATE);
-        Gson gson=new Gson();
-        String json=sp.getString("record_data",null);
-        Type type=new TypeToken<ArrayList<Record>>(){}.getType();
-        records=gson.fromJson(json,type);
 
         ArrayList<Integer> availableYear = new ArrayList<>();
         for (int i=0;i<=records.size()-1;i++) {
@@ -168,7 +249,7 @@ public class FinanceAmountPieChart extends AppCompatActivity implements View.OnC
         availableCategory_distinct = availableCategory.stream().distinct().collect(Collectors.toList());
     }
 
-    private void loadChartYear_Amount() {
+    private void loadChartAll_Amount() {
         ArrayList<YearCal> years;
         years = new ArrayList<>();
         TextView_show_displaying.setText("Viewing Mode: All");
@@ -215,11 +296,11 @@ public class FinanceAmountPieChart extends AppCompatActivity implements View.OnC
             pieChart.setCenterText("Consume");
         else
             pieChart.setCenterText("Revenue");
+        pieChart.animateXY(1000,1000);
         pieChart.invalidate();
-
     }
 
-    private void loadChartMonth_Amount(int selected_year) {
+    private void loadChartYear_Amount() {
         ArrayList<MonthCal> months;
         months = new ArrayList<>();
         TextView_show_displaying.setText("Viewing Mode: "+ Integer.toString(selected_year));
@@ -239,7 +320,6 @@ public class FinanceAmountPieChart extends AppCompatActivity implements View.OnC
 
         ArrayList<PieEntry> amounts = new ArrayList<>();
         for(int i=0;i <= months.size()-1;i++){
-            String[] month = res.getStringArray(R.array.months);
             if(months.get(i).getAmount()!=0){
                 amounts.add(new PieEntry((float)months.get(i).getAmount(),month[months.get(i).getMonth_int()]));
             }
@@ -268,12 +348,60 @@ public class FinanceAmountPieChart extends AppCompatActivity implements View.OnC
             pieChart.setCenterText("Consume");
         else
             pieChart.setCenterText("Revenue");
-        pieChart.animate();
+        pieChart.animateXY(1000,1000);
+        pieChart.invalidate();
+    }
+
+    private void loadChartMonth_Amount() {
+        ArrayList<MonthCal> months;
+        months = new ArrayList<>();
+        TextView_show_displaying.setText("Viewing Mode: "+ Integer.toString(selected_year)+" "+month[selected_month]);
+
+        months.add(new MonthCal(selected_month));
+
+        for (int i = 0; i <= records.size()-1; i++) {
+            if(records.get(i).getMonth_int()==months.get(0).getMonth_int()&&records.get(i).isConsume()==Consume_mode&&records.get(i).getYear_int()==selected_year){
+                months.get(0).addAmount(records.get(i).getAmount());
+                break;
+            }
+        }
+
+        ArrayList<PieEntry> amounts = new ArrayList<>();
+        for(int i=0;i <= months.size()-1;i++){
+            if(months.get(i).getAmount()!=0){
+                amounts.add(new PieEntry((float)months.get(i).getAmount(),month[months.get(i).getMonth_int()]));
+            }
+        }
+        Log.d("B",Integer.toString(amounts.size()));
+        if(amounts.size()==0)
+        {
+            TextView_show_displaying.setText("No data available");
+            pieChart.setVisibility(View.INVISIBLE);
+        }
+        else
+        {
+            pieChart.setVisibility(View.VISIBLE);
+        }
+        PieDataSet pieDataSet = new PieDataSet(amounts,"");
+        pieDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
+        pieDataSet.setValueTextColor(Color.BLACK);
+        pieDataSet.setValueTextSize(16f);
+        pieDataSet.setValueFormatter(formatter);
+
+
+        PieData pieData = new PieData(pieDataSet);
+        pieChart.setData(pieData);
+        pieChart.getDescription().setEnabled(false);
+        if(Consume_mode)
+            pieChart.setCenterText("Consume");
+        else
+            pieChart.setCenterText("Revenue");
+        pieChart.animateXY(1000,1000);
         pieChart.invalidate();
 
     }
 
-    private void loadChart_All_Category_Amount() {
+    private void loadChartAll_Category() {
         ArrayList<CatCal> categories;
         categories = new ArrayList<>();
         TextView_show_displaying.setText("Viewing Mode: All (Category)");
@@ -321,11 +449,11 @@ public class FinanceAmountPieChart extends AppCompatActivity implements View.OnC
             pieChart.setCenterText("Consume");
         else
             pieChart.setCenterText("Revenue");
+        pieChart.animateXY(1000,1000);
         pieChart.invalidate();
     }
 
-    private void loadChart_Year_Category_Amount(int selected_year) {
-        Viewing_Year = true;
+    private void loadChartYear_Category() {
         ArrayList<CatCal> categories;
         categories = new ArrayList<>();
         TextView_show_displaying.setText("Viewing Mode: "+ Integer.toString(selected_year) + " (Category)");
@@ -374,6 +502,60 @@ public class FinanceAmountPieChart extends AppCompatActivity implements View.OnC
             pieChart.setCenterText("Consume");
         else
             pieChart.setCenterText("Revenue");
+        pieChart.animateXY(1000,1000);
+        pieChart.invalidate();
+    }
+
+    private void loadChartMonth_Category() {
+        ArrayList<CatCal> categories;
+        categories = new ArrayList<>();
+        TextView_show_displaying.setText("Viewing Mode: "+ Integer.toString(selected_year) + " " + month[selected_month] + " (Category)");
+
+        for(int i=0;i<=availableCategory_distinct.size()-1;i++)
+        {
+            categories.add(new CatCal(availableCategory_distinct.get(i)));
+        }
+
+        for (int i = 0; i <= records.size()-1; i++) {
+            for(int m=0;m <= categories.size()-1;m++){
+                if(records.get(i).getCategory_type()==categories.get(m).getCategory()&&records.get(i).isConsume()==Consume_mode&&records.get(i).getYear_int()==selected_year&&records.get(i).getMonth_int()==selected_month){
+                    categories.get(m).addAmount(records.get(i).getAmount());
+                    break;
+                }
+            }
+        }
+
+        ArrayList<PieEntry> amounts = new ArrayList<>();
+        for(int i=0;i <= categories.size()-1;i++){
+            if(categories.get(i).getAmount()!=0)
+                amounts.add(new PieEntry((float)categories.get(i).getAmount(),categories.get(i).getCategory_name(this)));
+        }
+        Log.d("D",Integer.toString(amounts.size()));
+        if(amounts.size()==0)
+        {
+            TextView_show_displaying.setText("No data available");
+            pieChart.setVisibility(View.INVISIBLE);
+        }
+        else
+        {
+            pieChart.setVisibility(View.VISIBLE);
+        }
+
+        PieDataSet pieDataSet = new PieDataSet(amounts,"");
+        pieDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
+        pieDataSet.setValueTextColor(Color.BLACK);
+        pieDataSet.setValueTextSize(16f);
+        pieDataSet.setValueFormatter(formatter);
+
+
+        PieData pieData = new PieData(pieDataSet);
+        pieChart.setData(pieData);
+        pieChart.getDescription().setEnabled(false);
+        if(Consume_mode)
+            pieChart.setCenterText("Consume");
+        else
+            pieChart.setCenterText("Revenue");
+        pieChart.animateXY(1000,1000);
         pieChart.invalidate();
     }
 

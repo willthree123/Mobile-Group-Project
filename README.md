@@ -1,12 +1,28 @@
+
 ### 1.6.2 [29/4/2022 5:14]
 
 - implementing interest_calc
 - by The Wok
 
-### 1.5.8 [29/4/2022 00:44]
+### 1.6.0 [29/4/2022 04:04]
 
-- implementing the interest calculator
-- by The Wok
+- Export/ Import SharedPref
+- by Jesse
+
+### 1.5.10 [29/4/2022 01:04]
+
+- Fixed currency page xml
+- by Jesse
+
+### 1.5.9 [29/4/2022 00:25]
+
+- Added Interest page
+- by Jesse
+
+### 1.5.8 [29/4/2022 00:11]
+
+- Finished landing
+- by Jesse
 
 ### 1.5.7 [29/4/2022 00:11]
 
