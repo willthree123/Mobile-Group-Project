@@ -32,6 +32,9 @@
     <!--    Setting    -->
     <color name="setting_white">@color/currency_converter_white</color>
 
+    <!--    Record    -->
+    <color name="record_white">@color/currency_converter_white</color>
+
     <!--    Not Sorted    -->
 
 

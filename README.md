@@ -1,3 +1,9 @@
+### 1.5.3 [28/4/2022 18:36]
+
+- Working on records ui
+- by Jesse
+
+
 ### 1.5.2 [27/4/2022 17:22]
 
 - Finshed animation
