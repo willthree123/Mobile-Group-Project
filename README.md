@@ -1,3 +1,8 @@
+### 1.5.4 [28/4/2022 21:24]
+
+- Working on records finished
+- by Jesse
+
 ### 1.5.3 [28/4/2022 18:36]
 
 - Working on records ui

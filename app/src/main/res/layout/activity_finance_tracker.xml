@@ -31,6 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
                 android:layout_weight="1"
+                android:alpha="0.9"
                 android:background="@drawable/bg_record_consume"
                 android:fontFamily="@font/prompt_bold"
                 android:text="@string/is_consume"
@@ -41,6 +42,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:alpha="0.4"
                 android:background="@drawable/bg_record_rev"
                 android:fontFamily="@font/prompt_bold"
                 android:text="@string/is_revenue"
@@ -51,6 +53,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:orientation="vertical">
 
             <TextView
@@ -66,27 +69,35 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/add_record_currency"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/Currency_HKD"
-                    android:textColor="@color/currency_converter_white" />
+                android:background="@drawable/bg_input_field"
+                android:orientation="horizontal"
+                android:paddingLeft="16dp"
+                android:paddingTop="12dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="12dp">
 
                 <EditText
                     android:id="@+id/add_record_amount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
                     android:layout_weight="1"
-                    android:background="@drawable/bg_input_field"
                     android:backgroundTint="@android:color/transparent"
+                    android:fontFamily="@font/prompt"
                     android:hint="@string/Amount"
-                    android:inputType="textPersonName"
+                    android:inputType="numberDecimal"
+                    android:padding="0dp"
                     android:textColor="@color/currency_converter_white"
-                    android:textColorHint="@color/currency_converter_white" />
+                    android:textColorHint="@color/record_hint"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/add_record_currency"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Currency_HKD"
+                    android:textColor="@color/record_white"
+                    android:textSize="16sp" />
 
             </LinearLayout>
         </LinearLayout>
@@ -94,6 +105,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:orientation="vertical">
 
             <TextView
@@ -108,8 +120,11 @@
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-<!--                android:layout_height="200dp">-->
+
+                android:layout_height="200dp"
+                android:scrollbarThumbHorizontal="@color/record_scrollbar"
+                android:scrollbarThumbVertical="@color/record_scrollbar">
+                <!--                android:layout_height="wrap_content">-->
 
 
                 <LinearLayout
@@ -702,30 +717,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/tv_tool_title4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:fontFamily="@font/prompt"
-                android:text="@string/Description"
-                android:textColor="@color/home_white"
-                android:textSize="14sp" />
-
-            <EditText
-                android:id="@+id/add_record_description"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:textColor="@color/currency_converter_white" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:orientation="vertical">
 
             <TextView
@@ -741,8 +733,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -755,7 +745,10 @@
                     <Button
                         android:id="@+id/add_record_date_today"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_input_field_light"
+                        android:padding="0dp"
+                        android:textColor="@color/record_white" />
 
                     <TextView
                         android:id="@+id/fDisplayText"
@@ -769,6 +762,10 @@
 
                 </LinearLayout>
 
+                <Space
+                    android:layout_width="8dp"
+                    android:layout_height="wrap_content" />
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -779,7 +776,10 @@
                     <Button
                         android:id="@+id/add_record_date_yesterday"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:alpha="0.4"
+                        android:background="@drawable/bg_input_field_light"
+                        android:textColor="@color/record_white" />
 
                     <TextView
                         android:id="@+id/fDisplayText15"
@@ -793,6 +793,10 @@
 
                 </LinearLayout>
 
+                <Space
+                    android:layout_width="8dp"
+                    android:layout_height="wrap_content" />
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -803,9 +807,16 @@
                     <Button
                         android:id="@+id/add_record_date_dby"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:alpha="0.4"
+                        android:background="@drawable/bg_input_field_light"
+                        android:textColor="@color/record_white" />
 
                 </LinearLayout>
+
+                <Space
+                    android:layout_width="8dp"
+                    android:layout_height="wrap_content" />
 
                 <LinearLayout
                     android:layout_width="40dp"
@@ -828,6 +839,52 @@
                 </LinearLayout>
 
             </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_tool_title4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/prompt"
+                android:text="@string/Description"
+                android:textColor="@color/home_white"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_input_field"
+                android:orientation="horizontal"
+                android:paddingLeft="16dp"
+                android:paddingTop="12dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="12dp">
+
+                <EditText
+                    android:id="@+id/add_record_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@android:color/transparent"
+                    android:fontFamily="@font/prompt"
+                    android:hint="@string/Description"
+                    android:inputType="textPersonName"
+                    android:padding="0dp"
+                    android:textColor="@color/currency_converter_white"
+                    android:textColorHint="@color/record_hint"
+                    android:textSize="16sp" />
+
+
+            </LinearLayout>
+
         </LinearLayout>
 
         <Space
