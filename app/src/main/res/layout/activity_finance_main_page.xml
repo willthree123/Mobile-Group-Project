@@ -102,7 +102,7 @@
             </androidx.recyclerview.widget.RecyclerView>
 
             <LinearLayout
-                android:id="@+id/to_finance"
+                android:id="@+id/to_all_records"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="30dp"

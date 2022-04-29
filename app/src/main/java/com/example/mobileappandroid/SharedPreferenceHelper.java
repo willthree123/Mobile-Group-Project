@@ -2,6 +2,7 @@ package com.example.mobileappandroid;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 
 public class SharedPreferenceHelper {
     private final static String PREF_FILE = "PREF";
@@ -18,6 +19,12 @@ public class SharedPreferenceHelper {
             result = "en";
         }
         return result;
+    }
+
+    static Resources getLangResources(Context context) {
+        String lang = SharedPreferenceHelper.getLanguage(context);
+        Context context1 = LocaleHelper.setLocale(context, lang);
+        return context1.getResources();
     }
 
     static void clearRecords(Context context) {

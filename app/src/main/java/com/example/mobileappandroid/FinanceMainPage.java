@@ -29,7 +29,7 @@ public class FinanceMainPage extends AppCompatActivity implements View.OnClickLi
 
 
     Button bt_add_record, home;
-    private LinearLayout bt_to_graph;
+    private LinearLayout bt_to_graph, to_all_records;
     public boolean is_saved;
     private ArrayList<Record> records;
     private Record record;
@@ -56,6 +56,8 @@ public class FinanceMainPage extends AppCompatActivity implements View.OnClickLi
         home = findViewById(R.id.currency_page_go_home);
         bt_add_record = findViewById(R.id.add_record);
         bt_to_graph = findViewById(R.id.to_graph);
+        to_all_records = findViewById(R.id.to_all_records);
+        to_all_records.setOnClickListener(this);
         home.setOnClickListener(this);
         bt_add_record.setOnClickListener(this);
         bt_to_graph.setOnClickListener(this);
@@ -73,17 +75,18 @@ public class FinanceMainPage extends AppCompatActivity implements View.OnClickLi
         records.add(record);
 
         Gson gson = new Gson();
-        String json=gson.toJson(records);
-        SharedPreferenceHelper.setString(this,"Records","record_data",json);
+        String json = gson.toJson(records);
+        SharedPreferenceHelper.setString(this, "Records", "record_data", json);
     }
 
     private void loadData() {
-        SharedPreferences sp=getSharedPreferences("Records",MODE_PRIVATE);
-        Gson gson=new Gson();
-        String json=sp.getString("record_data",null);
-        Type type=new TypeToken<ArrayList<Record>>(){}.getType();
-        if (json==null){
-            records= new ArrayList<>();
+        SharedPreferences sp = getSharedPreferences("Records", MODE_PRIVATE);
+        Gson gson = new Gson();
+        String json = sp.getString("record_data", null);
+        Type type = new TypeToken<ArrayList<Record>>() {
+        }.getType();
+        if (json == null) {
+            records = new ArrayList<>();
 
 
             SharedPreferences.Editor editor = sp.edit();
@@ -116,6 +119,10 @@ public class FinanceMainPage extends AppCompatActivity implements View.OnClickLi
                 break;
             case R.id.currency_page_go_home:
                 intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.to_all_records:
+                intent = new Intent(this, AllRecordsPage.class);
                 startActivity(intent);
                 break;
         }

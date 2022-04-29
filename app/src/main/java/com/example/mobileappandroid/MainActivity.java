@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
@@ -40,10 +41,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         to_setting=findViewById(R.id.btn_setting);
         to_setting.setOnClickListener(this);
 
-        SharedPreferences sp=getSharedPreferences("Records",MODE_PRIVATE);
-        SharedPreferences.Editor editor=sp.edit();
-        editor.clear();
-        editor.commit();
+//        SharedPreferences sp=getSharedPreferences("Records",MODE_PRIVATE);
+//        SharedPreferences.Editor editor=sp.edit();
+//        editor.clear();
+//        editor.commit();
         reloadLang(MainActivity.this);
 
 //         Intent intent = new Intent(this, AllRecordsPage.class);

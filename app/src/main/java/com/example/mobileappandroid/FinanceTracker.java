@@ -72,6 +72,8 @@ public class FinanceTracker extends AppCompatActivity implements View.OnClickLis
             R.drawable.ficon_09, R.drawable.ficon_10,
             R.drawable.ficon_11, R.drawable.ficon_12,
             R.drawable.ficon_13, R.drawable.ficon_14,
+            R.drawable.ficon_15,R.drawable.ficon_16,
+            R.drawable.ficon_06, R.drawable.ficon_14
     };
     private int categoryPicked;
 
@@ -171,7 +173,8 @@ public class FinanceTracker extends AppCompatActivity implements View.OnClickLis
         btn_fAdd2.setOnClickListener(this);
         btn_fAdd3.setOnClickListener(this);
         btn_fAdd4.setOnClickListener(this);
-
+        Button currency_page_go_home = findViewById(R.id.currency_page_go_home);
+        currency_page_go_home.setOnClickListener(this);
 
         listener = new DatePickerDialog.OnDateSetListener() {
             @Override
@@ -248,6 +251,12 @@ public class FinanceTracker extends AppCompatActivity implements View.OnClickLis
 
 //                bt_dby.setText(dateFormat.format(calendar_temp.getTime()));
                 break;
+            case R.id.currency_page_go_home:
+                Intent intent = new Intent(this, FinanceMainPage.class);
+                intent.putExtra("is_saved", false);
+                startActivity(intent);
+                break;
+
             case R.id.btn_fNeg1:
 
             case R.id.btn_fNeg2:
@@ -415,12 +424,13 @@ public class FinanceTracker extends AppCompatActivity implements View.OnClickLis
         Button revenue_button = findViewById(R.id.revenue_button);
         EditText add_record_amount = findViewById(R.id.add_record_amount);
         EditText add_record_description = findViewById(R.id.add_record_description);
+        Button btn = findViewById(R.id.add_record_button);
 
         //get string
         consume_button.setText(resources.getString(R.string.is_consume));
         revenue_button.setText(resources.getString(R.string.is_revenue));
         add_record_amount.setHint(resources.getString(R.string.Amount));
-        add_record_description.setText(resources.getString(R.string.Description));
+        add_record_description.setHint(resources.getString(R.string.Description));
         add_record_currency.setText(resources.getString(R.string.Currency_HKD));
         fDisplayText15.setText(resources.getString(R.string.fYesterday));
         fDisplayText.setText(resources.getString(R.string.fToday));
@@ -433,7 +443,7 @@ public class FinanceTracker extends AppCompatActivity implements View.OnClickLis
 
         TextView fDisplayText1 = findViewById(R.id.fDisplayText1);
         TextView fDisplayText2 = findViewById(R.id.fDisplayText2);
-        TextView fDisplayText3  = findViewById(R.id.fDisplayText3);
+        TextView fDisplayText3 = findViewById(R.id.fDisplayText3);
         TextView fDisplayText4 = findViewById(R.id.fDisplayText4);
         TextView fDisplayText5 = findViewById(R.id.fDisplayText5);
         TextView fDisplayText6 = findViewById(R.id.fDisplayText6);
@@ -468,15 +478,16 @@ public class FinanceTracker extends AppCompatActivity implements View.OnClickLis
         fDisplayAddText2.setText(resources.getString(R.string.fAdd2));
         fDisplayAddText3.setText(resources.getString(R.string.fAdd3));
         fDisplayAddText4.setText(resources.getString(R.string.fAdd4));
+        btn.setText(resources.getString(R.string.add_button));
 
 
         return;
     }
 
-    public void get_data_from_interest_calc(){
-        String interest_calc_amount = SharedPreferenceHelper.getString(this,"Interest_calc_to_add_records","Amount");
-        String interest_calc_description = SharedPreferenceHelper.getString(this, "Interest_calc_to_add_records","Description");
-        if ((!(interest_calc_amount.matches("")))&&(!(interest_calc_description.matches("")))){
+    public void get_data_from_interest_calc() {
+        String interest_calc_amount = SharedPreferenceHelper.getString(this, "Interest_calc_to_add_records", "Amount");
+        String interest_calc_description = SharedPreferenceHelper.getString(this, "Interest_calc_to_add_records", "Description");
+        if ((!(interest_calc_amount.matches(""))) && (!(interest_calc_description.matches("")))) {
             amount.setText(interest_calc_amount);
             description.setText(interest_calc_description);
             categoryPicked = Arrays.asList(btn_id_array).indexOf(R.id.btn_fAdd1);
@@ -491,7 +502,7 @@ public class FinanceTracker extends AppCompatActivity implements View.OnClickLis
             btn.setAlpha(1);
             consume = false;
             showCat(consume);
-            SharedPreferenceHelper.clearData(this,"Interest_calc_to_add_records");
+            SharedPreferenceHelper.clearData(this, "Interest_calc_to_add_records");
         }
     }
 
