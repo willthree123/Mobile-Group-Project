@@ -176,9 +176,9 @@
 
             <ImageView
                 android:id="@+id/imageView7"
-                android:layout_width="81dp"
-                android:layout_height="43dp"
-                android:alpha="0.7"
+                android:layout_width="fill_parent"
+                android:layout_height="20dp"
+                android:alpha="0.65"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:srcCompat="@drawable/bg_white" />
