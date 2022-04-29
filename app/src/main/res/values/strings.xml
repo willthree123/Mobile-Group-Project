@@ -114,8 +114,8 @@
     <string name="currency_converter_title">Currency Converter</string>
     <string name="currency_converter_hint">Please enter $</string>
     <string name="currency_converter_convert_button">Default currency</string>
-    <string name="AC">AC</string>
-    <string name="Back">Back</string>
+    <string name="AC" translatable="false">AC</string>
+    <string name="Back" translatable="false">DEL</string>
     <string name="add2Record">Add this to record</string>
 
 
