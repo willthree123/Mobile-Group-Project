@@ -56,12 +56,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         loadData();
         loadChart();
 
-
-//        SharedPreferences sp=getSharedPreferences("Records",MODE_PRIVATE);
-//        SharedPreferences.Editor editor=sp.edit();
-//        editor.clear();
-//        editor.commit();
-
         reloadLang(MainActivity.this);
 
 
@@ -157,6 +151,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onResume() {
         super.onResume();
         reloadLang(MainActivity.this);
+        loadData();
         loadChart();
     }
 
