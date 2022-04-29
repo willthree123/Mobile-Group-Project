@@ -61,8 +61,8 @@
     <string name="interestCalc">"利息計算機"</string>
     <string name="Charts">"圖表"</string>
     <string name="recentRecords">"最近紀錄"</string>
-    <string name="is_consume">"收入"</string>
-    <string name="is_revenue">"支出"</string>
+    <string name="is_consume">"支出"</string>
+    <string name="is_revenue">"收入"</string>
     <string name="save_button">"儲存"</string>
     <string name="add_button">"添加"</string>
     <string name="Amount">"金額"</string>
