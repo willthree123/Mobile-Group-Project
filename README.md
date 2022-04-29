@@ -1,14 +1,37 @@
 
+
+### 1.8.3 [29/4/2022 15:54]
+
+- Debug currency_converter
+- by The Wok
+
+### 1.8.3 [29/4/2022 15:54]
+
+- Transalte things in finance detail
+- all string in xml added chinese
+- by The Wok
+
+### 1.8.2 [29/4/2022 14:19]
+
+- Fixed edit record amount and keyboard
+- by Alvin
+
+
+### 1.8.2 [29/4/2022 14:01]
+
+- Added (ThisMonth) PieChart to main (translation & formatting required)
+- by Alvin
+
+### 1.8.1 [29/4/2022 13:18]
+
+- Fixed Chinese String of Consume & Revenue swapped
+- Finished View all records
+- by Alvin
+
 ### 1.8.0 [29/4/2022 10:33]
 
 - Finished most UI and lang change
 - by Jesse
-
-### 1.6.2 [29/4/2022 5:14]
-
-- implementing interest_calc
-- Interest calculator supports Chinese
-- by The Wok
 
 ### 1.7.3 [29/4/2022 05:50]
 
@@ -23,6 +46,7 @@
 ### 1.6.2 [29/4/2022 5:14]
 
 - implementing interest_calc
+- Interest calculator supports Chinese
 - by The Wok
 
 ### 1.6.0 [29/4/2022 04:04]

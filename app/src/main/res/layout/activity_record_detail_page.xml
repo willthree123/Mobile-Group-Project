@@ -83,7 +83,7 @@
                         android:backgroundTint="@android:color/transparent"
                         android:editable="false"
                         android:ems="10"
-                        android:inputType="textPersonName"
+                        android:inputType="numberDecimal"
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp"
                         android:text="Name"

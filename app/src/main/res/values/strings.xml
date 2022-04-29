@@ -54,6 +54,7 @@
         <item>@string/m11</item>
         <item>@string/m12</item>
     </string-array>
+
     <string name="fNeg1">Transport</string>
     <string name="fNeg2">Health</string>
     <string name="fNeg3">Necessities</string>
@@ -113,8 +114,8 @@
     <string name="currency_converter_title">Currency Converter</string>
     <string name="currency_converter_hint">Please enter $</string>
     <string name="currency_converter_convert_button">Default currency</string>
-    <string name="AC">AC</string>
-    <string name="Back">Back</string>
+    <string name="AC" translatable="false">AC</string>
+    <string name="Back" translatable="false">DEL</string>
     <string name="add2Record">Add this to record</string>
 
 
@@ -167,6 +168,7 @@
     <string name="Edit">Edit</string>
     <string name="Save">Save</string>
 
+    <string name="interestCalc">interestCalc</string>
     <!--    Chart    -->
 <string name="All_Chart">All Charts</string>
     <string name="ConsumeNRev">Consume/ Revenue</string>
@@ -175,6 +177,16 @@
     <string name="ViewingMode">Viewing Mode: </string>
     <string name="ViewingAll">Viewing Mode: All</string>
     <string name="NoData">No data available</string>
+
+
+    <!--    Record_detail    -->
+    <string name="record_detail_title">Details</string>
+    <string name="record_detail_amount">Amount</string>
+    <string name="record_detail_description">Description</string>
+    <string name="record_detail_date">Date</string>
+    <string name="record_detail_save">Save</string>
+    <string name="record_detail_edit">Edit</string>
+
     <!--    Not Sorted    -->
 
 </resources>

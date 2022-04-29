@@ -55,17 +55,21 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
 
     int check_if_too_quick = -1;
 
-    String[] currency_choose ={
-            "AED","AFN","ALL","AMD","ANG","AOA","ARS","AUD","AWG","AZN","BAM","BBD","BDT","BGN","BHD","BIF","BMD","BND","BOB","BRL",
-            "BSD","BTC","BTN","BWP","BYN","BYR","CAD","CDF","CHF","CLF","CLP","CNY","COP","CRC","CUC","CUP","CVE","CZK","DJF","DKK",
-            "DOP","DZD","EGP","ERN","ETB","EUR","FJD","FKP","GBP","GEL","GGP","GHS","GIP","GMD","GNF","GTQ","GYD","HKD","HNL","HRK",
-            "HTG","HUF","IDR","ILS","IMP","INR","IQD","IRR","ISK","JEP","JMD","JOD","JPY","KES","KGS","KHR","KMF","KPW","KRW","KWD",
-            "KYD","KZT","LAK","LBP","LKR","LRD","LSL","LTL","LVL","LYD","MAD","MDL","MGA","MKD","MMK","MNT","MOP","MRO","MUR","MVR",
-            "MWK","MXN","MYR","MZN","NAD","NGN","NIO","NOK","NPR","NZD","OMR","PAB","PEN","PGK","PHP","PKR","PLN","PYG","QAR","RON",
-            "RSD","RUB","RWF","SAR","SBD","SCR","SDG","SEK","SGD","SHP","SLL","SOS","SRD","STD","SVC","SYP","SZL","THB","TJS","TMT",
-            "TND","TOP","TRY","TTD","TWD","TZS","UAH","UGX","USD","UYU","UZS","VEF","VND","VUV","WST","XAF","XAG","XAU","XCD","XDR",
-            "XOF","XPF","YER","ZAR","ZMK","ZMW","ZWL"
-    };
+    String[] currency_choose;
+
+    {
+        currency_choose = new String[]{
+                "AED", "AFN", "ALL", "AMD", "ANG", "AOA", "ARS", "AUD", "AWG", "AZN", "BAM", "BBD", "BDT", "BGN", "BHD", "BIF", "BMD", "BND", "BOB", "BRL",
+                "BSD", "BTC", "BTN", "BWP", "BYN", "BYR", "CAD", "CDF", "CHF", "CLF", "CLP", "CNY", "COP", "CRC", "CUC", "CUP", "CVE", "CZK", "DJF", "DKK",
+                "DOP", "DZD", "EGP", "ERN", "ETB", "EUR", "FJD", "FKP", "GBP", "GEL", "GGP", "GHS", "GIP", "GMD", "GNF", "GTQ", "GYD", "HKD", "HNL", "HRK",
+                "HTG", "HUF", "IDR", "ILS", "IMP", "INR", "IQD", "IRR", "ISK", "JEP", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRW", "KWD",
+                "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LVL", "LYD", "MAD", "MDL", "MGA", "MKD", "MMK", "MNT", "MOP", "MRO", "MUR", "MVR",
+                "MWK", "MXN", "MYR", "MZN", "NAD", "NGN", "NIO", "NOK", "NPR", "NZD", "OMR", "PAB", "PEN", "PGK", "PHP", "PKR", "PLN", "PYG", "QAR", "RON",
+                "RSD", "RUB", "RWF", "SAR", "SBD", "SCR", "SDG", "SEK", "SGD", "SHP", "SLL", "SOS", "SRD", "STD", "SVC", "SYP", "SZL", "THB", "TJS", "TMT",
+                "TND", "TOP", "TRY", "TTD", "TWD", "TZS", "UAH", "UGX", "USD", "UYU", "UZS", "VEF", "VND", "VUV", "WST", "XAF", "XAG", "XAU", "XCD", "XDR",
+                "XOF", "XPF", "YER", "ZAR", "ZMK", "ZMW", "ZWL"
+        };
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,7 +82,7 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
         ed2 = findViewById(R.id.show_amount);
         sp1 = findViewById(R.id.choose_currency_top);
         sp2 = findViewById(R.id.choose_currency_bottom);
-        convert = findViewById(R.id.convert);
+        convert = findViewById(R.id.change_to_default_currency);
         swap = findViewById(R.id.swap);
         home = findViewById(R.id.currency_page_go_home);
         api_working_hint = findViewById(R.id.show_api_is_ok);
@@ -101,7 +105,9 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
 
         //set API link
         queue = Volley.newRequestQueue(currency_converter.this);
-        url = "http://data.fixer.io/api/latest?access_key=1e3517690351e96f8fa21aab98c5047e&format=1";
+        url = "http://api.exchangeratesapi.io/v1/latest?access_key=915717ef247cbb56cec01237dfa2cf4e&format=1";
+
+
 
 
         //set 2 spinners item
@@ -110,9 +116,11 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
             public void onResponse(JSONObject response) {
                 try {
                     setup_virtual_keyboard();
+                    home.setOnClickListener(currency_converter.this);
+                    Log.d("bitch", currency_choose[0]);
                     currency = response.getJSONObject("rates");
-                    ArrayAdapter ad = new ArrayAdapter<String>(currency_converter.this, R.layout.currency_converter_spinner, currency_choose);
-                    //        com.google.android.material.R.layout.support_simple_spinner_dropdown_item
+                    ArrayAdapter ad = new ArrayAdapter<String>(currency_converter.this, R.layout.currency_converter_spinner,currency_choose);
+//                            com.google.android.material.R.layout.support_simple_spinner_dropdown_item
                     ad.setDropDownViewResource(R.layout.currency_converter_dropdown);
                     sp1.setAdapter(ad);
                     sp1.setSelection(148); // set default USD
@@ -256,7 +264,7 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
                 Intent intent = new Intent(currency_converter.this, MainActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.convert:
+            case R.id.change_to_default_currency:
                 sp1.setSelection(148);
                 sp2.setSelection(57);
                 change_currency();
@@ -287,7 +295,6 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
 
         currency_top = sp1.getSelectedItem().toString();
         currency_bottom = sp2.getSelectedItem().toString();
-
 
         try {
             selected_currency_top_values_string =currency.getString(currency_top);
@@ -386,9 +393,9 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
 
         //Edit below
         //get element id
-        TextView title = findViewById(R.id.title);
+        TextView title = findViewById(R.id.currency_converter_title);
         EditText hint = findViewById(R.id.enter_amount_top);
-        Button convert = findViewById(R.id.convert);
+        Button convert = findViewById(R.id.change_to_default_currency);
         Button ac=findViewById(R.id.button_ac);
         Button back=findViewById(R.id.button_back);
         TextView b = findViewById(R.id.add_interest_to_record);
@@ -432,6 +439,7 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
             Toast.makeText(currency_converter.this, "The API is not working", Toast.LENGTH_SHORT).show();
         }
     }
+
 
 
 }

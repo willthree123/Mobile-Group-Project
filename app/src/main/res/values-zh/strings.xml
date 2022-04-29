@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">MobileAppAndroid</string>
     <string name="display_text">你的語言已經轉換成中文</string>
-    <string name="currency_converter_title">貨幣轉換神器</string>
+    <string name="currency_converter_title">貨幣轉換器</string>
     <string name="currency_converter_hint">輸入數目</string>
     <string name="currency_converter_convert_button">預設貨幣</string>
     <string-array name ="financeNegCat">
@@ -61,8 +61,8 @@
     <string name="interestCalc">"利息計算機"</string>
     <string name="Charts">"圖表"</string>
     <string name="recentRecords">"最近紀錄"</string>
-    <string name="is_consume">"收入"</string>
-    <string name="is_revenue">"支出"</string>
+    <string name="is_consume">"支出"</string>
+    <string name="is_revenue">"收入"</string>
     <string name="save_button">"儲存"</string>
     <string name="add_button">"添加"</string>
     <string name="Amount">"金額"</string>
@@ -77,8 +77,6 @@
     <string name="Dateq">"日期:"</string>
     <string name="HKDq">"港幣:"</string>
     <string name="view">"查看"</string>
-    <string name="AC">"清除"</string>
-    <string name="Back">"消除"</string>
     <string name="add2Record">"添加這個紀錄"</string>
     <string name="Tracking">資金追蹤</string>
     <string name="btn_clear_tracking">"清除所有追蹤紀錄"</string>
@@ -123,6 +121,25 @@
     <string name="interest_calculator_year">年數</string>
     <string name="interest_calculator_add_records_no_starting">加當前利息到紀錄中</string>
     <string name="interest_calculator_add_records_with_starting">加當前利息到紀錄中(連本金)</string>
+    <string name="deleteRecods">刪除所有紀錄</string>
+    <string name="DELETE">刪除該紀錄</string>
+    <string name="deleteQuestion">你是否要刪除該紀錄？</string>
+    <string name="Details">詳情</string>
+    <string name="Edit">編輯</string>
+    <string name="Save">儲存</string>
+    <string name="All_Chart">全部圖表</string>
+    <string name="ConsumeNRev">支出/收入</string>
+    <string name="CatAll">類別/全部</string>
+    <string name="ViewAll">查看全部</string>
+    <string name="ViewingMode">查看模式:</string>
+    <string name="ViewingAll">查看模式:全部</string>
+    <string name="NoData">沒有相關數據</string>
+    <string name="record_detail_title">查看</string>
+    <string name="record_detail_amount">金額</string>
+    <string name="record_detail_description">簡介</string>
+    <string name="record_detail_date">日期</string>
+    <string name="record_detail_save">儲存</string>
+    <string name="record_detail_edit">編輯</string>
 
 
 </resources>
