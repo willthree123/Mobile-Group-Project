@@ -313,7 +313,7 @@ public class FinanceAmountPieChart extends AppCompatActivity implements View.OnC
             if (years.get(i).getAmount() != 0)
                 amounts.add(new PieEntry((float) years.get(i).getAmount(), years.get(i).getYear()));
         }
-        Log.d("A", Integer.toString(amounts.size()));
+
         if (amounts.size() == 0) {
             TextView_show_displaying.setText(resources.getString(R.string.NoData));
             pieChart.setVisibility(View.INVISIBLE);
@@ -363,7 +363,7 @@ public class FinanceAmountPieChart extends AppCompatActivity implements View.OnC
                 amounts.add(new PieEntry((float) months.get(i).getAmount(), month[months.get(i).getMonth_int()]));
             }
         }
-//        Log.d("B", Integer.toString(amounts.size()));
+
         if (amounts.size() == 0) {
             TextView_show_displaying.setText(resources.getString(R.string.NoData));
             pieChart.setVisibility(View.INVISIBLE);
@@ -408,7 +408,7 @@ public class FinanceAmountPieChart extends AppCompatActivity implements View.OnC
                 amounts.add(new PieEntry((float) months.get(i).getAmount(), month[months.get(i).getMonth_int()]));
             }
         }
-        Log.d("B", Integer.toString(amounts.size()));
+
         if (amounts.size() == 0) {
             TextView_show_displaying.setText(resources.getString(R.string.NoData));
             pieChart.setVisibility(View.INVISIBLE);
@@ -456,7 +456,7 @@ public class FinanceAmountPieChart extends AppCompatActivity implements View.OnC
             if (categories.get(i).getAmount() != 0)
                 amounts.add(new PieEntry((float) categories.get(i).getAmount(), categories.get(i).getCategory_name(this)));
         }
-        Log.d("C", Integer.toString(amounts.size()));
+
         if (amounts.size() == 0) {
             TextView_show_displaying.setText(resources.getString(R.string.NoData));
             pieChart.setVisibility(View.INVISIBLE);
@@ -505,7 +505,7 @@ public class FinanceAmountPieChart extends AppCompatActivity implements View.OnC
             if (categories.get(i).getAmount() != 0)
                 amounts.add(new PieEntry((float) categories.get(i).getAmount(), categories.get(i).getCategory_name(this)));
         }
-        Log.d("D", Integer.toString(amounts.size()));
+
         if (amounts.size() == 0) {
             TextView_show_displaying.setText(resources.getString(R.string.NoData));
             pieChart.setVisibility(View.INVISIBLE);
@@ -554,7 +554,7 @@ public class FinanceAmountPieChart extends AppCompatActivity implements View.OnC
             if (categories.get(i).getAmount() != 0)
                 amounts.add(new PieEntry((float) categories.get(i).getAmount(), categories.get(i).getCategory_name(this)));
         }
-        Log.d("D", Integer.toString(amounts.size()));
+
         if (amounts.size() == 0) {
             TextView_show_displaying.setText(resources.getString(R.string.NoData));
             pieChart.setVisibility(View.INVISIBLE);

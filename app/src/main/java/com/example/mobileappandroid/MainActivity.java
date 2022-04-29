@@ -102,12 +102,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Calendar cal = Calendar.getInstance();
         int year = cal.get(Calendar.YEAR);
         int month = cal.get(Calendar.MONTH);
-        Log.d("Size",Integer.toString(records.size()));
+
+
         for (int i=0;i<records.size();i++)
         {
             for(int m=0;m<categories.size();m++)
             {
-                Log.d("i",Integer.toString(i));
+
                 if(records.get(i).getYear_int()==year&&records.get(i).getMonth_int()==month&&records.get(i).getCategory_type()==categories.get(m).getCategory()&&records.get(i).isConsume()==true)
                 {
                     categories.get(m).addAmount(records.get(i).getAmount());

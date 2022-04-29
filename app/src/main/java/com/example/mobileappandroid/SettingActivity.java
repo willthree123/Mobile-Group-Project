@@ -67,7 +67,6 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
         radiobtn_chin = findViewById(R.id.radio_chin);
         radiobtn_jp = findViewById(R.id.radio_jp);
 
-//        Log.d("cry", SharedPreferenceHelper.getLanguage(SettingActivity.this));
         String a = SharedPreferenceHelper.getLanguage(SettingActivity.this).toString();
 
         if (a.matches("en")) {
@@ -234,7 +233,7 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
 
                 // Gets the clipboard as text.
                 pasteData = item.getText().toString();
-//                Log.d("cry",pasteData.substring(3, 15));
+
                 if (pasteData.length() > 20 && pasteData.substring(3, 16).equals("Category_type")) {
                     linearLayout = findViewById(R.id.export_layout);
                     linearLayout.setVisibility(View.GONE);

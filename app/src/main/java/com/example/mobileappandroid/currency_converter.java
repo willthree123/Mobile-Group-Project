@@ -117,7 +117,7 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
                 try {
                     setup_virtual_keyboard();
                     home.setOnClickListener(currency_converter.this);
-                    Log.d("bitch", currency_choose[0]);
+
                     currency = response.getJSONObject("rates");
                     ArrayAdapter ad = new ArrayAdapter<String>(currency_converter.this, R.layout.currency_converter_spinner,currency_choose);
 //                            com.google.android.material.R.layout.support_simple_spinner_dropdown_item
@@ -205,7 +205,7 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
     public void onClick(View view) {
         switch(view.getId()){
             case R.id.button_0:
-                Log.d("pressed", "onClick: 0");
+
                 add_the_pressed_button_and_update("0");
                 break;
             case R.id.button_1:

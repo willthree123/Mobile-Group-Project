@@ -163,11 +163,7 @@ Context context;
     }
 
     private void searchRecord_distributor() {
-        Log.d("ViewingByCategory", Boolean.toString(ViewingByCategory));
-        Log.d("ViewingByYear", Boolean.toString(ViewingByYear));
-        Log.d("ViewingByAll", Boolean.toString(ViewingByAll));
-        Log.d("ViewingByMonth", Boolean.toString(ViewingByMonth));
-        Log.d("---------------", "");
+
         if (ViewingByCategory) {
             if (ViewingByYear&&!ViewingByMonth)
                 SearchRecordYear_Category();
@@ -199,12 +195,12 @@ Context context;
         switch (view.getId()) {
             case R.id.AllRecordsPage_ViewByCategory:
                 ViewingByCategory=!ViewingByCategory;
-                Log.d("A","AllRecordsPage_ViewByCategory");
+
                 searchRecord_distributor();
                 resetAlpha();
                 break;
             case R.id.AllRecordsPage_ViewYear:
-                Log.d("B","AllRecordsPage_ViewYear");
+
                 ViewingByYear = !ViewingByYear;
                 ViewingByMonth = false;
                 ViewingByAll = false;
@@ -212,7 +208,7 @@ Context context;
                 resetAlpha();
                 break;
             case R.id.AllRecordsPage_ViewMonth:
-                Log.d("C","AllRecordsPage_ViewMonth");
+
                 ViewingByYear = true;
                 ViewingByMonth = !ViewingByMonth;
                 ViewingByAll = false;
