@@ -56,7 +56,7 @@
     <string name="welcome_slo">"你的理財助手"</string>
     <string name="Financial_Tracking">"資金追蹤"</string>
     <string name="plusadd_button">"+ 添加"</string>
-    <string name="thisMonth">"(這個月)"</string>
+    <string name="thisMonth">"(本月支出)"</string>
     <string name="viewDetail">"查看更多"</string>
     <string name="interestCalc">"利息計算機"</string>
     <string name="Charts">"圖表"</string>
@@ -116,7 +116,7 @@
     <string name="allRecord">所有記錄</string>
 
     <string name="interest_calculator_title">利息計算機</string>
-    <string name="interest_calculator_interest">利息</string>
+    <string name="interest_calculator_interest">年利率(%)</string>
     <string name="interest_calculator_starting">本金</string>
     <string name="interest_calculator_year">年數</string>
     <string name="interest_calculator_add_records_no_starting">加當前利息到紀錄中</string>
@@ -140,6 +140,10 @@
     <string name="record_detail_date">日期</string>
     <string name="record_detail_save">儲存</string>
     <string name="record_detail_edit">編輯</string>
+    <string name="Interest">利息</string>
+    <string name="InterestwithStarting">利息連本金</string>
+    <string name="SimInterest">"單利息 "</string>
+    <string name="ComInterest">複利息</string>
 
 
 </resources>

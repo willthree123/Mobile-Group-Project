@@ -7,259 +7,262 @@
     android:background="@drawable/bg_currency_converter"
     tools:context=".SettingActivity">
 
-  <LinearLayout
+  <ScrollView
       android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:orientation="vertical"
-      android:paddingLeft="20dp"
-      android:paddingTop="18dp"
-      android:paddingRight="20dp"
-      tools:layout_editor_absoluteX="1dp"
-      tools:layout_editor_absoluteY="1dp">
+      android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingTop="18dp"
+        android:paddingRight="20dp">
 
-      <TextView
-          android:id="@+id/setting_screen_titile"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:fontFamily="@font/prompt_bold"
-          android:text="@string/setting_titile"
-          android:textColor="@color/currency_converter_white"
-          android:textSize="26sp" />
-
-      <Space
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_weight="1" />
-
-      <Button
-          android:id="@+id/currency_page_go_home"
-          android:layout_width="50dp"
-          android:layout_height="50dp"
-          android:background="@drawable/currency_converter_home_button" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"
-        android:orientation="vertical">
-
-      <TextView
-          android:id="@+id/tv_lang_title"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_marginBottom="8dp"
-          android:fontFamily="@font/prompt"
-          android:text="@string/Language"
-          android:textColor="@color/home_white"
-          android:textSize="18sp" />
-
-      <RadioGroup
-          android:id="@+id/radio_group_lan"
+      <LinearLayout
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
+          android:layout_marginBottom="30dp"
           android:orientation="horizontal">
 
-        <RadioButton
-            android:id="@+id/radio_eng"
+        <TextView
+            android:id="@+id/setting_screen_titile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:buttonTint="#555555"
-            android:checked="false"
-            android:fontFamily="@font/prompt"
-            android:text="@string/lan_1"
-            android:textColor="@color/setting_white" />
+            android:fontFamily="@font/prompt_bold"
+            android:text="@string/setting_titile"
+            android:textColor="@color/currency_converter_white"
+            android:textSize="26sp" />
 
         <Space
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
-        <RadioButton
-            android:id="@+id/radio_chin"
+        <Button
+            android:id="@+id/currency_page_go_home"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/currency_converter_home_button" />
+
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="25dp"
+          android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_lang_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:buttonTint="#555555"
+            android:layout_marginBottom="8dp"
             android:fontFamily="@font/prompt"
-            android:text="@string/lan_2"
-            android:textColor="@color/setting_white" />
+            android:text="@string/Language"
+            android:textColor="@color/home_white"
+            android:textSize="18sp" />
 
-        <Space
-            android:layout_width="wrap_content"
+        <RadioGroup
+            android:id="@+id/radio_group_lan"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:orientation="horizontal">
 
-        <RadioButton
-            android:id="@+id/radio_jp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:buttonTint="#555555"
-            android:fontFamily="@font/prompt"
-            android:text="@string/lan_3"
-            android:textColor="@color/setting_white"
-            android:visibility="gone" />
-      </RadioGroup>
-    </LinearLayout>
+          <RadioButton
+              android:id="@+id/radio_eng"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:buttonTint="#555555"
+              android:checked="false"
+              android:fontFamily="@font/prompt"
+              android:text="@string/lan_1"
+              android:textColor="@color/setting_white" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"
-        android:orientation="vertical">
+          <Space
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_weight="1" />
+
+          <RadioButton
+              android:id="@+id/radio_chin"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:buttonTint="#555555"
+              android:fontFamily="@font/prompt"
+              android:text="@string/lan_2"
+              android:textColor="@color/setting_white" />
+
+          <Space
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_weight="1" />
+
+          <RadioButton
+              android:id="@+id/radio_jp"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:buttonTint="#555555"
+              android:fontFamily="@font/prompt"
+              android:text="@string/lan_3"
+              android:textColor="@color/setting_white"
+              android:visibility="gone" />
+        </RadioGroup>
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="25dp"
+          android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="30dp"
+            android:orientation="vertical">
+
+          <TextView
+              android:id="@+id/tv_export_title"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginBottom="8dp"
+              android:fontFamily="@font/prompt"
+              android:text="@string/export"
+              android:textColor="@color/home_white"
+              android:textSize="18sp" />
+
+          <TextView
+              android:id="@+id/textView6"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:fontFamily="@font/prompt"
+              android:text="@string/loadDes"
+              android:textColor="@color/currency_hint" />
+
+          <TextView
+              android:id="@+id/textView4"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginBottom="8dp"
+              android:fontFamily="@font/prompt"
+              android:text="@string/backupDes"
+              android:textColor="@color/currency_hint" />
+
+          <LinearLayout
+              android:id="@+id/export_layout"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#353535"
+              android:orientation="vertical"
+              android:visibility="gone">
+
+            <EditText
+                android:id="@+id/exportjson_editText"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:backgroundTint="@android:color/transparent"
+                android:ems="10"
+                android:inputType="none"
+                android:text="Exported Json here"
+                android:textColor="@color/currency_hint"
+                android:textIsSelectable="true"
+                android:textSize="12sp" />
+
+
+          </LinearLayout>
+
+          <Button
+              android:id="@+id/btn_export"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginBottom="10dp"
+              android:background="@drawable/bg_stork_button_long"
+              android:fontFamily="@font/prompt_bold"
+              android:paddingTop="8dp"
+              android:paddingBottom="8dp"
+              android:text="@string/btn_export"
+              android:textColor="@color/currency_converter_white"
+              android:textSize="15sp" />
+
+          <LinearLayout
+              android:id="@+id/load_layout"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#353535"
+              android:orientation="vertical"
+              android:visibility="gone">
+
+            <EditText
+                android:id="@+id/loadjson_editText"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:backgroundTint="@android:color/transparent"
+                android:ems="10"
+                android:inputType="none"
+                android:text="Paste Json here"
+                android:textColor="@color/currency_hint"
+                android:textIsSelectable="true"
+                android:textSize="12sp" />
+
+          </LinearLayout>
+
+          <Button
+              android:id="@+id/btn_load"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@drawable/bg_stork_button_long"
+              android:fontFamily="@font/prompt_bold"
+              android:paddingTop="8dp"
+              android:paddingBottom="8dp"
+              android:text="@string/btn_load"
+              android:textColor="@color/currency_converter_white"
+              android:textSize="15sp" />
+
+          <TextView
+              android:id="@+id/textView7"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:fontFamily="@font/prompt"
+              android:text="@string/warning"
+              android:textColor="#FF1313" />
+
+        </LinearLayout>
+
+      </LinearLayout>
 
       <LinearLayout
           android:layout_width="match_parent"
           android:layout_height="match_parent"
-          android:layout_marginBottom="30dp"
+          android:layout_marginBottom="25dp"
+          android:gravity="bottom"
           android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tv_export_title"
+            android:id="@+id/tv_tracking_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:fontFamily="@font/prompt"
-            android:text="@string/export"
+            android:text="@string/Language"
             android:textColor="@color/home_white"
             android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/prompt"
-            android:text="@string/loadDes"
-            android:textColor="@color/currency_hint" />
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:fontFamily="@font/prompt"
-            android:text="@string/backupDes"
-            android:textColor="@color/currency_hint" />
-
-        <LinearLayout
-            android:id="@+id/export_layout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#353535"
-            android:orientation="vertical"
-            android:visibility="gone">
-
-          <EditText
-              android:id="@+id/exportjson_editText"
-              android:layout_width="match_parent"
-              android:layout_height="150dp"
-              android:backgroundTint="@android:color/transparent"
-              android:ems="10"
-              android:inputType="none"
-              android:text="Exported Json here"
-              android:textColor="@color/currency_hint"
-              android:textIsSelectable="true"
-              android:textSize="12sp" />
-
-
-        </LinearLayout>
-
         <Button
-            android:id="@+id/btn_export"
+            android:id="@+id/btn_clear_all_records"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/bg_stork_button_long"
+            android:background="@drawable/bg_red_stork_button"
             android:fontFamily="@font/prompt_bold"
             android:paddingTop="8dp"
             android:paddingBottom="8dp"
-            android:text="@string/btn_export"
-            android:textColor="@color/currency_converter_white"
+            android:text="@string/btn_clear_tracking"
+            android:textColor="#FF1313"
             android:textSize="15sp" />
-
-        <LinearLayout
-            android:id="@+id/load_layout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#353535"
-            android:orientation="vertical"
-            android:visibility="gone">
-
-          <EditText
-              android:id="@+id/loadjson_editText"
-              android:layout_width="match_parent"
-              android:layout_height="150dp"
-              android:backgroundTint="@android:color/transparent"
-              android:ems="10"
-              android:inputType="none"
-              android:text="Paste Json here"
-              android:textColor="@color/currency_hint"
-              android:textIsSelectable="true"
-              android:textSize="12sp" />
-
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/btn_load"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_stork_button_long"
-            android:fontFamily="@font/prompt_bold"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            android:text="@string/btn_load"
-            android:textColor="@color/currency_converter_white"
-            android:textSize="15sp" />
-
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/prompt"
-            android:text="@string/warning"
-            android:textColor="#FF1313" />
 
       </LinearLayout>
 
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="25dp"
-        android:gravity="bottom"
-        android:orientation="vertical">
-
-      <TextView
-          android:id="@+id/tv_tracking_title"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_marginBottom="8dp"
-          android:fontFamily="@font/prompt"
-          android:text="@string/Language"
-          android:textColor="@color/home_white"
-          android:textSize="18sp" />
-
-      <Button
-          android:id="@+id/btn_clear_all_records"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:background="@drawable/bg_red_stork_button"
-          android:fontFamily="@font/prompt_bold"
-          android:paddingTop="8dp"
-          android:paddingBottom="8dp"
-          android:text="@string/btn_clear_tracking"
-          android:textColor="#FF1313"
-          android:textSize="15sp" />
-
-    </LinearLayout>
-
-  </LinearLayout>
+  </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

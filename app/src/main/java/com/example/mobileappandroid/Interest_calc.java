@@ -92,6 +92,10 @@ public class Interest_calc extends AppCompatActivity {
     }
 
     private void interest_spinner_settings(){
+        Resources r =SharedPreferenceHelper.getLangResources(this);
+        spinner_array[0]=r.getString(R.string.SimInterest);
+        spinner_array[1]=r.getString(R.string.ComInterest);
+
         ArrayAdapter ad = new ArrayAdapter<String>(Interest_calc.this, R.layout.currency_converter_spinner, spinner_array);
         ad.setDropDownViewResource(R.layout.currency_converter_dropdown);
         interest_spinner.setAdapter(ad);
@@ -363,7 +367,8 @@ public class Interest_calc extends AppCompatActivity {
         TextView year_text = findViewById(R.id.Year_Text);
         TextView display_text = findViewById(R.id.display_text);
         TextView add_interest_to_record = findViewById(R.id.add_interest_to_record);
-
+        TextView displayText1=findViewById(R.id.display_text1);
+        TextView displayText3=findViewById(R.id.display_text3);
         //get string
         title.setText(resources.getString(R.string.interest_calculator_title));
         interest_text.setText((resources.getString(R.string.interest_calculator_interest)));
@@ -371,8 +376,11 @@ public class Interest_calc extends AppCompatActivity {
         year_text.setText(resources.getString(R.string.interest_calculator_year));
         display_text.setText(resources.getString(R.string.interest_calculator_add_records_no_starting));
         add_interest_to_record.setText(resources.getString(R.string.interest_calculator_add_records_with_starting));
-
-
+        interest_rate.setHint(resources.getString(R.string.currency_converter_hint));
+        year.setHint(resources.getString(R.string.currency_converter_hint));
+        start_amount.setHint(resources.getString(R.string.currency_converter_hint));
+        displayText1.setText(resources.getString(R.string.Interest));
+        displayText3.setText(resources.getString(R.string.InterestwithStarting));
         return;
     }
 }

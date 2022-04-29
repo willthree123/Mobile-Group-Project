@@ -12,7 +12,7 @@
     <string name="main_currency_btn" translatable="false">@string/currency_converter_title</string>
     <string name="Financial_Tracking">Financial Tracking</string>
     <string name="plusadd_button">+ Add</string>
-    <string name="thisMonth">(This month)</string>
+    <string name="thisMonth">(Consume of this month)</string>
     <string name="viewDetail">View Detail</string>
 
     <!--    Tracking    -->
@@ -149,7 +149,11 @@
 
     <!--    Interest Calculator    -->
     <string name="interest_calculator_title">Interest Calculator</string>
-    <string name="interest_calculator_interest">Interest</string>
+    <string name="Interest">Interest</string>
+    <string name="SimInterest">Simple Interest</string>
+    <string name="ComInterest">Compound Interest</string>
+    <string name="InterestwithStarting">Interest with Starting</string>
+    <string name="interest_calculator_interest">Interest Rate(%)</string>
     <string name="interest_calculator_starting">Starting</string>
     <string name="interest_calculator_year">Year</string>
     <string name="interest_calculator_add_records_no_starting">Add interest amount to the record</string>
@@ -168,7 +172,7 @@
     <string name="Edit">Edit</string>
     <string name="Save">Save</string>
 
-    <string name="interestCalc">interestCalc</string>
+    <string name="interestCalc">Interest Calculator</string>
     <!--    Chart    -->
 <string name="All_Chart">All Charts</string>
     <string name="ConsumeNRev">Consume/ Revenue</string>

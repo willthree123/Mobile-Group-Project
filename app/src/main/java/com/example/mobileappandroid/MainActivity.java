@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 return String.format("%.2f", value);
             }
         };
-        Resources resources = getResources();
+        Resources resources = SharedPreferenceHelper.getLangResources(this);
         String[] categories_name = resources.getStringArray(R.array.financeNegCat);
         ArrayList<CatCal> categories = new ArrayList<>();
         for (int i = 0; i < categories_name.length; i++) {
