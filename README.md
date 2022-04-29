@@ -1,3 +1,8 @@
+### 1.8.1 [29/4/2022 13:18]
+
+- Added (ThisMonth) PieChart to main (translation & formatting required)
+- by Alvin
+
 ### 1.8.0 [29/4/2022 13:18]
 
 - Fixed Chinese String of Consume & Revenue swapped

@@ -83,8 +83,7 @@ public class FinanceMainPage extends AppCompatActivity implements View.OnClickLi
         SharedPreferences sp = getSharedPreferences("Records", MODE_PRIVATE);
         Gson gson = new Gson();
         String json = sp.getString("record_data", null);
-        Type type = new TypeToken<ArrayList<Record>>() {
-        }.getType();
+        Type type = new TypeToken<ArrayList<Record>>() {}.getType();
         if (json == null) {
             records = new ArrayList<>();
 

@@ -334,7 +334,6 @@ Context context;
             ViewYear.animate().alpha(0.3f).setDuration(300);
             ViewYear.setAlpha(0.3f);
         }
-
     }
 
     private void reloadLang(Context context) {
@@ -350,7 +349,6 @@ Context context;
         Button c = findViewById(R.id.AllRecordsPage_ViewYear);
         Button d = findViewById(R.id.AllRecordsPage_ViewMonth);
         Button e = findViewById(R.id.AllRecordsPage_ViewByCategory);
-
 
         //get string
         a.setText(resources.getString(R.string.allRecord));
