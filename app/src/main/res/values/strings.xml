@@ -14,7 +14,6 @@
     <string name="plusadd_button">+ Add</string>
     <string name="thisMonth">(This month)</string>
     <string name="viewDetail">View Detail</string>
-    <string name="interestCalc">Interest Calculator</string>
 
     <!--    Tracking    -->
     <string name="Charts">Charts</string>
@@ -29,19 +28,31 @@
     <string name="Currency_HKD">HKD</string>
     <string name="AddRecord">Add Record</string>
     <string name="Date">Date</string>
+    <string name="m1">January</string>
+    <string name="m2">February</string>
+    <string name="m3">March</string>
+    <string name="m4">April</string>
+    <string name="m5">May</string>
+    <string name="m6">June</string>
+    <string name="m7">July</string>
+    <string name="m8">Auguse</string>
+    <string name="m9">September</string>
+    <string name="m10">October</string>
+    <string name="m11">November</string>
+    <string name="m12">December</string>
     <string-array name="months">
-        <item>January</item>
-        <item>February</item>
-        <item>March</item>
-        <item>April</item>
-        <item>May</item>
-        <item>June</item>
-        <item>July</item>
-        <item>August</item>
-        <item>September</item>
-        <item>October</item>
-        <item>November</item>
-        <item>December</item>
+        <item>@string/m1</item>
+        <item>@string/m2</item>
+        <item>@string/m3</item>
+        <item>@string/m4</item>
+        <item>@string/m5</item>
+        <item>@string/m6</item>
+        <item>@string/m7</item>
+        <item>@string/m8</item>
+        <item>@string/m9</item>
+        <item>@string/m10</item>
+        <item>@string/m11</item>
+        <item>@string/m12</item>
     </string-array>
     <string name="fNeg1">Transport</string>
     <string name="fNeg2">Health</string>
@@ -72,6 +83,10 @@
         <item>@string/fNeg12</item>
         <item>@string/fNeg13</item>
         <item>@string/fNeg14</item>
+        <item>@string/fAdd1</item>
+        <item>@string/fAdd2</item>
+        <item>@string/fAdd3</item>
+        <item>@string/fAdd4</item>
     </string-array>
     <string name="fAdd1">Interest</string>
     <string name="fAdd2">Income</string>
@@ -141,6 +156,25 @@
 
     <!--    Record    -->
 
+    <string name="Filter">Filter</string>
+    <string name="byYear">By Year</string>
+    <string name="byMonth">By Month</string>
+    <string name="allRecord">All Records</string>
+    <string name="deleteRecods">DELETE RECORDS</string>
+    <string name="DELETE">DELETE</string>
+    <string name="deleteQuestion">Are you sure you want to delete this record</string>
+    <string name="Details">Details</string>
+    <string name="Edit">Edit</string>
+    <string name="Save">Save</string>
+
+    <!--    Chart    -->
+<string name="All_Chart">All Charts</string>
+    <string name="ConsumeNRev">Consume/ Revenue</string>
+    <string name="CatAll">CATEGORY/ ALL</string>
+    <string name="ViewAll">ViewALL</string>
+    <string name="ViewingMode">Viewing Mode: </string>
+    <string name="ViewingAll">Viewing Mode: All</string>
+    <string name="NoData">No data available</string>
     <!--    Not Sorted    -->
 
 </resources>

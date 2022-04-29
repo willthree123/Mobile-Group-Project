@@ -1,5 +1,12 @@
-### 1.7.4 [29/4/2022 06:21]
 
+### 1.8.0 [29/4/2022 10:33]
+
+- Finished most UI and lang change
+- by Jesse
+
+### 1.6.2 [29/4/2022 5:14]
+
+- implementing interest_calc
 - Interest calculator supports Chinese
 - by The Wok
 

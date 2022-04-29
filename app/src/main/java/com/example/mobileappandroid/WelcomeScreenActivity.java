@@ -15,7 +15,7 @@ public class WelcomeScreenActivity extends AppCompatActivity {
         setContentView(R.layout.welcome_screen);
 
         //delay in ms
-        int DELAY = 3000;
+        int DELAY = 1;
 
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {

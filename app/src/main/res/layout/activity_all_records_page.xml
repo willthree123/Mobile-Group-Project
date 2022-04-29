@@ -4,66 +4,204 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2B2626"
+    android:background="@drawable/bg_currency_converter"
     tools:context=".AllRecordsPage">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_record_allrecordspage"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="553dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-    </androidx.recyclerview.widget.RecyclerView>
-
-    <Button
-        android:id="@+id/AllRecordsPage_ViewByCategory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingTop="18dp"
+        android:paddingRight="20dp"
         tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp" />
+        tools:layout_editor_absoluteY="1dp">
 
-    <Spinner
-        android:id="@+id/AllRecordsPage_SpinnerCategory"
-        android:layout_width="150dp"
-        android:layout_height="48dp"
-        android:backgroundTint="@color/currency_converter_white"
-        app:layout_constraintStart_toEndOf="@+id/AllRecordsPage_ViewByCategory"
-        app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/AllRecordsPage_ViewYear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AllRecordsPage_ViewByCategory" />
+            <TextView
+                android:id="@+id/setting_screen_titile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt_bold"
+                android:text="@string/allRecord"
+                android:textColor="@color/currency_converter_white"
+                android:textSize="26sp" />
 
-    <Spinner
-        android:id="@+id/AllRecordsPage_SpinnerYear"
-        android:layout_width="150dp"
-        android:layout_height="48dp"
-        android:backgroundTint="@color/currency_converter_white"
-        app:layout_constraintStart_toEndOf="@+id/AllRecordsPage_ViewYear"
-        app:layout_constraintTop_toBottomOf="@+id/AllRecordsPage_SpinnerCategory" />
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
 
-    <Button
-        android:id="@+id/AllRecordsPage_ViewMonth"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AllRecordsPage_ViewYear" />
+            <Button
+                android:id="@+id/currency_page_go_home"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/currency_converter_home_button" />
 
-    <Spinner
-        android:id="@+id/AllRecordsPage_SpinnerMonth"
-        android:layout_width="150dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="48dp"
-        android:backgroundTint="@color/currency_converter_white"
-        app:layout_constraintStart_toEndOf="@+id/AllRecordsPage_SpinnerYear"
-        app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_tracking_title1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/prompt"
+                    android:text="@string/Filter"
+                    android:textColor="@color/home_white"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/AllRecordsPage_ViewYear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:alpha="0.3"
+                android:background="@drawable/bg_main_add_btn"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:text="@string/byYear"
+                android:textColor="@color/currency_converter_white" />
+
+            <Button
+                android:id="@+id/AllRecordsPage_ViewMonth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:alpha="0.3"
+                android:background="@drawable/bg_main_add_btn"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:text="@string/byMonth"
+                android:textColor="@color/currency_converter_white" />
+
+            <Button
+                android:id="@+id/AllRecordsPage_ViewByCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.3"
+                android:background="@drawable/bg_main_add_btn"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:text="@string/Category"
+                android:textAllCaps="true"
+                android:textColor="@color/currency_converter_white" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="12dp"
+                        android:background="@drawable/bg_input_field"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/AllRecordsPage_SpinnerCategory"
+                            android:layout_width="150dp"
+                            android:layout_height="48dp"
+                            android:backgroundTint="@color/currency_converter_white" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="12dp"
+                        android:background="@drawable/bg_input_field"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/AllRecordsPage_SpinnerMonth"
+                            android:layout_width="150dp"
+                            android:layout_height="48dp"
+                            android:backgroundTint="@color/currency_converter_white" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_input_field"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/AllRecordsPage_SpinnerYear"
+                            android:layout_width="120dp"
+                            android:layout_height="48dp"
+                            android:backgroundTint="@color/currency_converter_white" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_input_field"
+                android:orientation="horizontal"
+                android:paddingLeft="5dp"
+                android:paddingTop="2dp"
+                android:paddingRight="5dp">
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_record_allrecordspage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </androidx.recyclerview.widget.RecyclerView>
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

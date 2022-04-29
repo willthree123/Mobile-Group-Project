@@ -12,10 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MobileAppAndroid"
         android:usesCleartextTraffic="true">
-        <activity
 
-            android:name=".InterestCalc"
-      android:exported="false" />
           <activity
 
             android:name=".AllRecordsPage"

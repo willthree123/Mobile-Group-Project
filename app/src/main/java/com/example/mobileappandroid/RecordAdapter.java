@@ -39,6 +39,7 @@ public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.RecordView
     public RecordViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.record, parent, false);
         RecordViewHolder recordViewHolder = new RecordViewHolder(v);
+
         context = parent.getContext();
         return recordViewHolder;
     }
@@ -51,17 +52,23 @@ public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.RecordView
     public void onBindViewHolder(@NonNull RecordViewHolder holder, int position) {
         Record current_record = records.get(position);
         int record_position = position;
+        resources=context.getResources();
+        resources=SharedPreferenceHelper.getLangResources(context);
+
         holder.tv_amount.setText(String.format("%.1f", current_record.getAmount()));
         holder.iv_category.setImageResource(current_record.getCategory());
         holder.tv_date.setText(current_record.getDate());
         holder.tv_description.setText(current_record.getDescription());
-        if (current_record.isConsume()) {
-            holder.tv_type.setText(R.string.is_consume);
+        holder.tv_dateTitle.setText(resources.getString(R.string.Dateq));
+        holder.tv_HKDTitle.setText(resources.getString(R.string.HKDq));
 
-            holder.card.setCardBackgroundColor(context.getResources().getColor(R.color.card_bg_red));
+        if (current_record.isConsume()) {
+            holder.tv_type.setText(resources.getString(R.string.is_consume));
+
+            holder.card.setCardBackgroundColor(resources.getColor(R.color.card_bg_red));
         } else {
-            holder.tv_type.setText(R.string.is_revenue);
-            holder.card.setCardBackgroundColor(context.getResources().getColor(R.color.card_bg_green));
+            holder.tv_type.setText(resources.getString(R.string.is_revenue));
+            holder.card.setCardBackgroundColor(resources.getColor(R.color.card_bg_green));
         }
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,7 +93,7 @@ public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.RecordView
         public TextView tv_amount;
         public TextView tv_date;
         public TextView tv_description;
-        public TextView tv_type;
+        public TextView tv_type, tv_dateTitle, tv_HKDTitle;
         public ImageView iv_category;
         public CardView card;
 
@@ -97,6 +104,8 @@ public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.RecordView
             tv_date = itemView.findViewById(R.id.record_date);
             tv_description = itemView.findViewById(R.id.record_description);
             tv_type = itemView.findViewById(R.id.record_type);
+            tv_dateTitle = itemView.findViewById(R.id.textView);
+            tv_HKDTitle = itemView.findViewById(R.id.textView2);
             card = itemView.findViewById(R.id.Card_of_record);
             card.setOnLongClickListener(this);
 
@@ -107,10 +116,10 @@ public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.RecordView
 
             AlertDialog.Builder alert = new AlertDialog.Builder(context);
 
-            alert.setTitle("DELETE RECORDS");
-            alert.setMessage("Are you sure you want to delete this record");
+            alert.setTitle(resources.getString(R.string.deleteRecods));
+            alert.setMessage(resources.getString(R.string.deleteQuestion));
 
-            alert.setPositiveButton("DELETE", new DialogInterface.OnClickListener() {
+            alert.setPositiveButton(resources.getString(R.string.DELETE), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     int index = getAdapterPosition();
@@ -129,7 +138,7 @@ public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.RecordView
                     notifyDataSetChanged();
                 }
             });
-            alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            alert.setNegativeButton(resources.getString(R.string.no), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
 

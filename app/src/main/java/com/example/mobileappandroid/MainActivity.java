@@ -46,6 +46,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        editor.clear();
 //        editor.commit();
 
+        reloadLang(MainActivity.this);
+
 
 //         Intent intent = new Intent(this, AllRecordsPage.class);
 //         startActivity(intent);
