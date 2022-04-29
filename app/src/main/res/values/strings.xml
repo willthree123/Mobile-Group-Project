@@ -177,6 +177,16 @@
     <string name="ViewingMode">Viewing Mode: </string>
     <string name="ViewingAll">Viewing Mode: All</string>
     <string name="NoData">No data available</string>
+
+
+    <!--    Record_detail    -->
+    <string name="record_detail_title">Details</string>
+    <string name="record_detail_amount">Amount</string>
+    <string name="record_detail_description">Description</string>
+    <string name="record_detail_date">Date</string>
+    <string name="record_detail_save">Save</string>
+    <string name="record_detail_edit">Edit</string>
+
     <!--    Not Sorted    -->
 
 </resources>

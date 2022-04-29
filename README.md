@@ -1,3 +1,9 @@
+### 1.8.3 [29/4/2022 15:54]
+
+- Transalte things in finance detail
+- all string in xml added chinese
+- by The Wok
+
 ### 1.8.2 [29/4/2022 14:19]
 
 - Fixed edit record amount and keyboard

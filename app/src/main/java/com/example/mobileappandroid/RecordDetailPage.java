@@ -3,6 +3,7 @@ package com.example.mobileappandroid;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
@@ -74,6 +75,7 @@ public class RecordDetailPage extends AppCompatActivity implements View.OnClickL
         enable_edit.setOnClickListener(this);
         bt_save.setOnClickListener(this);
         home.setOnClickListener(this);
+        reloadLang(this);
 
 
         calendar_picker = record.getDate_calendar();
@@ -184,6 +186,33 @@ public class RecordDetailPage extends AppCompatActivity implements View.OnClickL
             return (false);
         }
         return true;
+    }
+
+    private void reloadLang(Context context) {
+        //Lang change
+        String lang = SharedPreferenceHelper.getLanguage(context);
+        context = LocaleHelper.setLocale(context, lang);
+        Resources resources = context.getResources();
+
+        //Edit below
+        //get element id
+        TextView title_text_view = findViewById(R.id.setting_screen_titile);
+        TextView amount_text_view = findViewById(R.id.tv_lang_title1);
+        TextView description_text_view = findViewById(R.id.tv_lang_title2);
+        TextView date_text_view = findViewById(R.id.tv_lang_title);
+        Button save_button_text = findViewById(R.id.record_edit_save);
+        Button edit_button_text = findViewById(R.id.record_enable_edit);
+
+        //get string
+        title_text_view.setText(resources.getString(R.string.record_detail_title));
+        amount_text_view.setText((resources.getString(R.string.record_detail_amount)));
+        description_text_view.setText(resources.getString(R.string.record_detail_description));
+        date_text_view.setText(resources.getString(R.string.record_detail_date));
+        save_button_text.setText(resources.getString(R.string.record_detail_save));
+        edit_button_text.setText(resources.getString(R.string.record_detail_edit));
+
+
+        return;
     }
 
 }
