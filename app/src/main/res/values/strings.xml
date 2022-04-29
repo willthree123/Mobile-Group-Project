@@ -54,6 +54,7 @@
         <item>@string/m11</item>
         <item>@string/m12</item>
     </string-array>
+
     <string name="fNeg1">Transport</string>
     <string name="fNeg2">Health</string>
     <string name="fNeg3">Necessities</string>
@@ -167,6 +168,7 @@
     <string name="Edit">Edit</string>
     <string name="Save">Save</string>
 
+    <string name="interestCalc">interestCalc</string>
     <!--    Chart    -->
 <string name="All_Chart">All Charts</string>
     <string name="ConsumeNRev">Consume/ Revenue</string>

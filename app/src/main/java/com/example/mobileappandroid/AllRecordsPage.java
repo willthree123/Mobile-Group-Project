@@ -180,21 +180,21 @@ Context context;
         Log.d("ViewingByYear", Boolean.toString(ViewingByYear));
         Log.d("ViewingByAll", Boolean.toString(ViewingByAll));
         Log.d("ViewingByMonth", Boolean.toString(ViewingByMonth));
-        Log.d("Skip", "");
+        Log.d("---------------", "");
         if (ViewingByCategory) {
-            if (ViewingByYear)
+            if (ViewingByYear&&!ViewingByMonth)
                 SearchRecordYear_Category();
-//            if(ViewingByMonth)
-//                SearchRecordMonth_Category();
-            if (ViewingByAll)
+            else if(ViewingByMonth)
+                SearchRecordMonth_Category();
+            else
                 SearchRecordAll_Category();
         } else {
-            if (ViewingByYear)
+            if (ViewingByYear&&!ViewingByMonth)
                 SearchRecordYear();
-//            if(ViewingByMonth)
-//                SearchRecordMonth();
-//            if(ViewingByAll)
-//                SearchRecordAll();
+            else if(ViewingByMonth)
+                SearchRecordMonth();
+            else
+                SearchRecordAll();
         }
 
     }
@@ -211,40 +211,38 @@ Context context;
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.AllRecordsPage_ViewByCategory:
-                ViewingByCategory = !ViewingByCategory;
+                ViewingByCategory=!ViewingByCategory;
+                Log.d("A","AllRecordsPage_ViewByCategory");
                 searchRecord_distributor();
-
                 resetAlpha();
-                ViewByCategory.setAlpha(0.3f);
-                ViewByCategory.animate().alpha(0.9f).setDuration(300);
-                ViewByCategory.setAlpha(0.9f);
                 break;
             case R.id.AllRecordsPage_ViewYear:
-                ViewingByYear = true;
+                Log.d("B","AllRecordsPage_ViewYear");
+                ViewingByYear = !ViewingByYear;
                 ViewingByMonth = false;
                 ViewingByAll = false;
                 searchRecord_distributor();
-
                 resetAlpha();
-                ViewYear.setAlpha(0.3f);
-                ViewYear.animate().alpha(0.9f).setDuration(300);
-                ViewYear.setAlpha(0.9f);
                 break;
             case R.id.AllRecordsPage_ViewMonth:
+                Log.d("C","AllRecordsPage_ViewMonth");
                 ViewingByYear = true;
-                ViewingByMonth = true;
+                ViewingByMonth = !ViewingByMonth;
+                ViewingByAll = false;
                 searchRecord_distributor();
-
                 resetAlpha();
-                ViewMonth.setAlpha(0.3f);
-                ViewMonth.animate().alpha(0.9f).setDuration(300);
-                ViewMonth.setAlpha(0.9f);
                 break;
             case R.id.currency_page_go_home:
                 Intent intent = new Intent(this, FinanceMainPage.class);
                 intent.putExtra("is_saved", false);
                 startActivity(intent);
+                break;
         }
+    }
+
+    private void SearchRecordAll() {
+        loadData();
+        display_rv(records);
     }
 
     private void SearchRecordYear() {
@@ -257,11 +255,11 @@ Context context;
         display_rv(records_temp);
     }
 
-    private void SearchRecordYear_Category() {
+    private void SearchRecordMonth() {
         loadData();
         ArrayList<Record> records_temp = new ArrayList<>();
         for (int i = 0; i < records.size(); i++) {
-            if (records.get(i).getYear_int() == selected_year && records.get(i).getCategory_type() == selected_category)
+            if (records.get(i).getYear_int() == selected_year && records.get(i).getMonth_int() == selected_month)
                 records_temp.add(records.get(i));
         }
         display_rv(records_temp);
@@ -282,26 +280,61 @@ Context context;
         }
         display_rv(records_temp);
     }
-    public void resetAlpha(){
-        ViewByCategory.setAlpha(0.3f);
-        ViewMonth.setAlpha(0.3f);
-        ViewYear.setAlpha(0.3f);
 
-        if (ViewByCategory.getAlpha() == 1.0f) {
+    private void SearchRecordYear_Category() {
+        loadData();
+        ArrayList<Record> records_temp = new ArrayList<>();
+        for (int i = 0; i < records.size(); i++) {
+            if (records.get(i).getYear_int() == selected_year && records.get(i).getCategory_type() == selected_category)
+                records_temp.add(records.get(i));
+        }
+        display_rv(records_temp);
+    }
+
+    private void SearchRecordMonth_Category() {
+        loadData();
+        ArrayList<Record> records_temp = new ArrayList<>();
+        for (int i = 0; i < records.size(); i++) {
+            if (records.get(i).getYear_int() == selected_year && records.get(i).getMonth_int() == selected_month && records.get(i).getCategory_type() == selected_category)
+                records_temp.add(records.get(i));
+        }
+        display_rv(records_temp);
+    }
+
+    public void resetAlpha(){
+        if(ViewByCategory.getAlpha()==0.3f&&ViewingByCategory) {
+            ViewByCategory.setAlpha(0.3f);
+            ViewByCategory.animate().alpha(0.9f).setDuration(300);
+            ViewByCategory.setAlpha(0.9f);
+        }
+        else if(ViewByCategory.getAlpha()==0.9f&&!ViewingByCategory) {
             ViewByCategory.setAlpha(1.0f);
             ViewByCategory.animate().alpha(0.3f).setDuration(300);
             ViewByCategory.setAlpha(0.3f);
         }
-        if (ViewMonth.getAlpha() == 1.0f) {
+
+        if(ViewMonth.getAlpha()==0.3f&&ViewingByMonth) {
+            ViewMonth.setAlpha(0.3f);
+            ViewMonth.animate().alpha(0.9f).setDuration(300);
+            ViewMonth.setAlpha(0.9f);
+        }
+        else if(ViewMonth.getAlpha()==0.9f&&!ViewingByMonth) {
             ViewMonth.setAlpha(1.0f);
             ViewMonth.animate().alpha(0.3f).setDuration(300);
             ViewMonth.setAlpha(0.3f);
         }
-        if (ViewYear.getAlpha() == 1.0f) {
+
+        if(ViewYear.getAlpha()==0.3f&&ViewingByYear) {
+            ViewYear.setAlpha(0.3f);
+            ViewYear.animate().alpha(0.9f).setDuration(300);
+            ViewYear.setAlpha(0.9f);
+        }
+        else if(ViewYear.getAlpha()==0.9f&&!ViewingByYear) {
             ViewYear.setAlpha(1.0f);
             ViewYear.animate().alpha(0.3f).setDuration(300);
             ViewYear.setAlpha(0.3f);
         }
+
     }
 
     private void reloadLang(Context context) {
@@ -322,9 +355,9 @@ Context context;
         //get string
         a.setText(resources.getString(R.string.allRecord));
         b.setText(resources.getString(R.string.Filter));
-        c.setText(resources.getString(R.string.Category));
+        c.setText(resources.getString(R.string.byYear));
         d.setText(resources.getString(R.string.byMonth));
-        e.setText(resources.getString(R.string.byYear));
+        e.setText(resources.getString(R.string.Category));
         return;
     }
 

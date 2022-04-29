@@ -1,14 +1,13 @@
+### 1.8.0 [29/4/2022 13:18]
+
+- Fixed Chinese String of Consume & Revenue swapped
+- Finished View all records
+- by Alvin
 
 ### 1.8.0 [29/4/2022 10:33]
 
 - Finished most UI and lang change
 - by Jesse
-
-### 1.6.2 [29/4/2022 5:14]
-
-- implementing interest_calc
-- Interest calculator supports Chinese
-- by The Wok
 
 ### 1.7.3 [29/4/2022 05:50]
 
@@ -23,6 +22,7 @@
 ### 1.6.2 [29/4/2022 5:14]
 
 - implementing interest_calc
+- Interest calculator supports Chinese
 - by The Wok
 
 ### 1.6.0 [29/4/2022 04:04]
