@@ -77,8 +77,6 @@
     <string name="Dateq">"日期:"</string>
     <string name="HKDq">"港幣:"</string>
     <string name="view">"查看"</string>
-    <string name="AC">"清除"</string>
-    <string name="Back">"消除"</string>
     <string name="add2Record">"添加這個紀錄"</string>
     <string name="Tracking">資金追蹤</string>
     <string name="btn_clear_tracking">"清除所有追蹤紀錄"</string>
