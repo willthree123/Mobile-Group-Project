@@ -55,17 +55,21 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
 
     int check_if_too_quick = -1;
 
-    String[] currency_choose ={
-            "AED","AFN","ALL","AMD","ANG","AOA","ARS","AUD","AWG","AZN","BAM","BBD","BDT","BGN","BHD","BIF","BMD","BND","BOB","BRL",
-            "BSD","BTC","BTN","BWP","BYN","BYR","CAD","CDF","CHF","CLF","CLP","CNY","COP","CRC","CUC","CUP","CVE","CZK","DJF","DKK",
-            "DOP","DZD","EGP","ERN","ETB","EUR","FJD","FKP","GBP","GEL","GGP","GHS","GIP","GMD","GNF","GTQ","GYD","HKD","HNL","HRK",
-            "HTG","HUF","IDR","ILS","IMP","INR","IQD","IRR","ISK","JEP","JMD","JOD","JPY","KES","KGS","KHR","KMF","KPW","KRW","KWD",
-            "KYD","KZT","LAK","LBP","LKR","LRD","LSL","LTL","LVL","LYD","MAD","MDL","MGA","MKD","MMK","MNT","MOP","MRO","MUR","MVR",
-            "MWK","MXN","MYR","MZN","NAD","NGN","NIO","NOK","NPR","NZD","OMR","PAB","PEN","PGK","PHP","PKR","PLN","PYG","QAR","RON",
-            "RSD","RUB","RWF","SAR","SBD","SCR","SDG","SEK","SGD","SHP","SLL","SOS","SRD","STD","SVC","SYP","SZL","THB","TJS","TMT",
-            "TND","TOP","TRY","TTD","TWD","TZS","UAH","UGX","USD","UYU","UZS","VEF","VND","VUV","WST","XAF","XAG","XAU","XCD","XDR",
-            "XOF","XPF","YER","ZAR","ZMK","ZMW","ZWL"
-    };
+    String[] currency_choose;
+
+    {
+        currency_choose = new String[]{
+                "AED", "AFN", "ALL", "AMD", "ANG", "AOA", "ARS", "AUD", "AWG", "AZN", "BAM", "BBD", "BDT", "BGN", "BHD", "BIF", "BMD", "BND", "BOB", "BRL",
+                "BSD", "BTC", "BTN", "BWP", "BYN", "BYR", "CAD", "CDF", "CHF", "CLF", "CLP", "CNY", "COP", "CRC", "CUC", "CUP", "CVE", "CZK", "DJF", "DKK",
+                "DOP", "DZD", "EGP", "ERN", "ETB", "EUR", "FJD", "FKP", "GBP", "GEL", "GGP", "GHS", "GIP", "GMD", "GNF", "GTQ", "GYD", "HKD", "HNL", "HRK",
+                "HTG", "HUF", "IDR", "ILS", "IMP", "INR", "IQD", "IRR", "ISK", "JEP", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRW", "KWD",
+                "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LVL", "LYD", "MAD", "MDL", "MGA", "MKD", "MMK", "MNT", "MOP", "MRO", "MUR", "MVR",
+                "MWK", "MXN", "MYR", "MZN", "NAD", "NGN", "NIO", "NOK", "NPR", "NZD", "OMR", "PAB", "PEN", "PGK", "PHP", "PKR", "PLN", "PYG", "QAR", "RON",
+                "RSD", "RUB", "RWF", "SAR", "SBD", "SCR", "SDG", "SEK", "SGD", "SHP", "SLL", "SOS", "SRD", "STD", "SVC", "SYP", "SZL", "THB", "TJS", "TMT",
+                "TND", "TOP", "TRY", "TTD", "TWD", "TZS", "UAH", "UGX", "USD", "UYU", "UZS", "VEF", "VND", "VUV", "WST", "XAF", "XAG", "XAU", "XCD", "XDR",
+                "XOF", "XPF", "YER", "ZAR", "ZMK", "ZMW", "ZWL"
+        };
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,10 +105,9 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
 
         //set API link
         queue = Volley.newRequestQueue(currency_converter.this);
-        url = "http://data.fixer.io/api/latest?access_key=1e3517690351e96f8fa21aab98c5047e&format=1";
+        url = "http://api.exchangeratesapi.io/v1/latest?access_key=915717ef247cbb56cec01237dfa2cf4e&format=1";
 
 
-        home.setOnClickListener(currency_converter.this);
 
 
         //set 2 spinners item
@@ -113,9 +116,11 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
             public void onResponse(JSONObject response) {
                 try {
                     setup_virtual_keyboard();
+                    home.setOnClickListener(currency_converter.this);
+                    Log.d("bitch", currency_choose[0]);
                     currency = response.getJSONObject("rates");
-                    ArrayAdapter ad = new ArrayAdapter<String>(currency_converter.this, R.layout.currency_converter_spinner, currency_choose);
-                    //        com.google.android.material.R.layout.support_simple_spinner_dropdown_item
+                    ArrayAdapter ad = new ArrayAdapter<String>(currency_converter.this, R.layout.currency_converter_spinner,currency_choose);
+//                            com.google.android.material.R.layout.support_simple_spinner_dropdown_item
                     ad.setDropDownViewResource(R.layout.currency_converter_dropdown);
                     sp1.setAdapter(ad);
                     sp1.setSelection(148); // set default USD
@@ -288,11 +293,10 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
         String currency_top;
         String currency_bottom;
 
-
+        currency_top = sp1.getSelectedItem().toString();
+        currency_bottom = sp2.getSelectedItem().toString();
 
         try {
-            currency_top = sp1.getSelectedItem().toString();
-            currency_bottom = sp2.getSelectedItem().toString();
             selected_currency_top_values_string =currency.getString(currency_top);
             selected_currency_bottom_values_string = currency.getString(currency_bottom);
             selected_currency_top_values_double = Double.parseDouble(selected_currency_top_values_string);
