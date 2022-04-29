@@ -118,11 +118,24 @@
     <string name="allRecord">所有記錄</string>
 
     <string name="interest_calculator_title">利息計算機</string>
-    <string name="interest_calculator_interest">利息</string>
+    <string name="interest_calculator_interest">利息(%)</string>
     <string name="interest_calculator_starting">本金</string>
     <string name="interest_calculator_year">年數</string>
     <string name="interest_calculator_add_records_no_starting">加當前利息到紀錄中</string>
     <string name="interest_calculator_add_records_with_starting">加當前利息到紀錄中(連本金)</string>
+    <string name="deleteRecods">刪除所有紀錄</string>
+    <string name="DELETE">刪除該紀錄</string>
+    <string name="deleteQuestion">你確定你要刪除該紀錄嗎？</string>
+    <string name="Details">詳情</string>
+    <string name="Edit">編輯</string>
+    <string name="Save">儲存</string>
+    <string name="All_Chart">所有圖表</string>
+    <string name="ConsumeNRev">支出/收入</string>
+    <string name="ViewAll">查看全部</string>
+    <string name="ViewingMode">觀看模式:</string>
+    <string name="CatAll">類別/全部</string>
+    <string name="ViewingAll">觀看模式:全部</string>
+    <string name="NoData">沒有相關數據</string>
 
 
 </resources>

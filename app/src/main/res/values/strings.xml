@@ -14,6 +14,7 @@
     <string name="plusadd_button">+ Add</string>
     <string name="thisMonth">(This month)</string>
     <string name="viewDetail">View Detail</string>
+    <string name="interestCalc">Interest Calculator</string>
 
     <!--    Tracking    -->
     <string name="Charts">Charts</string>
@@ -148,7 +149,7 @@
 
     <!--    Interest Calculator    -->
     <string name="interest_calculator_title">Interest Calculator</string>
-    <string name="interest_calculator_interest">Interest</string>
+    <string name="interest_calculator_interest">Interest(%)</string>
     <string name="interest_calculator_starting">Starting</string>
     <string name="interest_calculator_year">Year</string>
     <string name="interest_calculator_add_records_no_starting">Add interest amount to the record</string>

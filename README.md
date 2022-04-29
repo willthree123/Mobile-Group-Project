@@ -1,3 +1,8 @@
+### 1.8.1 [29/4/2022 13:26]
+- interest_calc by clicking keyboard click will hide keyboard
+- interest_calc year input integer only
+- some string that added it's cantonese
+- by The Wok
 
 ### 1.8.0 [29/4/2022 10:33]
 

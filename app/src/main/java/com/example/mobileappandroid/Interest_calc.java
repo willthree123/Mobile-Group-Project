@@ -2,6 +2,7 @@ package com.example.mobileappandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -12,6 +13,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -146,6 +148,7 @@ public class Interest_calc extends AppCompatActivity {
 
             }
         });
+
     }
 
     private void set_year_listener(){
@@ -165,6 +168,7 @@ public class Interest_calc extends AppCompatActivity {
 
             }
         });
+
     }
 
     private void clear_on_click(){

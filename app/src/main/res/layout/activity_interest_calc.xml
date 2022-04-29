@@ -5,11 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_currency_converter"
-    tools:context=".currency_converter">
+    tools:context=".currency_converter"
+    >
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -37,7 +39,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="@font/prompt_bold"
-                        android:text="@string/interestCalc"
+                        android:text="@string/interest_calculator_title"
                         android:textColor="@color/currency_converter_white"
                         android:textSize="26sp" />
 
@@ -83,7 +85,8 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal">
+                                android:orientation="horizontal"
+                                >
 
                                 <EditText
                                     android:id="@+id/interest_rate"
@@ -101,7 +104,9 @@
                                     android:paddingRight="10dp"
                                     android:paddingBottom="10dp"
                                     android:textColor="@color/currency_converter_white"
-                                    android:textColorHint="@color/currency_hint" />
+                                    android:textColorHint="@color/currency_hint"
+                                    android:singleLine="true"
+                                    android:imeOptions="actionDone"/>
 
                                 <EditText
                                     android:id="@+id/startAmount"
@@ -119,7 +124,9 @@
                                     android:paddingRight="10dp"
                                     android:paddingBottom="10dp"
                                     android:textColor="@color/currency_converter_white"
-                                    android:textColorHint="@color/currency_hint" />
+                                    android:textColorHint="@color/currency_hint"
+                                    android:singleLine="true"
+                                    android:imeOptions="actionDone"/>
 
                                 <EditText
                                     android:id="@+id/year"
@@ -130,12 +137,14 @@
                                     android:ems="10"
                                     android:fontFamily="@font/prompt"
                                     android:hint="@string/currency_converter_hint"
-                                    android:inputType="numberDecimal"
+                                    android:imeOptions="actionDone"
+                                    android:inputType="numberSigned"
                                     android:keyboardNavigationCluster="false"
                                     android:paddingLeft="18dp"
                                     android:paddingTop="10dp"
                                     android:paddingRight="10dp"
                                     android:paddingBottom="10dp"
+                                    android:singleLine="true"
                                     android:textColor="@color/currency_converter_white"
                                     android:textColorHint="@color/currency_hint" />
 
