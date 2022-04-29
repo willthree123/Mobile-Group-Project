@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        reloadLang(MainActivity.this);
 
         to_finance = findViewById(R.id.to_finance);
         to_finance.setOnClickListener(this);
@@ -45,7 +45,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        SharedPreferences.Editor editor=sp.edit();
 //        editor.clear();
 //        editor.commit();
+
         reloadLang(MainActivity.this);
+
 
 //         Intent intent = new Intent(this, AllRecordsPage.class);
 //         startActivity(intent);

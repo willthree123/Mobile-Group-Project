@@ -235,6 +235,27 @@
 
                 </LinearLayout>
 
+                <TextView
+                    android:id="@+id/Interest_Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textColor="@color/currency_converter_white" />
+
+                <TextView
+                    android:id="@+id/Starting_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textColor="@color/currency_converter_white" />
+
+                <TextView
+                    android:id="@+id/Year_Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textColor="@color/currency_converter_white" />
+
                 <LinearLayout
                     android:id="@+id/add_interestWithStarting"
 

@@ -99,6 +99,7 @@
     <string name="btn_export">導出數據並複制</string>
     <string name="btn_load">貼上並加載</string>
     <string name="loaded">所有跟踪記錄已加載</string>
+
     <string name="m1">一月</string>
     <string name="m2">二月</string>
     <string name="m3">三月</string>
@@ -115,5 +116,13 @@
     <string name="byYear">按年份</string>
     <string name="byMonth">按月</string>
     <string name="allRecord">所有記錄</string>
+
+    <string name="interest_calculator_title">利息計算機</string>
+    <string name="interest_calculator_interest">利息</string>
+    <string name="interest_calculator_starting">本金</string>
+    <string name="interest_calculator_year">年數</string>
+    <string name="interest_calculator_add_records_no_starting">加當前利息到紀錄中</string>
+    <string name="interest_calculator_add_records_with_starting">加當前利息到紀錄中(連本金)</string>
+
 
 </resources>

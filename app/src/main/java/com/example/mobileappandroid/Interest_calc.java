@@ -2,8 +2,10 @@ package com.example.mobileappandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
@@ -14,8 +16,10 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Interest_calc extends AppCompatActivity {
@@ -26,6 +30,7 @@ public class Interest_calc extends AppCompatActivity {
     EditText result_interest_with_starting;
 
     Button clear;
+    ImageButton home;
 
     LinearLayout add_interest_only;
     LinearLayout add_interest_with_starting;
@@ -54,8 +59,10 @@ public class Interest_calc extends AppCompatActivity {
         set_start_amount_listener();
         set_year_listener();
         clear_on_click();
+        home_on_click();
         add_interest_only_on_click();
         add_interest_with_starting_on_click();
+        reloadLang(this);
     }
 
     private void set_component(){
@@ -71,6 +78,7 @@ public class Interest_calc extends AppCompatActivity {
         disable_edit_text_editing(result_interest_with_starting);
 
         clear = findViewById(R.id.clear);
+        home = findViewById(R.id.currency_page_go_home);
 
         add_interest_only = findViewById(R.id.add_interest);
         add_interest_with_starting = findViewById(R.id.add_interestWithStarting);
@@ -120,6 +128,7 @@ public class Interest_calc extends AppCompatActivity {
             }
         });
     }
+
     private void set_start_amount_listener(){
         start_amount.addTextChangedListener(new TextWatcher() {
             @Override
@@ -138,6 +147,7 @@ public class Interest_calc extends AppCompatActivity {
             }
         });
     }
+
     private void set_year_listener(){
         year.addTextChangedListener(new TextWatcher() {
             @Override
@@ -163,6 +173,16 @@ public class Interest_calc extends AppCompatActivity {
             public void onClick(View view) {
                 interest_spinner.setSelection(0);
                 clear_all_text();
+            }
+        });
+    }
+
+    private void home_on_click(){
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Interest_calc.this, MainActivity.class);
+                startActivity(intent);
             }
         });
     }
@@ -330,5 +350,32 @@ public class Interest_calc extends AppCompatActivity {
     private void shared_pref_passing(String amount,String description){
         SharedPreferenceHelper.setString(this,"Interest_calc_to_add_records","Amount",amount);
         SharedPreferenceHelper.setString(this,"Interest_calc_to_add_records","Description",description);
+    }
+
+    private void reloadLang(Context context) {
+        //Lang change
+        String lang = SharedPreferenceHelper.getLanguage(context);
+        context = LocaleHelper.setLocale(context, lang);
+        Resources resources = context.getResources();
+
+        //Edit below
+        //get element id
+        TextView title = findViewById(R.id.title);
+        TextView interest_text = findViewById(R.id.Interest_Text);
+        TextView starting_text = findViewById(R.id.Starting_text);
+        TextView year_text = findViewById(R.id.Year_Text);
+        TextView display_text = findViewById(R.id.display_text);
+        TextView add_interest_to_record = findViewById(R.id.add_interest_to_record);
+
+        //get string
+        title.setText(resources.getString(R.string.interest_calculator_title));
+        interest_text.setText((resources.getString(R.string.interest_calculator_interest)));
+        starting_text.setText(resources.getString(R.string.interest_calculator_starting));
+        year_text.setText(resources.getString(R.string.interest_calculator_year));
+        display_text.setText(resources.getString(R.string.interest_calculator_add_records_no_starting));
+        add_interest_to_record.setText(resources.getString(R.string.interest_calculator_add_records_with_starting));
+
+
+        return;
     }
 }

@@ -11,7 +11,6 @@
     <string name="main_tools">Tools</string>
     <string name="main_currency_btn" translatable="false">@string/currency_converter_title</string>
     <string name="Financial_Tracking">Financial Tracking</string>
-    <string name="interestCalc">Interest Calculator</string>
     <string name="plusadd_button">+ Add</string>
     <string name="thisMonth">(This month)</string>
     <string name="viewDetail">View Detail</string>
@@ -146,6 +145,14 @@
 <string name="btn_export">export data and copy</string>
 <string name="btn_load">paste and LOAD</string>
     <string name="loaded">All tracking records has been loaded</string>
+
+    <!--    Interest Calculator    -->
+    <string name="interest_calculator_title">Interest Calculator</string>
+    <string name="interest_calculator_interest">Interest</string>
+    <string name="interest_calculator_starting">Starting</string>
+    <string name="interest_calculator_year">Year</string>
+    <string name="interest_calculator_add_records_no_starting">Add interest amount to the record</string>
+    <string name="interest_calculator_add_records_with_starting">Add interest amount to the record(with starting amount)</string>
 
     <!--    Record    -->
 
