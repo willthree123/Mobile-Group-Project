@@ -142,7 +142,6 @@
                                     android:paddingRight="10dp"
                                     android:paddingBottom="10dp"
                                     android:singleLine="true"
-                                    android:imeOptions="actionDone"
                                     android:textColor="@color/currency_converter_white"
                                     android:textColorHint="@color/currency_hint" />
 
