@@ -74,7 +74,7 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
             radiobtn_eng.setChecked(true);
         } else if (a.matches("zh")) {
             radiobtn_chin.setChecked(true);
-        } else if (a.matches("jp")) {
+        } else if (a.matches("ja")) {
             radiobtn_jp.setChecked(true);
         }
 
@@ -93,7 +93,7 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
                         SharedPreferenceHelper.setLanguage(SettingActivity.this, "zh");
                         break;
                     case R.id.radio_jp:
-                        SharedPreferenceHelper.setLanguage(SettingActivity.this, "jp");
+                        SharedPreferenceHelper.setLanguage(SettingActivity.this, "ja");
                         break;
                 }
 

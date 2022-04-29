@@ -106,7 +106,7 @@
               android:fontFamily="@font/prompt"
               android:text="@string/lan_3"
               android:textColor="@color/setting_white"
-              android:visibility="gone" />
+              android:visibility="visible" />
         </RadioGroup>
       </LinearLayout>
 

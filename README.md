@@ -1,3 +1,8 @@
+### 1.9.2 [30/4/2022 00:12]
+
+- Add Japnesee
+- by Jesse
+
 ### 1.9.1 [29/4/2022 23:51]
 
 - Finished all pages

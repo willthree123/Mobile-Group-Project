@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">日記</string>
+    <string name="display_text">あなたの言語は日本語に変換されました
+    </string>
+    <string name="currency_converter_title">通貨コンバーター</string>
+    <string name="currency_converter_hint">入力数</string>
+    <string name="currency_converter_convert_button">デフォルトの通貨</string>
+    <string-array name="financeNegCat">
+        <item>@string/fNeg1</item>
+        <item>@string/fNeg2</item>
+        <item>@string/fNeg3</item>
+        <item>@string/fNeg4</item>
+        <item>@string/fNeg5</item>
+        <item>@string/fNeg6</item>
+        <item>@string/fNeg7</item>
+        <item>@string/fNeg8</item>
+        <item>@string/fNeg9</item>
+        <item>@string/fNeg10</item>
+        <item>@string/fNeg11</item>
+        <item>@string/fNeg12</item>
+        <item>@string/fNeg13</item>
+        <item>@string/fNeg14</item>
+        <item>@string/fAdd1</item>
+        <item>@string/fAdd2</item>
+        <item>@string/fAdd3</item>
+        <item>@string/fAdd4</item>
+    </string-array>
+    <string-array name="financeAddCat">
+        <item>興味</item>
+        <item>給与</item>
+        <item>ギフトを受け取る</item>
+        <item>その他</item>
+    </string-array>
+    <string name="fNeg1">トラフィック</string>
+    <string name="fNeg2">健康</string>
+    <string name="fNeg3">毎日のアイテム</string>
+    <string name="fNeg4">エンターテインメント</string>
+    <string name="fNeg5">ダイエット</string>
+    <string name="fNeg6">ギフト</string>
+    <string name="fNeg7">教える</string>
+    <string name="fNeg8">コースマネー</string>
+    <string name="fNeg9">ホーム</string>
+    <string name="fNeg10">請求</string>
+    <string name="fNeg11">住宅</string>
+    <string name="fNeg12">衣類</string>
+    <string name="fNeg13">メンバーシップ</string>
+    <string name="fNeg14">その他</string>
+    <string name="fAdd1">関心</string>
+    <string name="fAdd2">給与</string>
+    <string name="fAdd3">贈り物</string>
+    <string name="fAdd4">その他</string>
+    <string name="Language">言語</string>
+    <string name="setting_titile">設定</string>
+    <string name="main_tools">ツール</string>
+    <string name="cleared">すべてのレコードが削除されました</string>
+    <string name="welcome_slo">あなたの財務アシスタント</string>
+    <string name="Financial_Tracking">資金追跡</string>
+    <string name="plusadd_button">+追加</string>
+    <string name="thisMonth">(月の支出)</string>
+    <string name="viewDetail">もっと見る</string>
+    <string name="interestCalc">利息計算機</string>
+    <string name="Charts">グラフ</string>
+    <string name="recentRecords">最近のレコード</string>
+    <string name="is_consume">支出</string>
+    <string name="is_revenue">収益</string>
+    <string name="save_button">保存</string>
+    <string name="add_button">追加</string>
+    <string name="Amount">金額</string>
+    <string name="Category">カテゴリ</string>
+    <string name="Description">説明</string>
+    <string name="Currency_HKD">HKD" </string>
+    <string name="AddRecord">レコードの追加</string>
+    <string name="Date">日付</string>
+    <string name="fToday">今日</string>
+    <string name="fYesterday">昨日</string>
+    <string name="fYesYesterday">昨日の前日</string>
+    <string name="Dateq">日付：</string>
+    <string name="HKDq">HKD：</string>
+    <string name="view">表示</string>
+    <string name="add2Record">このレコードを追加</string>
+    <string name="Tracking">資金追跡</string>
+    <string name="btn_clear_tracking">すべての追跡レコードをクリアする</string>
+    <string name="export">バックアップトレースレコード</string>
+    <string name="recordsCopied">すべてのレコードがコピーされました</string>
+    <string name="recordsNull">レコードなし</string>
+    <string name="loadedRecord">ロードされたレコード</string>
+    <string name="backupDes">バックアップするには、&#8220;データをエクスポートしてコピー &#8220;を押して、データをストレージ（メモ帳など）に貼り付けます</string>
+    <string name="loadDes">バックアップを読み込むには、バックアップからデータをコピーして、[貼り付けて読み込む]を押します</string>
+    <string name="warning">ロードする前にデータが破損していないことを確認してください</string>
+    <string name="clearAll">すべてのレコードをクリア</string>
+    <string name="clearConfirm">すべてのレコードをクリアしてもよろしいですか？ </string>
+    <string name="clear">クリア</string>
+    <string name="loadTitle">レコードの読み込み</string>
+    <string name="loadConfirm">レコードをロードしてもよろしいですか？古いレコードを上書きする</string>
+    <string name="loadNOverwrite">読み込みと上書き</string>
+    <string name="no">いいえ</string>
+    <string name="btn_export">データをエクスポートしてコピー</string>
+    <string name="btn_load">貼り付けと読み込み</string>
+    <string name="loaded">ロードされたすべてのトレース</string>
+    <string name="m1">1月</string>
+    <string name="m2">2月</string>
+    <string name="m3">3月</string>
+    <string name="m4">4月</string>
+    <string name="m5">5月</string>
+    <string name="m6">6月</string>
+    <string name="m7">7月</string>
+    <string name="m8">8月</string>
+    <string name="m9">9月</string>
+    <string name="m10">10月</string>
+    <string name="m11">11月</string>
+    <string name="m12">12月</string>
+    <string name="Filter">フィルター</string>
+    <string name="byYear">年別</string>
+    <string name="byMonth">月別</string>
+    <string name="allRecord">すべてのレコード</string>
+
+    <string name="interest_calculator_title">利息計算機</string>
+    <string name="interest_calculator_interest"> APR（％）</string>
+    <string name="interest_calculator_starting">プリンシパル</string>
+    <string name="interest_calculator_year">年</string>
+    <string name="interest_calculator_add_records_no_starting">レコードに現在の関心を追加する</string>
+    <string name="interest_calculator_add_records_with_starting">現在の関心をレコードに追加します（プリンシパルを使用）</string>
+    <string name="deleteRecods">すべてのレコードを削除</string>
+    <string name="DELETE">このレコードを削除</string>
+    <string name="deleteQuestion">このレコードを削除しますか？ </string>
+    <string name="Details">詳細</string>
+    <string name="Edit">編集</string>
+    <string name="Save">保存</string>
+    <string name="All_Chart">すべてのグラフ</string>
+    <string name="ConsumeNRev">費用/収入</string>
+    <string name="CatAll">カテゴリ/すべて</string>
+    <string name="ViewAll">すべて表示</string>
+    <string name="ViewingMode">表示モード：</string>
+    <string name="ViewingAll">表示モード：すべて</string>
+    <string name="NoData">関連データなし</string>
+    <string name="record_detail_title">表示</string>
+    <string name="record_detail_amount">金額</string>
+    <string name="record_detail_description">はじめに</string>
+    <string name="record_detail_date">日付</string>
+    <string name="record_detail_save">保存</string>
+    <string name="record_detail_edit">編集</string>
+    <string name="Interest">関心</string>
+    <string name="InterestwithStarting">プリンシパルへの関心</string>
+    <string name="SimInterest">単一の関心</string>
+    <string name="ComInterest">複利</string>
+</resources>
