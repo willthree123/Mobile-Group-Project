@@ -1,3 +1,8 @@
+### 1.9.1 [29/4/2022 23:51]
+
+- Finished all pages
+- by Jesse
+
 ### 1.9.0 [29/4/2022 21:44]
 
 - Finished interest page

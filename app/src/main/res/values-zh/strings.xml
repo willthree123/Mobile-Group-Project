@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">MobileAppAndroid</string>
+    <string name="app_name">日記</string>
     <string name="display_text">你的語言已經轉換成中文</string>
     <string name="currency_converter_title">貨幣轉換器</string>
     <string name="currency_converter_hint">輸入數目</string>
@@ -81,11 +81,11 @@
     <string name="Tracking">資金追蹤</string>
     <string name="btn_clear_tracking">"清除所有追蹤紀錄"</string>
     <string name="export">備份跟踪記錄</string>
-    <string name="recordsCopied">已復制所有記錄</string>
+    <string name="recordsCopied">已複製所有記錄</string>
     <string name="recordsNull">沒有記錄</string>
     <string name="loadedRecord">加載了記錄</string>
     <string name="backupDes">要備份，請按&#8220;備份跟踪記錄&#8220; 並將數據粘貼到存儲中（例如記事本）</string>
-    <string name="loadDes">要加載備份，請從備份中復制數據並按 &#8220;貼上並加載&#8220;</string>
+    <string name="loadDes">要加載備份，請從備份中複製數據並按 &#8220;貼上並加載&#8220;</string>
     <string name="warning">請確保您的數據在加載前沒有損壞</string>
     <string name="clearAll">清除所有記錄</string>
     <string name="clearConfirm">您確定要清除所有記錄嗎？</string>

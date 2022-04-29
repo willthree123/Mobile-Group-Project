@@ -1,5 +1,8 @@
 package com.example.mobileappandroid;
 
+import android.content.Context;
+import android.content.res.Resources;
+
 import java.io.Serializable;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
@@ -71,6 +74,14 @@ public class Record implements Serializable {
 
     public int getCategory_type() {
         return Category_type;
+    }
+    public String getCategory_Name(Context context){
+
+        String lang = SharedPreferenceHelper.getLanguage(context);
+        context = LocaleHelper.setLocale(context, lang);
+        Resources res = context.getResources();
+        String[] cats = res.getStringArray(R.array.financeNegCat);
+        return cats[Category_type];
     }
 
     public void setCategory(int category) {

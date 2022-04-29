@@ -17,54 +17,61 @@
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp">
 
-        <LinearLayout
+        <HorizontalScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:orientation="horizontal">
+            android:layout_height="match_parent">
 
-            <Button
-                android:id="@+id/piechart_change_view_mode"
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_record_rev"
-                android:fontFamily="@font/prompt"
-                android:paddingLeft="12dp"
-                android:paddingRight="12dp"
-                android:text="@string/ConsumeNRev"
-                android:textColor="@color/home_white"
-                android:textSize="14sp"
-                android:textStyle="bold" />
+                android:layout_height="match_parent"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
 
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                <Button
+                    android:id="@+id/piechart_change_view_mode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_record_rev"
+                    android:fontFamily="@font/prompt"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:text="@string/ConsumeNRev"
+                    android:textColor="@color/home_white"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/piechart_change_view_category"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_cat"
-                android:fontFamily="@font/prompt"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:text="@string/CatAll"
-                android:textColor="@color/home_white"
-                android:textSize="14sp" />
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
 
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                <Button
+                    android:id="@+id/piechart_change_view_category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/bg_cat"
+                    android:fontFamily="@font/prompt"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="@string/CatAll"
+                    android:textColor="@color/home_white"
+                    android:textSize="14sp" />
 
-            <Button
-                android:id="@+id/currency_page_go_home"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/currency_converter_home_button" />
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
 
-        </LinearLayout>
+                <Button
+                    android:id="@+id/currency_page_go_home"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/currency_converter_home_button" />
+
+            </LinearLayout>
+        </HorizontalScrollView>
 
         <LinearLayout
             android:layout_width="match_parent"
