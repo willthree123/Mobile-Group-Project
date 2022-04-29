@@ -32,7 +32,7 @@
                     android:paddingRight="20dp">
 
                     <TextView
-                        android:id="@+id/title"
+                        android:id="@+id/currency_converter_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -100,6 +100,8 @@
                                     android:paddingTop="10dp"
                                     android:paddingRight="10dp"
                                     android:paddingBottom="10dp"
+                                    android:singleLine="true"
+                                    android:imeOptions="actionDone"
                                     android:textColor="@color/currency_converter_white"
                                     android:textColorHint="@color/currency_hint" />
 
@@ -118,6 +120,8 @@
                                     android:paddingTop="10dp"
                                     android:paddingRight="10dp"
                                     android:paddingBottom="10dp"
+                                    android:singleLine="true"
+                                    android:imeOptions="actionDone"
                                     android:textColor="@color/currency_converter_white"
                                     android:textColorHint="@color/currency_hint" />
 
@@ -138,6 +142,7 @@
                                     android:paddingRight="10dp"
                                     android:paddingBottom="10dp"
                                     android:singleLine="true"
+                                    android:imeOptions="actionDone"
                                     android:textColor="@color/currency_converter_white"
                                     android:textColorHint="@color/currency_hint" />
 

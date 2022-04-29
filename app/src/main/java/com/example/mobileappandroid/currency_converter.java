@@ -78,7 +78,7 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
         ed2 = findViewById(R.id.show_amount);
         sp1 = findViewById(R.id.choose_currency_top);
         sp2 = findViewById(R.id.choose_currency_bottom);
-        convert = findViewById(R.id.convert);
+        convert = findViewById(R.id.change_to_default_currency);
         swap = findViewById(R.id.swap);
         home = findViewById(R.id.currency_page_go_home);
         api_working_hint = findViewById(R.id.show_api_is_ok);
@@ -102,6 +102,9 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
         //set API link
         queue = Volley.newRequestQueue(currency_converter.this);
         url = "http://data.fixer.io/api/latest?access_key=1e3517690351e96f8fa21aab98c5047e&format=1";
+
+
+        home.setOnClickListener(currency_converter.this);
 
 
         //set 2 spinners item
@@ -256,7 +259,7 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
                 Intent intent = new Intent(currency_converter.this, MainActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.convert:
+            case R.id.change_to_default_currency:
                 sp1.setSelection(148);
                 sp2.setSelection(57);
                 change_currency();
@@ -386,9 +389,9 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
 
         //Edit below
         //get element id
-        TextView title = findViewById(R.id.title);
+        TextView title = findViewById(R.id.currency_converter_title);
         EditText hint = findViewById(R.id.enter_amount_top);
-        Button convert = findViewById(R.id.convert);
+        Button convert = findViewById(R.id.change_to_default_currency);
         Button ac=findViewById(R.id.button_ac);
         Button back=findViewById(R.id.button_back);
         TextView b = findViewById(R.id.add_interest_to_record);
@@ -432,6 +435,7 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
             Toast.makeText(currency_converter.this, "The API is not working", Toast.LENGTH_SHORT).show();
         }
     }
+
 
 
 }

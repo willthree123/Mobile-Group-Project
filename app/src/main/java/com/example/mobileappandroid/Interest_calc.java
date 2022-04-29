@@ -4,13 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -20,7 +18,6 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class Interest_calc extends AppCompatActivity {
     EditText interest_rate;
@@ -360,7 +357,7 @@ public class Interest_calc extends AppCompatActivity {
 
         //Edit below
         //get element id
-        TextView title = findViewById(R.id.title);
+        TextView title = findViewById(R.id.currency_converter_title);
         TextView interest_text = findViewById(R.id.Interest_Text);
         TextView starting_text = findViewById(R.id.Starting_text);
         TextView year_text = findViewById(R.id.Year_Text);
