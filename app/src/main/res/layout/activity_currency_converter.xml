@@ -32,7 +32,7 @@
                     android:paddingRight="20dp">
 
                     <TextView
-                        android:id="@+id/title"
+                        android:id="@+id/currency_converter_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -151,7 +151,7 @@
                         android:orientation="horizontal">
 
                         <Button
-                            android:id="@+id/convert"
+                            android:id="@+id/change_to_default_currency"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
