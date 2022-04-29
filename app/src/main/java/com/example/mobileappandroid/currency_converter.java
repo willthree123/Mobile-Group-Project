@@ -285,11 +285,11 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
         String currency_top;
         String currency_bottom;
 
-        currency_top = sp1.getSelectedItem().toString();
-        currency_bottom = sp2.getSelectedItem().toString();
 
 
         try {
+            currency_top = sp1.getSelectedItem().toString();
+            currency_bottom = sp2.getSelectedItem().toString();
             selected_currency_top_values_string =currency.getString(currency_top);
             selected_currency_bottom_values_string = currency.getString(currency_bottom);
             selected_currency_top_values_double = Double.parseDouble(selected_currency_top_values_string);
