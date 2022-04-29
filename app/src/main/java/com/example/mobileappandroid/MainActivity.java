@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         for (int i=0;i<categories.size();i++)
         {
             if(categories.get(i).getAmount()>0)
-                amounts.add(new PieEntry((float) categories.get(i).getAmount(), categories_name[i]));
+                amounts.add(new PieEntry((float) categories.get(i).getAmount(), categories.get(i).getCategory_name(this)));
         }
 
         if (amounts.size() == 0) {
@@ -157,6 +157,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onResume() {
         super.onResume();
         reloadLang(MainActivity.this);
+        loadChart();
     }
 
 

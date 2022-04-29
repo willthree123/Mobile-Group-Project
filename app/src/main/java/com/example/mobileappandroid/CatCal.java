@@ -3,6 +3,7 @@ package com.example.mobileappandroid;
 import android.content.Context;
 import android.content.res.Resources;
 import android.util.Log;
+import android.widget.Button;
 
 import java.util.Locale;
 
@@ -28,6 +29,8 @@ public class CatCal {
     }
 
     public String getCategory_name(Context context){
+        String lang = SharedPreferenceHelper.getLanguage(context);
+        context = LocaleHelper.setLocale(context, lang);
         Resources res = context.getResources();
         String[] cats = res.getStringArray(R.array.financeNegCat);
         return cats[category];
