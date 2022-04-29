@@ -249,7 +249,12 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
                     SharedPreferences.Editor editor = sp_load.edit();
                     editor.putString("record_data", pasteData);
                     editor.apply();
-
+                    try {
+                        loadData();
+                    } catch (Exception e) {
+                        Toast.makeText(context, "ERROR: NOT MATCHING JSON", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
 
                     Toast.makeText(context, resources.getString(R.string.loadedRecord), Toast.LENGTH_SHORT).show();
                 } else {
@@ -261,6 +266,25 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
                 }
             }
         }
+    }
+
+    private ArrayList<Record> records;
+
+    private void loadData() {
+        SharedPreferences sp = getSharedPreferences("Records", MODE_PRIVATE);
+        Gson gson = new Gson();
+        String json = sp.getString("record_data", null);
+        Type type = new TypeToken<ArrayList<Record>>() {
+        }.getType();
+        if (json == null) {
+            records = new ArrayList<>();
+            SharedPreferences.Editor editor = sp.edit();
+            editor = sp.edit();
+            json = gson.toJson(records);
+            editor.putString("record_data", json);
+            editor.apply();
+        }
+        records = gson.fromJson(json, type);
     }
 
     private void reloadLang(Context context) {

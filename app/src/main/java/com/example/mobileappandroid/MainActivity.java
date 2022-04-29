@@ -151,7 +151,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onResume() {
         super.onResume();
         reloadLang(MainActivity.this);
-        loadData();
+//        loadData();
         loadChart();
     }
 
