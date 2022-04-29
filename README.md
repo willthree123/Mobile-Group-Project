@@ -1,9 +1,15 @@
-### 1.8.1 [29/4/2022 13:18]
+### 1.8.2 [29/4/2022 14:19]
+
+- Fixed edit record amount and keyboard
+- by Alvin
+
+
+### 1.8.2 [29/4/2022 14:01]
 
 - Added (ThisMonth) PieChart to main (translation & formatting required)
 - by Alvin
 
-### 1.8.0 [29/4/2022 13:18]
+### 1.8.1 [29/4/2022 13:18]
 
 - Fixed Chinese String of Consume & Revenue swapped
 - Finished View all records

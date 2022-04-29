@@ -152,19 +152,6 @@ Context context;
         }.getType();
         if (json == null) {
             records = new ArrayList<>();
-            //Test
-            Calendar cal = Calendar.getInstance();
-            cal.set(2020, 4, 4);
-            Calendar cal2 = Calendar.getInstance();
-            cal2.set(2021, 4, 4);
-            Calendar cal3 = Calendar.getInstance();
-            cal3.set(2022, 4, 4);
-            for (int i = 0; i < 3; i++) {
-                records.add(new Record(100, cal, R.drawable.ic_launcher_foreground, "No", false, 0));
-                records.add(new Record(100, cal2, R.drawable.ic_launcher_foreground, "No", false, 0));
-                records.add(new Record(100, cal3, R.drawable.ic_launcher_foreground, "No", false, 0));
-            }
-            //Test
             SharedPreferences.Editor editor = sp.edit();
             editor = sp.edit();
             json = gson.toJson(records);

@@ -16,6 +16,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -74,7 +75,6 @@ public class RecordDetailPage extends AppCompatActivity implements View.OnClickL
         bt_save.setOnClickListener(this);
         home.setOnClickListener(this);
 
-        new_amount = 10;
 
         calendar_picker = record.getDate_calendar();
         listener = new DatePickerDialog.OnDateSetListener() {
@@ -119,7 +119,7 @@ public class RecordDetailPage extends AppCompatActivity implements View.OnClickL
                 dialog.show();
                 break;
             case R.id.record_edit_save:
-                if (true) {
+                if (InputValidator()) {
                     SharedPreferences sp = getSharedPreferences("Records", MODE_PRIVATE);
                     Gson gson = new Gson();
                     String json = sp.getString("record_data", null);
@@ -133,7 +133,6 @@ public class RecordDetailPage extends AppCompatActivity implements View.OnClickL
                     records.get(record_position).setDescription(new_description);
                     records.get(record_position).setDate(calendar_picker);
 
-                    Log.d("A", "Run here");
                     SharedPreferences.Editor editor = sp.edit();
                     editor = sp.edit();
                     json = gson.toJson(records);
@@ -174,6 +173,17 @@ public class RecordDetailPage extends AppCompatActivity implements View.OnClickL
         b.setText(resources.getString(R.string.Save));
         b = findViewById(R.id.record_enable_edit);
         b.setText(resources.getString(R.string.Edit));
+    }
+
+    private boolean InputValidator()
+    {
+        try{
+            new_amount = Double.parseDouble(et_amount.getText().toString());
+        } catch (Exception e) {
+            Toast.makeText(this, "The amount should be numerical", Toast.LENGTH_LONG).show();
+            return (false);
+        }
+        return true;
     }
 
 }
