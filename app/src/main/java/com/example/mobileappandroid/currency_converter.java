@@ -105,7 +105,7 @@ public class currency_converter extends AppCompatActivity implements View.OnClic
 
         //set API link
         queue = Volley.newRequestQueue(currency_converter.this);
-        url = "http://api.exchangeratesapi.io/v1/latest?access_key=915717ef247cbb56cec01237dfa2cf4e&format=1";
+        url = "http://api.exchangeratesapi.io/v1/latest?access_key=d37875e4cb26de02b45842da7e809c73&format=1";
 
 
 
